@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ProjetoIlegra.iml" filepath="$PROJECT_DIR$/.idea/modules/ProjetoIlegra.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ProjetoIlegra_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ProjetoIlegra_main.iml" group="ProjetoIlegra" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ProjetoIlegra_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ProjetoIlegra_test.iml" group="ProjetoIlegra" />
+    </modules>
+  </component>
+</project>
