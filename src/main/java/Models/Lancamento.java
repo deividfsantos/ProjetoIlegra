@@ -4,12 +4,14 @@ public class Lancamento {
 
     private double valor;
     private String descricao;
-    private char tipo;
+    private String tipo;
+    private int parcelas;
 
-    public Lancamento(double valor, String descricao, char tipo) {
+    public Lancamento(double valor, String descricao, String tipo) {
         this.valor = valor;
         this.descricao = descricao;
         this.tipo = tipo;
+        defineParcelas();
     }
 
     public double getValor() {
@@ -28,11 +30,18 @@ public class Lancamento {
         this.descricao = descricao;
     }
 
-    public char getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(char tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public void defineParcelas(){
+        switch (tipo){
+            case "a":
+                break;
+        }
     }
 }
