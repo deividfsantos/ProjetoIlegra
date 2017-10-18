@@ -1,4 +1,3 @@
-import Factory.ConnectionFactory;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -9,9 +8,16 @@ public class TesteConexao {
 
 
 
-        Connection connection = new ConnectionFactory().getConnection();
-        System.out.println("Conexão aberta!");
-        connection.close();
+        Connection con = new ConnectionFactory().getConnection();
+
+
+        Usuario user = new Usuario("Joao");
+        UsuarioDAO envia= new UsuarioDAO(con);
+        envia.cadastrar(user);
+
+
+
+        con.close();
 
     }
 
