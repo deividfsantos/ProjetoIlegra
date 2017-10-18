@@ -1,4 +1,8 @@
 
+import DAO.UsuarioDAO;
+import Factory.ConnectionFactory;
+import Models.Usuario;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -11,9 +15,10 @@ public class TesteConexao {
         Connection con = new ConnectionFactory().getConnection();
 
 
-        Usuario user = new Usuario("Joao");
+        Usuario user = new Usuario("Deivid");
         UsuarioDAO envia= new UsuarioDAO(con);
-        envia.cadastrar(user);
+
+        envia.visualizar();
 
 
 
