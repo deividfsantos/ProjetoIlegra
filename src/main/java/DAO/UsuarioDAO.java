@@ -18,7 +18,7 @@ public class UsuarioDAO {
     }
 
     public void cadastrar(Usuario usuario){
-        String sql = "INSERT INTO usuario" +" (nome_usuario)"+" VALUES (?)";
+        String sql = "INSERT INTO usuario (nome_usuario)"+" VALUES (?)";
         try {
 
             PreparedStatement preparador = con.prepareStatement(sql);
@@ -34,7 +34,7 @@ public class UsuarioDAO {
         }
     }
 
-    public void visualizar(){
+    public void visualizarTodos(){
 
         List<Usuario> usuarios = new ArrayList<Usuario>();
         String sql = "select * from usuario ";
@@ -49,10 +49,11 @@ public class UsuarioDAO {
 
                 Usuario usuario = new Usuario();
                 usuario.setUserName(rs.getString("nome_usuario"));
+                usuario.setCodUser(rs.getInt("cod_usuario"));
                 usuarios.add(usuario);
 
             }
-
+            preparador.close();
         } catch (SQLException e){
             System.out.println("Não foi possível verificar "+e.getMessage());
         }
@@ -61,6 +62,28 @@ public class UsuarioDAO {
             System.out.println(""+usuarios.get(i));
         }
 
+    }
+
+    public Usuario retornaUsuario(String nome){
+        String sql = "select * from usuario where nome_usuario= (?)";
+        Usuario user = new Usuario();
+
+        try {
+            PreparedStatement preparador = con.prepareStatement(sql);
+            preparador.setString(1,nome);
+            ResultSet resultado = preparador.executeQuery();
+            while(resultado.next()){
+
+                user.setUserName(resultado.getString("nome_usuario"));
+                user.setCodUser(resultado.getInt("cod_usuario"));
+
+            }
+            preparador.close();
+
+        }catch (SQLException e){
+            System.out.println("Não foi possível encontrar o usuario X: "+e.getMessage());
+        }
+        return user;
     }
 
 

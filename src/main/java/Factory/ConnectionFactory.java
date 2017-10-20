@@ -6,12 +6,15 @@ import java.sql.SQLException;
 
 public class ConnectionFactory {
 
-    String local = "jdbc:mysql://localhost/projeto_financeiro";
-    String usuario = "root";
 
-    public Connection getConnection(){
+
+    public static Connection getConnection(){
+        String local = "jdbc:mysql://localhost/projeto_financeiro?useSSL=false";
+        String usuario = "root";
+        String pass = "root";
+
         try {
-            return DriverManager.getConnection(local,usuario, "");
+            return DriverManager.getConnection(local,usuario, pass);
         } catch (SQLException excecao) {
             throw new RuntimeException(excecao);
         }

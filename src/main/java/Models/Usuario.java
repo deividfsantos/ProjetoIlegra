@@ -3,6 +3,7 @@ package Models;
 public class Usuario {
 
     private String userName;
+    private int codUser;
 
     public Usuario() {
     }
@@ -19,9 +20,17 @@ public class Usuario {
         this.userName = userName;
     }
 
+    public int getCodUser() {
+        return codUser;
+    }
+
+    public void setCodUser(int codUser) {
+        this.codUser = codUser;
+    }
+
     @Override
     public String toString() {
-        return "\nModels.Usuario: " +
+        return "\nUsuario: " +
                 "\nNome de usuário: " + userName+"\n";
     }
 }
