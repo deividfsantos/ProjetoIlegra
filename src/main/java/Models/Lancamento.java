@@ -1,13 +1,8 @@
 package Models;
 
-
-import DAO.UsuarioDAO;
-import Factory.ConnectionFactory;
-
-import java.sql.Connection;
 import java.util.Date;
 
-public class Renda {
+public class Lancamento {
 
     private double valor;
     private String descricao;
@@ -15,24 +10,44 @@ public class Renda {
     private Date data;
     private Usuario responsavel;
     private int parcelas;
+    private String tipoParcelas;
 
 
-    public Renda(double valor, String descricao, String tipo, Date data, Usuario responsavel, int parcelas) {
+    /*
+    * Variável ou fixo
+    * Despesa ou Renda
+    * A vista ou Parcelado
+    *
+    * Caso Despesa
+    * Decide se é variável ou fixo
+    * Caso variável, escolher tipo A ou P
+    * Caso P, escolher quantidade de parcelas
+    *
+    * Caso fixo, tipo = f e parcelas = 12
+    *
+    * */
+
+    //Construtor Variável
+
+    public Lancamento(double valor, String descricao, String tipo, Date data, Usuario responsavel, int parcelas, String tipoParcelas) {
         this.valor = valor;
         this.descricao = descricao;
         this.data = data;
         this.responsavel = responsavel;
         this.tipo = tipo;
         this.parcelas = parcelas;
+        this.tipoParcelas = tipoParcelas;
     }
 
-    public Renda(double valor, String descricao, String tipo, Date data, Usuario responsavel) {
+    //Construtor Fixo
+    public Lancamento(double valor, String descricao, String tipo, Date data, Usuario responsavel) {
         this.valor = valor;
         this.descricao = descricao;
         this.data = data;
         this.responsavel = responsavel;
         this.tipo = tipo;
         this.parcelas = 12;
+        this.tipoParcelas = "f";
     }
 
     public double getValor() {
@@ -82,6 +97,5 @@ public class Renda {
     public void setParcelas(int parcelas) {
         this.parcelas = parcelas;
     }
-
 
 }

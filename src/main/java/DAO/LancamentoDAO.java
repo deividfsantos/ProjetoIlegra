@@ -1,21 +1,21 @@
 package DAO;
 
-import Models.Renda;
+import Models.Lancamento;
 
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class RendaDAO {
+public class LancamentoDAO {
 
     private Connection con;
 
-    public RendaDAO(Connection con) {
+    public LancamentoDAO(Connection con) {
         this.con = con;
     }
 
-    public void insertRenda(Renda renda){
+    public void inserirLancamento(Lancamento renda){
         String sql= "insert into lancamento (descricao, tipo, valor, cod_responsavel, data_parcela) values (?,?,?,?,?)";
 
         try{

@@ -1,8 +1,8 @@
 
-import DAO.RendaDAO;
+import DAO.LancamentoDAO;
 import DAO.UsuarioDAO;
 import Factory.ConnectionFactory;
-import Models.Renda;
+import Models.Lancamento;
 import Models.Usuario;
 
 import java.sql.Connection;
@@ -23,27 +23,20 @@ public class TesteConexao {
 
         UsuarioDAO envia= new UsuarioDAO(con);
 
-
-
         envia.visualizarTodos();
 
 
-
-
-
         SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
-
         Date dataf = formatador.parse("24/2/2000");
-
 
         Usuario usuario = envia.retornaUsuario("Luiz");
 
-        Renda renda = new Renda(100, "Teste10", "a", dataf, usuario);
+        Lancamento lancamento = new Lancamento(100, "Teste10", "a", dataf, usuario);
 
-        RendaDAO enviaRenda = new RendaDAO(con);
+        LancamentoDAO enviaLancamento = new LancamentoDAO(con);
 
         envia.retornaUsuario("teste");
-        enviaRenda.insertRenda(renda);
+        enviaLancamento.inserirLancamento(lancamento);
 
         con.close();
 

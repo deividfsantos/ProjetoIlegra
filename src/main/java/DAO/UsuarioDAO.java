@@ -78,6 +78,7 @@ public class UsuarioDAO {
                 user.setCodUser(resultado.getInt("cod_usuario"));
 
             }
+
             preparador.close();
 
         }catch (SQLException e){
