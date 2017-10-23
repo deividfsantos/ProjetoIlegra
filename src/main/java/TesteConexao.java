@@ -26,12 +26,11 @@ public class TesteConexao {
         envia.visualizarTodos();
 
 
-        SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
-        Date dataf = formatador.parse("24/2/2000");
+        Date dataf =  new SimpleDateFormat("dd/MM/yyyy").parse("24/12/2017");
 
         Usuario usuario = envia.retornaUsuario("Luiz");
 
-        Lancamento lancamento = new Lancamento(100, "Teste10", "a", dataf, usuario);
+        Lancamento lancamento = new Lancamento(100, "T", "a", dataf, usuario);
 
         LancamentoDAO enviaLancamento = new LancamentoDAO(con);
 

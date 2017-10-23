@@ -98,4 +98,11 @@ public class Lancamento {
         this.parcelas = parcelas;
     }
 
+    public String getTipoParcelas() {
+        return tipoParcelas;
+    }
+
+    public void setTipoParcelas(String tipoParcelas) {
+        this.tipoParcelas = tipoParcelas;
+    }
 }

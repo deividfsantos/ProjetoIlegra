@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Calendar;
 
 public class LancamentoDAO {
 
@@ -15,26 +16,46 @@ public class LancamentoDAO {
         this.con = con;
     }
 
-    public void inserirLancamento(Lancamento renda){
-        String sql= "insert into lancamento (descricao, tipo, valor, cod_responsavel, data_parcela) values (?,?,?,?,?)";
+    public void inserirLancamento(Lancamento lancamento){
 
-        try{
 
-            PreparedStatement preparador = con.prepareStatement(sql);
-            preparador.setString(1,renda.getDescricao());
-            preparador.setString(2, renda.getTipo());
-            preparador.setDouble(3,renda.getValor());
-            preparador.setInt(4,renda.getResponsavel().getCodUser());
-            preparador.setDate(5, converte(renda.getData()));
-            preparador.execute();
-            preparador.close();
+        String sql= "insert into lancamento (descricao, tipo, valor, cod_responsavel, data_parcela, tipo_parcela) values (?,?,?,?,?,?)";
 
-        }catch (SQLException e){
-            System.out.println("Erro: "+e.getMessage());
+        for (int i = 0; i < 1/*lancamento.getParcelas()*/; i++) {
+
+
+            try{
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(lancamento.getData());
+
+
+                PreparedStatement preparador = con.prepareStatement(sql);
+                preparador.setString(1,lancamento.getDescricao());
+                preparador.setString(2, lancamento.getTipo());
+                preparador.setDouble(3,lancamento.getValor());
+                preparador.setInt(4,lancamento.getResponsavel().getCodUser());
+                preparador.setDate(5, converte(cal.getTime()));
+                preparador.setString(6, lancamento.getTipoParcelas());
+
+
+
+
+                preparador.execute();
+                preparador.close();
+
+            }catch (SQLException e){
+                System.out.println("Erro: "+e.getMessage());
+            }
+
+
         }
 
     }
 
+/*    private Date adicionaUmMes(){
+
+    }
+  */
     private Date converte(java.util.Date data) {
         return new Date(data.getTime());
     }
