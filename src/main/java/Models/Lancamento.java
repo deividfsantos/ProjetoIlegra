@@ -12,31 +12,15 @@ public class Lancamento {
     private int parcelas;
     private String tipoParcelas;
 
-
-    /*
-    * Variável ou fixo
-    * Despesa ou Renda
-    * A vista ou Parcelado
-    *
-    * Caso Despesa
-    * Decide se é variável ou fixo
-    * Caso variável, escolher tipo A ou P
-    * Caso P, escolher quantidade de parcelas
-    *
-    * Caso fixo, tipo = f e parcelas = 12
-    *
-    * */
-
     //Construtor Variável
-
     public Lancamento(double valor, String descricao, String tipo, Date data, Usuario responsavel, int parcelas, String tipoParcelas) {
         this.valor = valor;
         this.descricao = descricao;
         this.data = data;
         this.responsavel = responsavel;
-        this.tipo = tipo;
+        this.tipo = tipo; // renda ou despesa
         this.parcelas = parcelas;
-        this.tipoParcelas = tipoParcelas;
+        this.tipoParcelas = tipoParcelas; //fixo, variável ou parcelado
     }
 
     //Construtor Fixo
@@ -45,9 +29,9 @@ public class Lancamento {
         this.descricao = descricao;
         this.data = data;
         this.responsavel = responsavel;
-        this.tipo = tipo;
+        this.tipo = tipo; //renda ou despesa
         this.parcelas = 12;
-        this.tipoParcelas = "f";
+        this.tipoParcelas = "f"; //fixo
     }
 
     public double getValor() {

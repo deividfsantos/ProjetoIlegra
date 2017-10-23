@@ -41,17 +41,15 @@ public class UsuarioDAO {
 
 
         try{
-            PreparedStatement preparador = con.prepareStatement("select * from usuario ");
+            PreparedStatement preparador = con.prepareStatement(sql);
 
             ResultSet rs = preparador.executeQuery();
 
             while(rs.next()) {
-
-                Usuario usuario = new Usuario();
-                usuario.setUserName(rs.getString("nome_usuario"));
-                usuario.setCodUser(rs.getInt("cod_usuario"));
+                String nome= rs.getString("nome_usuario");
+                int codigo = rs.getInt("cod_usuario");
+                Usuario usuario = new Usuario(nome, codigo);
                 usuarios.add(usuario);
-
             }
             preparador.close();
         } catch (SQLException e){
@@ -66,24 +64,26 @@ public class UsuarioDAO {
 
     public Usuario retornaUsuario(String nome){
         String sql = "select * from usuario where nome_usuario= (?)";
-        Usuario user = new Usuario();
+
+        String nomeUser = "";
+        int codigo = 0;
 
         try {
             PreparedStatement preparador = con.prepareStatement(sql);
             preparador.setString(1,nome);
             ResultSet resultado = preparador.executeQuery();
             while(resultado.next()){
-
-                user.setUserName(resultado.getString("nome_usuario"));
-                user.setCodUser(resultado.getInt("cod_usuario"));
-
+                nomeUser= resultado.getString("nome_usuario");
+                codigo = resultado.getInt("cod_usuario");
             }
-
             preparador.close();
 
         }catch (SQLException e){
-            System.out.println("Não foi possível encontrar o usuario X: "+e.getMessage());
+            System.out.println("Não foi possível encontrar o usuario: "+e.getMessage());
         }
+
+        Usuario user = new Usuario(nomeUser, codigo);
+
         return user;
     }
 

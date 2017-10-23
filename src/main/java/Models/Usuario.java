@@ -5,11 +5,13 @@ public class Usuario {
     private String userName;
     private int codUser;
 
-    public Usuario() {
-    }
-
     public Usuario(String userName) {
         this.userName = userName;
+    }
+
+    public Usuario(String userName, int codUser) {
+        this.userName = userName;
+        this.codUser = codUser;
     }
 
     public String getUserName() {
