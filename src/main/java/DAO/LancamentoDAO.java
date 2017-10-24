@@ -1,11 +1,9 @@
 package DAO;
 
 import Models.Lancamento;
+import Models.Usuario;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Calendar;
 
 public class LancamentoDAO {
@@ -62,6 +60,37 @@ public class LancamentoDAO {
         } catch (SQLException e) {
             System.out.println("Erro: " + e.getMessage());
         }
+
+    }
+
+    public void visualizaRendas(int mes, int ano) throws SQLException {
+
+
+        String sql= "SELECT lancamento.* FROM projeto_financeiro.lancamento where data_parcela='?-?-01' and data_parcela>'?-?-01'";
+
+        PreparedStatement preparador = con.prepareStatement(sql);
+        preparador.setInt(1,ano);
+        preparador.setInt(2,mes);
+
+        ResultSet resultado = preparador.executeQuery();
+
+        while (resultado.next()){
+
+            String descricao = resultado.getString("descricao");
+            String tipo = resultado.getString("tipo");
+            double valor = resultado.getDouble("valor");
+            int cod_responsavel = resultado.getInt("cod_responsavel");
+            java.util.Date date = resultado.getDate("data_parcela");
+            String tipoParcela=resultado.getString("tipo_parcela");
+
+            UsuarioDAO user = new UsuarioDAO(con);
+            //user.retornaUsuario(cod_responsavel);
+
+            Lancamento lancamento = new Lancamento(valor, descricao, tipo, date, );
+
+
+        }
+
 
     }
 

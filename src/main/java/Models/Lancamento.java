@@ -89,4 +89,15 @@ public class Lancamento {
     public void setTipoParcelas(String tipoParcelas) {
         this.tipoParcelas = tipoParcelas;
     }
+
+    @Override
+    public String toString() {
+        return  "Valor: " + valor +
+                "\tDescricao: " + descricao  +
+                "\tTipo: " + tipo +
+                "\tData: " + data +
+                "\tResponsavel: " + responsavel +
+                "\tParcelas: " + parcelas +
+                "\tTipo parcelas: " + tipoParcelas;
+    }
 }

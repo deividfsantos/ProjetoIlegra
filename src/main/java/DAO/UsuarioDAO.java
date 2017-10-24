@@ -90,9 +90,6 @@ public class UsuarioDAO {
     public boolean retornaUsuarioTrue(String nome){
         String sql = "select * from usuario where nome_usuario= (?)";
 
-        String nomeUser = "";
-        int codigo = 0;
-
         try {
             PreparedStatement preparador = con.prepareStatement(sql);
             preparador.setString(1,nome);
@@ -105,8 +102,6 @@ public class UsuarioDAO {
         }catch (SQLException e){
             System.out.println("Não foi possível encontrar o usuario: "+e.getMessage());
         }
-
-
         return false;
     }
 
