@@ -87,6 +87,29 @@ public class UsuarioDAO {
         return user;
     }
 
+    public boolean retornaUsuarioTrue(String nome){
+        String sql = "select * from usuario where nome_usuario= (?)";
+
+        String nomeUser = "";
+        int codigo = 0;
+
+        try {
+            PreparedStatement preparador = con.prepareStatement(sql);
+            preparador.setString(1,nome);
+            ResultSet resultado = preparador.executeQuery();
+            while(resultado.next()){
+                return true;
+            }
+            preparador.close();
+
+        }catch (SQLException e){
+            System.out.println("Não foi possível encontrar o usuario: "+e.getMessage());
+        }
+
+
+        return false;
+    }
+
 
 }
 

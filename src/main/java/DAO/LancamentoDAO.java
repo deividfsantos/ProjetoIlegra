@@ -16,6 +16,31 @@ public class LancamentoDAO {
         this.con = con;
     }
 
+
+    public void inserirLancamento(Lancamento lancamento){
+        if (lancamento.getTipoParcelas().equalsIgnoreCase("f")) {
+            for (int i = 0; i < 12; i++) {
+                inserirUmLancamento(lancamento, i);
+            }
+        }else if(lancamento.getTipoParcelas().equalsIgnoreCase("a")){
+
+            inserirUmLancamento(lancamento, 0);
+
+        }else if(lancamento.getTipoParcelas().equalsIgnoreCase("p")){
+
+            lancamento.setValor(lancamento.getValor()/lancamento.getParcelas());
+
+            String var =  lancamento.getDescricao();
+
+            for (int i = 0; i < lancamento.getParcelas(); i++) {
+                lancamento.setDescricao(var+" ("+(i+1)+")");
+                inserirUmLancamento(lancamento, i);
+            }
+
+        }
+
+    }
+
     private void inserirUmLancamento(Lancamento lancamento, int i){
 
         String sql= "insert into lancamento (descricao, tipo, valor, cod_responsavel, data_parcela, tipo_parcela) values (?,?,?,?,?,?)";
@@ -40,33 +65,6 @@ public class LancamentoDAO {
 
     }
 
-    public void inserirLancamento(Lancamento lancamento){
-        if (lancamento.getTipoParcelas().equalsIgnoreCase("f")) {
-            for (int i = 0; i < 12; i++) {
-                inserirUmLancamento(lancamento, i);
-            }
-        }else if(lancamento.getTipoParcelas().equalsIgnoreCase("a")){
-
-            inserirUmLancamento(lancamento, 0);
-
-        }else if(lancamento.getTipoParcelas().equalsIgnoreCase("p")){
-            lancamento.setValor(lancamento.getValor()/lancamento.getParcelas());
-
-            String var =  lancamento.getDescricao();
-
-            for (int i = 0; i < lancamento.getParcelas(); i++) {
-                lancamento.setDescricao(var+" ("+(i+1)+")");
-                inserirUmLancamento(lancamento, i);
-            }
-
-        }
-
-    }
-
-/*    private Date adicionaUmMes(){
-
-    }
-  */
     private Date converte(java.util.Date data) {
         return new Date(data.getTime());
     }
