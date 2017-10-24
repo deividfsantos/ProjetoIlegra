@@ -117,7 +117,7 @@ public class TesteConexao {
 
         System.out.println("Digite o ano inicial: ");
         int ano = input.nextInt();
-        
+
         Lancamento rendaFixa = new Lancamento(valor, desc, tipo, regulaData(mes, ano), user);
         lancamentoDAO.inserirLancamento(rendaFixa);
     }
@@ -142,7 +142,7 @@ public class TesteConexao {
         String tipoParcelas = input.next();
 
         String tipoVar = input.next();
-        while((!(tipoParcelas.equalsIgnoreCase("v")))&&(!(tipoVar.equalsIgnoreCase("f")))){
+        while((!(tipoParcelas.equalsIgnoreCase("p")))&&(!(tipoVar.equalsIgnoreCase("a")))){
             System.out.println("Tipo incorreto, digite novamente: ");
             tipoParcelas=input.next();
         }
