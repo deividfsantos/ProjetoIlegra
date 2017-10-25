@@ -1,4 +1,4 @@
-package Models;
+package Models.Classes;
 
 public class Usuario {
 

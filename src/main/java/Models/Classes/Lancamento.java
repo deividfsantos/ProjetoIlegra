@@ -1,4 +1,4 @@
-package Models;
+package Models.Classes;
 
 import java.util.Date;
 
@@ -92,12 +92,9 @@ public class Lancamento {
 
     @Override
     public String toString() {
-        return  "Valor: " + valor +
+        return  "\nValor: " + valor +
                 "\tDescricao: " + descricao  +
-                "\tTipo: " + tipo +
-                "\tData: " + data +
-                "\tResponsavel: " + responsavel +
-                "\tParcelas: " + parcelas +
-                "\tTipo parcelas: " + tipoParcelas;
+                "\t\tData: " + data +
+                "\tParcelas: " + parcelas;
     }
 }

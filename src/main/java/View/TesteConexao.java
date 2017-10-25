@@ -1,9 +1,10 @@
+package View;
 
-import DAO.LancamentoDAO;
-import DAO.UsuarioDAO;
+import Models.Services.LancamentoDAO;
+import Models.Services.UsuarioDAO;
 import Factory.ConnectionFactory;
-import Models.Lancamento;
-import Models.Usuario;
+import Models.Classes.Lancamento;
+import Models.Classes.Usuario;
 import java.sql.Connection;
 import java.text.ParseException;
 import java.util.Date;
@@ -67,6 +68,17 @@ public class TesteConexao {
                             lancaValor(userDao.retornaUsuario(nome), lancamentoDAO, "d");
                             System.out.println("\nLançamento efetuado com sucesso.\n");
                             break;
+                        case 5:
+                            System.out.println("\n\n--------Visualização de despesas--------\n");
+                            exibeLancamento(con, input, userDao, nome, "d");
+                            break;
+                        case 6:
+                            System.out.println("\n\n--------Visualização de rendas--------\n");
+                            exibeLancamento(con, input, userDao, nome, "r");
+                            break;
+                        case 7:
+                            visualizaMes(input, userDao, lancamentoDAO, nome);
+                            break;
                     }
                 }
             con.close();
@@ -75,6 +87,33 @@ public class TesteConexao {
                 System.exit(0);
         }
 
+    }
+
+    private static void visualizaMes(Scanner input, UsuarioDAO userDao, LancamentoDAO lancamentoDAO, String nome) throws SQLException {
+        System.out.println("\n\n--------Visualizar Mes--------\n");
+        System.out.println("Digite o mês: ");
+        int mes = input.nextInt();
+        System.out.println("Digite o ano: ");
+        int ano = input.nextInt();
+        lancamentoDAO.visualizarMes(mes, ano, userDao.retornaUsuario(nome));
+    }
+
+    private static void exibeLancamento(Connection con, Scanner input, UsuarioDAO userDao, String nome, String tipoLancamento) throws SQLException {
+        System.out.println("F- Visualizar fixas\nV- Visualizar variáveis");
+
+        String tipo = input.next();
+
+        System.out.println("Digite o mês: ");
+        int mes = input.nextInt();
+        System.out.println("Digite o ano: ");
+        int ano = input.nextInt();
+        LancamentoDAO visualizador = new LancamentoDAO(con);
+        if(tipo.equalsIgnoreCase("v")){
+            visualizador.visualizaValores(mes, ano, userDao.retornaUsuario(nome), tipoLancamento, "p");
+            visualizador.visualizaValores(mes, ano, userDao.retornaUsuario(nome), tipoLancamento, "a");
+        }else{
+            visualizador.visualizaValores(mes, ano, userDao.retornaUsuario(nome), tipoLancamento, tipo);
+        }
     }
 
     private static void cadastraUsuario(Scanner input, UsuarioDAO userDao) {

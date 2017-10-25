@@ -1,6 +1,6 @@
-package DAO;
+package Models.Services;
 
-import Models.Usuario;
+import Models.Classes.Usuario;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -29,7 +29,8 @@ public class UsuarioDAO {
 
         } catch (SQLException e) {
 
-            System.out.println("Não foi possível salvar nos banco "+e.getMessage());
+            System.out.println("Não foi possível salvar nos ba " +
+                    "nco "+e.getMessage());
 
         }
     }
@@ -104,7 +105,6 @@ public class UsuarioDAO {
         }
         return false;
     }
-
 
 }
 
