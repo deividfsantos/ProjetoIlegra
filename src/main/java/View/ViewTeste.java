@@ -1,8 +1,8 @@
 package View;
 
+import Controller.ControllerTeste;
 import Models.Services.LancamentoDAO;
 import Models.Services.UsuarioDAO;
-import Factory.ConnectionFactory;
 import Models.Classes.Lancamento;
 import Models.Classes.Usuario;
 import java.sql.Connection;
@@ -12,14 +12,11 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
-public class TesteConexao {
+public class ViewTeste {
 
     public static void main(String[] args) throws SQLException, ParseException {
-
-        Connection con = ConnectionFactory.getConnection();
         Scanner input = new Scanner(System.in);
-        UsuarioDAO userDao = new UsuarioDAO(con);
-        LancamentoDAO lancamentoDAO = new LancamentoDAO(con);
+        ControllerTeste controle = new ControllerTeste();
 
         //Menus
         System.out.println("**** Digite a opção desejada ****" +
@@ -39,24 +36,15 @@ public class TesteConexao {
 
                 int opcao = 0;
                 while (opcao != 8) {
-                    System.out.print("\nDigite a opção desejada" +
-                            "\n1- Cadastrar novo usuário" +
-                            "\n2- Visualizar dados de usuário" +
-                            "\n3- Cadastrar renda" +
-                            "\n4- Cadastrar despesa" +
-                            "\n5- Visualizar despesas" +
-                            "\n6- Visualizar renda" +
-                            "\n7- Visualizar valores totais" +
-                            "\n8- Sair da aplicação\nDigite a opção: ");
-                    opcao = input.nextInt();
+
 
 
                     switch (opcao) {
                         case 1:
-                            cadastraUsuario(input, userDao);
-                            break;
-                        case 2:
-                            System.out.println(userDao.retornaUsuario(nome));
+                            System.out.println("\nDigite o nome do usuário: ");
+                            String nomeUser = input.next();
+                            Usuario user = new Usuario(nomeUser);
+                            controle.cadastra(user);
                             break;
                         case 3:
                             System.out.println("\n\n--------Lançamento de renda--------\n");
@@ -116,12 +104,7 @@ public class TesteConexao {
         }
     }
 
-    private static void cadastraUsuario(Scanner input, UsuarioDAO userDao) {
-        System.out.println("\nDigite o nome do usuário: ");
-        String nomeUser = input.next();
-        Usuario user = new Usuario(nomeUser);
-        userDao.cadastrar(user);
-    }
+
 
     private static void lancaValor(Usuario user, LancamentoDAO lancamentoDAO, String tipo) throws ParseException {
 
