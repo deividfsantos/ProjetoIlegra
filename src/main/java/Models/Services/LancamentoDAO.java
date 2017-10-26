@@ -4,6 +4,8 @@ import Models.Classes.Lancamento;
 import Models.Classes.Usuario;
 
 import java.sql.*;
+import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class LancamentoDAO {
@@ -15,7 +17,41 @@ public class LancamentoDAO {
     }
 
 
-    public void inserirLancamento(Lancamento lancamento){
+    public void inserirLancamento(double valor, String descricao, String tipo, int mes, int ano, Usuario responsavel) throws ParseException {
+
+        java.util.Date date = DataService.regulaData(mes, ano);
+
+        Lancamento lancamento = new Lancamento(valor, descricao, tipo, date, responsavel);
+
+        if (lancamento.getTipoParcelas().equalsIgnoreCase("f")) {
+            for (int i = 0; i < 12; i++) {
+                inserirUmLancamento(lancamento, i);
+            }
+        }else if(lancamento.getTipoParcelas().equalsIgnoreCase("a")){
+
+            inserirUmLancamento(lancamento, 0);
+
+        }else if(lancamento.getTipoParcelas().equalsIgnoreCase("p")){
+
+            lancamento.setValor(lancamento.getValor()/lancamento.getParcelas());
+
+            String var =  lancamento.getDescricao();
+
+            for (int i = 0; i < lancamento.getParcelas(); i++) {
+                lancamento.setDescricao(var+" ("+(i+1)+")");
+                inserirUmLancamento(lancamento, i);
+            }
+
+        }
+
+    }
+
+    public void inserirLancamento(double valor, String descricao, String tipoLancamento, int mes, int ano, int parcelas, String tipoParcelas, Usuario user) throws ParseException {
+
+        java.util.Date date = DataService.regulaData(mes, ano);
+
+        Lancamento lancamento = new Lancamento(valor, descricao, tipoLancamento, date, user, parcelas, tipoParcelas);
+
         if (lancamento.getTipoParcelas().equalsIgnoreCase("f")) {
             for (int i = 0; i < 12; i++) {
                 inserirUmLancamento(lancamento, i);
@@ -43,6 +79,9 @@ public class LancamentoDAO {
 
         String sql= "insert into lancamento (descricao, tipo, valor, cod_responsavel, data_parcela, tipo_parcela) values (?,?,?,?,?,?)";
 
+        UsuarioDAO user = new UsuarioDAO(con);
+        Usuario responsavel = user.retornaUsuario(lancamento.getResponsavel().getUserName());
+
         try {
             Calendar cal = Calendar.getInstance();
             cal.setTime(lancamento.getData());
@@ -52,7 +91,7 @@ public class LancamentoDAO {
             preparador.setString(1, lancamento.getDescricao());
             preparador.setString(2, lancamento.getTipo());
             preparador.setDouble(3, lancamento.getValor());
-            preparador.setInt(4, lancamento.getResponsavel().getCodUser());
+            preparador.setInt(4, responsavel.getCodUser());
             preparador.setDate(5, converte(cal.getTime()));
             preparador.setString(6, lancamento.getTipoParcelas());
             preparador.execute();
@@ -63,13 +102,15 @@ public class LancamentoDAO {
 
     }
 
-    public void visualizaValores(int mes, int ano, Usuario user, String tipoVariavel, String tipoParcelas) throws SQLException {
+    public ArrayList<Lancamento> visualizaValores(int mes, int ano, Usuario user, String tipoVariavel, String tipoParcelas) throws SQLException {
 
         String sql= "SELECT lancamento.* FROM projeto_financeiro.lancamento where data_parcela='"+ano+"-"+mes+"-01' AND tipo='"+tipoVariavel+"'" +
                 "AND tipo_parcela='"+tipoParcelas+"'";
 
         PreparedStatement preparador = con.prepareStatement(sql);
         ResultSet resultado = preparador.executeQuery();
+
+        ArrayList<Lancamento> lancamentos = new ArrayList<>();
 
         while (resultado.next()){
 
@@ -83,8 +124,10 @@ public class LancamentoDAO {
 
             Lancamento lancamento = new Lancamento(valor, descricao, tipo, date, user ,parcelas, tipoParcela);
 
-            System.out.println(lancamento);
+            lancamentos.add(lancamento);
+
         }
+        return lancamentos;
     }
 
     public int retornaQtdParcelas(String descricao) throws SQLException {

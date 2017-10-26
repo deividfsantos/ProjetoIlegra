@@ -17,7 +17,8 @@ public class UsuarioDAO {
         this.con = con;
     }
 
-    public void cadastrar(Usuario usuario){
+    public void cadastrar(String nome){
+        Usuario usuario = new Usuario(nome);
         String sql = "INSERT INTO usuario (nome_usuario)"+" VALUES (?)";
         try {
 

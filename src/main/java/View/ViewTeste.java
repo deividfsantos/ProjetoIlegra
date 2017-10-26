@@ -1,6 +1,6 @@
-package View;
+/*package View;
 
-import Controller.ControllerTeste;
+import Controller.MenuController;
 import Models.Services.LancamentoDAO;
 import Models.Services.UsuarioDAO;
 import Models.Classes.Lancamento;
@@ -16,13 +16,14 @@ public class ViewTeste {
 
     public static void main(String[] args) throws SQLException, ParseException {
         Scanner input = new Scanner(System.in);
-        ControllerTeste controle = new ControllerTeste();
+        MenuController controle = new MenuController();
 
         //Menus
         System.out.println("**** Digite a opção desejada ****" +
                 "\n1- Login" +
                 "\n2- Sair");
         int opcaoInicio = input.nextInt();
+
 
         switch (opcaoInicio) {
             case 1:
@@ -46,26 +47,29 @@ public class ViewTeste {
                             Usuario user = new Usuario(nomeUser);
                             controle.cadastra(user);
                             break;
-                        case 3:
+                        case 2:
                             System.out.println("\n\n--------Lançamento de renda--------\n");
                             lancaValor(userDao.retornaUsuario(nome), lancamentoDAO, "r");
                             System.out.println("\nLançamento efetuado com sucesso.\n");
                             break;
-                        case 4:
+                        case 3:
                             System.out.println("\n\n--------Lançamento de despesa--------\n");
                             lancaValor(userDao.retornaUsuario(nome), lancamentoDAO, "d");
                             System.out.println("\nLançamento efetuado com sucesso.\n");
                             break;
-                        case 5:
+                        case 4:
                             System.out.println("\n\n--------Visualização de despesas--------\n");
                             exibeLancamento(con, input, userDao, nome, "d");
                             break;
-                        case 6:
+                        case 5:
                             System.out.println("\n\n--------Visualização de rendas--------\n");
                             exibeLancamento(con, input, userDao, nome, "r");
                             break;
-                        case 7:
+                        case 6:
                             visualizaMes(input, userDao, lancamentoDAO, nome);
+                            break;
+                        case 7:
+                            System.exit(0);
                             break;
                     }
                 }
@@ -161,12 +165,7 @@ public class ViewTeste {
         lancamentoDAO.inserirLancamento(lancamentoVariavel);
     }
 
-    private static Date regulaData(int mes, int ano) throws ParseException {
-        String valor = ""+mes+"/"+ano;
 
-        Date data = new SimpleDateFormat("MM/yyyy").parse(valor);
-        return data;
-
-    }
 
 }
+*/
