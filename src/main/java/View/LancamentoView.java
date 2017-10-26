@@ -44,7 +44,7 @@ public class LancamentoView {
         int ano = input.nextInt();
 
         if(tipoVar.equalsIgnoreCase("f")) {
-            lancamento.cadastraFixo(valor, desc, tipo, mes, ano, tipoVar, user);
+            lancamento.cadastraValor(valor, desc, tipo, mes, ano, tipoVar, user);
         }else{
             lancaVariavel(valor, desc, tipo, mes, ano, tipoVar, user);
         }
@@ -66,12 +66,11 @@ public class LancamentoView {
             System.out.println("Digite a quantidade de parcelas: ");
             parcelas = input.nextInt();
         }
-
-        lancamento.cadastraVariavel(valor, desc, tipo, mes, ano, user, parcelas, tipoParcelas);
+        lancamento.cadastraValor(valor, desc, tipo, mes, ano, user, parcelas, tipoParcelas);
     }
 
 
-    public void menuVisualizaValor(){
+    public void menuVisualizaValor(Usuario user){
 
     }
 

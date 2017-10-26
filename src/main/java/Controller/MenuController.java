@@ -24,7 +24,7 @@ public class MenuController {
                 lancamentoView.menuLancamentoDespesa(user);
                 break;
             case 4:
-                lancamentoView.menuVisualizaValor();
+                lancamentoView.menuVisualizaValor(user);
                 break;
         }
 
