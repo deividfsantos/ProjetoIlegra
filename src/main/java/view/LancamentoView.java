@@ -31,7 +31,7 @@ public class LancamentoView {
         System.out.println("Deseja lançar qual tipo?\nFixa - F\nVariável - V");
         String tipoVar = input.next();
 
-        while((!(tipoVar.equalsIgnoreCase("v")))&&(!(tipoVar.equalsIgnoreCase("f")))){
+        while(!(tipoVar.equalsIgnoreCase("v"))&&!(tipoVar.equalsIgnoreCase("f"))){
             System.out.println("Tipo incorreto, digite novamente: ");
             tipoVar=input.next();
         }
@@ -104,7 +104,7 @@ public class LancamentoView {
         ArrayList<Lancamento> despesas = lancamentoController.buscaLancamentoMes(user, mes, ano , 2);
 
         if (rendas.size()>0){
-            System.out.println("\t\n------Rendas------");
+            System.out.println("\n\t------Rendas------");
         }else{
             System.out.println("\nVocê não possui rendas neste mês");
         }
@@ -114,7 +114,7 @@ public class LancamentoView {
         }
 
         if (despesas.size()>0){
-            System.out.println("\t\n------Despesas------");
+            System.out.println("\n\t------Despesas------");
         }else{
             System.out.println("\nVocê não possui despesas neste mês");
         }
@@ -122,7 +122,6 @@ public class LancamentoView {
         for (int i = 0; i < despesas.size(); i++) {
             System.out.println(despesas.get(i));
         }
-
 
     }
 

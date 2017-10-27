@@ -98,12 +98,23 @@ public class Lancamento {
         }
     }
 
+    public String converteTipoParcelas(){
+        if(tipoParcelas.equalsIgnoreCase("f")){
+            return "Fixo";
+        }else if(tipoParcelas.equalsIgnoreCase("a")){
+            return "A vista";
+        }else{
+            return "Parcelado";
+        }
+    }
+
     @Override
     public String toString() {
         return  "Valor: " + valor +
                 "\tData: " + data +
                 "\tParcelas: " + parcelas +
                 "\tTipo: "+ converteTipo() +
-                 "\t\tDescricao: " + descricao ;
+                 "\tDescricao: " + descricao+
+                "\tTipo das parcelas: "+converteTipoParcelas();
     }
 }

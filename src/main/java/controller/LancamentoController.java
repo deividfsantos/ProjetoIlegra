@@ -33,9 +33,9 @@ public class LancamentoController {
     public ArrayList<Lancamento> buscaLancamentoMes(Usuario user, int mes, int ano, int opcao) throws SQLException {
 
         if(opcao==1){
-            return lancamentoService.retornaDespesasMes(user, mes, ano);
-        }else{
             return lancamentoService.retornaRendasMes(user, mes, ano);
+        }else{
+            return lancamentoService.retornaDespesasMes(user, mes, ano);
         }
 
     }
