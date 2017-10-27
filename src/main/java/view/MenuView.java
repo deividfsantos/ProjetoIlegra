@@ -29,7 +29,7 @@ public class MenuView {
                     "\nDigite a opção: ");
             opcao = input.nextInt();
             System.out.println("\n");
-t            controle.seleciona(opcao, user);
+            controle.seleciona(opcao, user);
         }
     }
 
