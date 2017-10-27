@@ -89,6 +89,9 @@ public class LancamentoDAO {
             String tipo = resultado.getString("tipo");
             double valor = resultado.getDouble("valor");
             java.util.Date date = resultado.getDate("data_parcela");
+
+            java.sql.Date date2 = resultado.getDate("data_parcela");
+
             String tipoParcela=resultado.getString("tipo_parcela");
             int parcelas = retornaQtdParcelas(descricao);
 
