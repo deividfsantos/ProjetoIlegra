@@ -2,20 +2,12 @@ package view;
 
 import controller.UsuarioController;
 import models.classes.Usuario;
-
 import java.util.Scanner;
 
 public class UsuarioView {
 
     Scanner input = new Scanner(System.in);
     UsuarioController userControl =new UsuarioController();
-
-    public void telaCadastro() {
-        System.out.println("Digite o nome do usuário que deseja cadastrar:");
-        String nome = input.nextLine();
-
-        userControl.cadastraUsuario(nome);
-    }
 
     public Usuario telaLogin(){
         System.out.println("Digite seu nome de usuário: ");
@@ -32,4 +24,18 @@ public class UsuarioView {
         return user;
     }
 
+    public void telaCadastro() {
+        System.out.println("Digite o nome do usuário que deseja cadastrar:");
+        String nome = input.next();
+
+        userControl.cadastraUsuario(nome);
+        System.out.println("Usuário cadastrado com sucesso.");
+
+    }
+
+    public String solicitaNovamente(){
+        System.out.println("\nNome de usuário já existe" +
+                "\nPor favor, digite o nome novamente: ");
+        return input.next();
+    }
 }

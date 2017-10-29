@@ -24,7 +24,6 @@ public class UsuarioDAO {
             preparador.setString(1,usuario.getNomeUsuario());
             preparador.execute();
             preparador.close();
-            System.out.println("Dados salvos com sucesso");
 
         } catch (SQLException e) {
 
@@ -59,6 +58,28 @@ public class UsuarioDAO {
         return user;
     }
 
+    public boolean verificaUsuario(String nome){
+        String sql = "select * from usuario where nome_usuario= (?)";
+
+        try {
+            PreparedStatement preparador = con.prepareStatement(sql);
+            preparador.setString(1,nome);
+            ResultSet resultado = preparador.executeQuery();
+            if(resultado.next()){
+                preparador.close();
+                return true;
+
+            }else{
+                preparador.close();
+                return false;
+            }
+
+        }catch (SQLException e){
+            System.out.println("Não foi possível encontrar o usuario: "+e.getMessage());
+        }
+
+        return true;
+    }
 
 }
 

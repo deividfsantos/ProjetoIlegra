@@ -1,0 +1,107 @@
+[33mcommit b6c0ec83851e92998f7db8632ff37b947f1e6411[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Deivid Santos <deividfranciscosantos@hotmail.com>
+Date:   Fri Oct 27 01:19:46 2017 -0200
+
+    Cadastro completo
+
+[33mcommit ad185094c50b3e2b1fa607690a8b26d67b69e2ff[m
+Author: deividsantos <deividfranciscosantos@hotmail.com>
+Date:   Thu Oct 26 17:36:22 2017 -0200
+
+    Alterando cadastro com MVC
+
+[33mcommit 7fa911920cf332a2676ec566b8de7964d692a852[m
+Author: deividsantos <deividfranciscosantos@hotmail.com>
+Date:   Thu Oct 26 17:21:56 2017 -0200
+
+    Iniciando Menu de visualização com MVC
+
+[33mcommit 458148fd1bd462d92520f28d91602d198bb879d1[m
+Author: deividsantos <deividfranciscosantos@hotmail.com>
+Date:   Wed Oct 25 18:14:03 2017 -0200
+
+    Continuando no MVC
+
+[33mcommit f0c84d1db21d72ed205a20ae4e3c2ffe633dba19[m
+Author: deividsantos <deividfranciscosantos@hotmail.com>
+Date:   Wed Oct 25 16:57:37 2017 -0200
+
+    Inicio do MVC
+
+[33mcommit 001d9fac2d23820e05cbfec1926140ed20bcc93c[m
+Author: deividsantos <deividfranciscosantos@hotmail.com>
+Date:   Tue Oct 24 17:52:03 2017 -0200
+
+    Criando menu de visualizacao de rendas
+
+[33mcommit 466896bbac4c0aa8111cded02212cb483754304e[m
+Author: deividsantos <deividfranciscosantos@hotmail.com>
+Date:   Tue Oct 24 16:45:31 2017 -0200
+
+    Cadastro de itens finalizado 2
+
+[33mcommit 1e2a4c7b02bff4ad2ceec0df3174855a5e5ccf6c[m
+Author: deividsantos <deividfranciscosantos@hotmail.com>
+Date:   Tue Oct 24 16:40:07 2017 -0200
+
+    Cadastro de itens finalizado
+
+[33mcommit 19cc6f0c13952ca46f348f11dc4d63c921ec270c[m
+Author: deividsantos <deividfranciscosantos@hotmail.com>
+Date:   Mon Oct 23 17:58:39 2017 -0200
+
+    Editando classe main
+
+[33mcommit c24abe73e8e5b019db677611fbb01cb916c84e94[m
+Author: Deivid Santos <deividfranciscosantos@hotmail.com>
+Date:   Sun Oct 22 23:37:06 2017 -0200
+
+    Commit DB atualizado, nova coluna
+
+[33mcommit 7c8ff6ac37da0411a6999f923e81bf31a6d5caea[m
+Author: Deivid Santos <deividfranciscosantos@hotmail.com>
+Date:   Sun Oct 22 02:34:57 2017 -0200
+
+    Atualização das classes para lancamento e construtor
+
+[33mcommit be9658d4419bcb9e94fccb73169360e3232798c7[m
+Author: deividsantos <deividfranciscosantos@hotmail.com>
+Date:   Fri Oct 20 17:58:31 2017 -0200
+
+    Insert Renda Completo
+
+[33mcommit f407bed39a4336edb2479e21811436e751cf882b[m
+Author: deividsantos <deividfranciscosantos@hotmail.com>
+Date:   Wed Oct 18 18:06:18 2017 -0200
+
+    Cadastro de usuário completo com SQL
+
+[33mcommit 5b1a86a4a0e621d21f00d9ed47f905fe2c4aaec3[m
+Author: deividsantos <deividfranciscosantos@hotmail.com>
+Date:   Wed Oct 18 17:33:26 2017 -0200
+
+    Cadastro de usuário completo com SQL
+
+[33mcommit f5f8ad16224dfe0b94d8a97d8f12510bab6ccf8c[m
+Author: deividsantos <deividfranciscosantos@hotmail.com>
+Date:   Wed Oct 18 15:02:57 2017 -0200
+
+    Cadastro de usuário completo
+
+[33mcommit 44cb8c0a52443ad9b895763264660814b60750a3[m
+Author: deividsantos <deividfranciscosantos@hotmail.com>
+Date:   Wed Oct 18 13:59:53 2017 -0200
+
+    Segundo Commit
+
+[33mcommit 06ca0e89e3346abbabe5d5218a3fc6a249533bcb[m
+Author: deividsantos <deividfranciscosantos@hotmail.com>
+Date:   Wed Oct 18 13:57:41 2017 -0200
+
+    Primeiro Commit
+
+[33mcommit 2b97909eed593a9077c7e4270a7557c436841a1b[m
+Author: deividsantos <deividfranciscosantos@hotmail.com>
+Date:   Wed Oct 18 13:53:58 2017 -0200
+
+    Primeiro Commit

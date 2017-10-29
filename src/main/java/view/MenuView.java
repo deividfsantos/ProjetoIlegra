@@ -14,12 +14,16 @@ public class MenuView {
 
         Scanner input = new Scanner(System.in);
         MenuController controle = new MenuController();
+
         Usuario user = controle.login();
 
         int opcao=0;
 
+        System.out.println("\n\n********BEM VINDO********");
+
         while (opcao != 7) {
-            System.out.print("\n1- Cadastrar usuario" +
+            System.out.print("\nEscolha a opção desejada" +
+                    "\n1- Cadastrar usuario" +
                     "\n2- Lançamento de renda" +
                     "\n3- Lançamento de despesa" +
                     "\n4- Visualizar despesas" +
@@ -29,6 +33,11 @@ public class MenuView {
                     "\nDigite a opção: ");
             opcao = input.nextInt();
             System.out.println("\n");
+
+            while(opcao>7 || opcao<1){
+                System.out.println("Opção incorreta, digite novamente: ");
+                opcao = input.nextInt();
+            }
             controle.seleciona(opcao, user);
         }
     }

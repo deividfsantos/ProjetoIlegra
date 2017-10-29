@@ -108,13 +108,22 @@ public class Lancamento {
         }
     }
 
+    public String ajustaPrint(String valor, int tamanho){
+
+        while(valor.length()<tamanho){
+            valor= valor+" ";
+        }
+
+        return valor;
+    }
+
     @Override
     public String toString() {
-        return  "Valor: " + valor +
-                "\tData: " + data +
-                "\tParcelas: " + parcelas +
+        return  "Descricao: " + ajustaPrint(descricao, 25) +
+                "\tValor: " + ajustaPrint(String.valueOf(valor), 10) +
+                "\tParcelas: " + ajustaPrint(String.valueOf(parcelas), 5) +
                 "\tTipo: "+ converteTipo() +
-                 "\tDescricao: " + descricao+
+                "\tData: " + data +
                 "\tTipo das parcelas: "+converteTipoParcelas();
     }
 }

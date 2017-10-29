@@ -47,7 +47,7 @@ public class LancamentoDAO {
 
     public ArrayList<Lancamento> visualizaValores(Usuario user, String tipoVariavel) throws SQLException {
 
-        String sql= "SELECT lancamento.* FROM projeto_financeiro.lancamento where tipo='"+tipoVariavel+"' AND cod_responsavel = '"+user.getCodigoUsuario()+"'";
+        String sql= "SELECT lancamento.* FROM projeto_financeiro.lancamento where tipo='"+tipoVariavel+"' AND cod_responsavel = '"+user.getCodigoUsuario()+"' order by lancamento.data_parcela";
 
         PreparedStatement preparador = con.prepareStatement(sql);
         ResultSet resultado = preparador.executeQuery();
@@ -89,9 +89,6 @@ public class LancamentoDAO {
             String tipo = resultado.getString("tipo");
             double valor = resultado.getDouble("valor");
             java.util.Date date = resultado.getDate("data_parcela");
-
-            java.sql.Date date2 = resultado.getDate("data_parcela");
-
             String tipoParcela=resultado.getString("tipo_parcela");
             int parcelas = retornaQtdParcelas(descricao);
 
@@ -106,13 +103,9 @@ public class LancamentoDAO {
     public int retornaQtdParcelas(String descricao) throws SQLException {
 
         String[] valor =descricao.split(" ");
-
         String sql= "SELECT count(*) AS total_parcelas FROM projeto_financeiro.lancamento where descricao like '"+valor[0]+"%'";
-
         PreparedStatement preparador = con.prepareStatement(sql);
-
         ResultSet resultado = preparador.executeQuery();
-
 
         int retorno = 0;
 

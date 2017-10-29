@@ -16,19 +16,15 @@ public class LancamentoService {
     LancamentoDAO lancamentoDAO = new LancamentoDAO(con);
 
     public void inserirLancamento(double valor, String descricao, String tipo, int mes, int ano, Usuario responsavel) throws ParseException {
-
         java.util.Date date = DataService.regulaData(mes, ano);
         Lancamento lancamento = new Lancamento(valor, descricao, tipo, date, responsavel);
         inserirLancamentos(lancamento, lancamentoDAO);
-
     }
 
     public void inserirLancamento(double valor, String descricao, String tipoLancamento, int mes, int ano, int parcelas, String tipoParcelas, Usuario user) throws ParseException {
-
         java.util.Date date = DataService.regulaData(mes, ano);
         Lancamento lancamento = new Lancamento(valor, descricao, tipoLancamento, date, user, parcelas, tipoParcelas);
         inserirLancamentos(lancamento, lancamentoDAO);
-
     }
 
     private void inserirLancamentos(Lancamento lancamento, LancamentoDAO lancamentoDAO) {
@@ -50,7 +46,6 @@ public class LancamentoService {
                 lancamento.setDescricao(var+" ("+(i+1)+")");
                 lancamentoDAO.inserirUmLancamento(lancamento, i);
             }
-
         }
     }
 
@@ -101,6 +96,4 @@ public class LancamentoService {
 
         return lancamentoFinal;
     }
-
-
 }

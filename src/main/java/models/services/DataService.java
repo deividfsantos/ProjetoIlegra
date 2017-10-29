@@ -9,7 +9,7 @@ public class DataService {
     public static Date regulaData(int mes, int ano) throws ParseException {
         String valor = "/"+mes+"/"+ano;
 
-        Date data = new SimpleDateFormat("dd/MM/yyyy").parse("01"+valor);
+        Date data = new SimpleDateFormat("dd/MM/yyyy").parse("15"+valor);
 
         return data;
     }

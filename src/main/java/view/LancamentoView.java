@@ -7,6 +7,7 @@ import models.classes.Usuario;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class LancamentoView {
@@ -28,7 +29,7 @@ public class LancamentoView {
     }
 
     public void telaCadastro(String tipo, Usuario user) throws ParseException {
-        System.out.println("Deseja lançar qual tipo?\nFixa - F\nVariável - V");
+        System.out.print("Deseja lançar qual tipo?\nF - Fixa\nV - Variável\nDigite a opção: ");
         String tipoVar = input.next();
 
         while(!(tipoVar.equalsIgnoreCase("v"))&&!(tipoVar.equalsIgnoreCase("f"))){
@@ -36,7 +37,7 @@ public class LancamentoView {
             tipoVar=input.next();
         }
 
-        System.out.println("Digite a descrição desse lancamento: ");
+        System.out.println("\nDigite a descrição desse lancamento: ");
         String desc = input.next();
 
         System.out.println("Digite o valor:");
@@ -94,7 +95,7 @@ public class LancamentoView {
 
 
     public void visualizaMes(Usuario user) throws SQLException {
-        System.out.println("Visualizar um mês");
+        System.out.println("Visualizar um mês\n");
         System.out.println("Digite o mês: ");
         int mes = input.nextInt();
         System.out.println("Digite o ano: ");
@@ -124,6 +125,5 @@ public class LancamentoView {
         }
 
     }
-
 
 }

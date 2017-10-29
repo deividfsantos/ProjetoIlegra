@@ -9,14 +9,15 @@ import java.text.ParseException;
 
 public class MenuController {
 
-    public void seleciona(int opcao, Usuario user) throws ParseException, SQLException {
-        UsuarioView cadastroUsuario = new UsuarioView();
-        LancamentoView lancamentoView =  new LancamentoView();
+    UsuarioView usuarioView = new UsuarioView();
 
+    public void seleciona(int opcao, Usuario user) throws ParseException, SQLException {
+
+        LancamentoView lancamentoView =  new LancamentoView();
 
         switch (opcao){
             case 1:
-                cadastroUsuario.telaCadastro();
+                usuarioView.telaCadastro();
                 break;
             case 2:
                 lancamentoView.menuLancamentoRenda(user);
@@ -41,8 +42,6 @@ public class MenuController {
     }
 
     public Usuario login(){
-        UsuarioView usuarioView = new UsuarioView();
-
         return usuarioView.telaLogin();
     }
 
