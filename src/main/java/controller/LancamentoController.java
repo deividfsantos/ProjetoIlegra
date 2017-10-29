@@ -26,6 +26,7 @@ public class LancamentoController {
 
 
     public ArrayList<Lancamento> buscaRendasEDespesas(Usuario user, String tipoLancamento) throws SQLException {
+
         return lancamentoDAO.visualizaValores(user, tipoLancamento);
     }
 
@@ -38,6 +39,14 @@ public class LancamentoController {
             return lancamentoService.retornaDespesasMes(user, mes, ano);
         }
 
+    }
+
+    public int retornaTotal(ArrayList<Lancamento> lancamentos){
+        return lancamentoService.calculaTotal(lancamentos);
+    }
+
+    public int calculaRestante(int renda, int despesa){
+        return lancamentoService.calculaRestante(renda, despesa);
     }
 
 }

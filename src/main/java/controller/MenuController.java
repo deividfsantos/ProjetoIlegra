@@ -11,6 +11,10 @@ public class MenuController {
 
     UsuarioView usuarioView = new UsuarioView();
 
+    public Usuario login(){
+        return usuarioView.telaLogin();
+    }
+
     public void seleciona(int opcao, Usuario user) throws ParseException, SQLException {
 
         LancamentoView lancamentoView =  new LancamentoView();
@@ -41,8 +45,6 @@ public class MenuController {
 
     }
 
-    public Usuario login(){
-        return usuarioView.telaLogin();
-    }
+
 
 }

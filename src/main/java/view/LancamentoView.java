@@ -15,7 +15,6 @@ public class LancamentoView {
     Scanner input = new Scanner(System.in);
     LancamentoController lancamentoController = new LancamentoController();
 
-
     public void menuLancamentoRenda(Usuario user) throws ParseException {
         System.out.println("*********Lançamento de Renda*********");
         telaCadastro("r", user);
@@ -75,10 +74,13 @@ public class LancamentoView {
         lancamentoController.cadastraValor(valor, desc, tipo, mes, ano, parcelas, tipoParcelas, user);
     }
 
-    private static void visualizaValores(ArrayList<Lancamento> lancamentos){
+    private void visualizaValores(ArrayList<Lancamento> lancamentos){
         for (int i = 0; i < lancamentos.size(); i++) {
             System.out.println(lancamentos.get(i));
         }
+        int valor = lancamentoController.retornaTotal(lancamentos);
+        System.out.println("\nTotal: " + valor);
+
     }
 
     public void visualizaDespesa(Usuario user) throws SQLException {
@@ -124,6 +126,13 @@ public class LancamentoView {
             System.out.println(despesas.get(i));
         }
 
-    }
+        int totalRenda = lancamentoController.retornaTotal(rendas);
+        int totalDespesa = lancamentoController.retornaTotal(despesas);
 
+        System.out.println("\n**Total no mês**" +
+                "\nRenda: " +  totalRenda +
+                "\nDespesa: " +  totalDespesa +
+                "\nValor Restante: " + lancamentoController.calculaRestante(totalRenda, totalDespesa));
+
+    }
 }

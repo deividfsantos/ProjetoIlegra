@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class LancamentoService {
 
@@ -96,4 +97,20 @@ public class LancamentoService {
 
         return lancamentoFinal;
     }
+
+    public int calculaTotal(ArrayList<Lancamento> lancamentos){
+
+        int total = 0;
+
+        for (int i = 0; i < lancamentos.size(); i++) {
+            total += lancamentos.get(i).getValor();
+        }
+
+        return total;
+    }
+
+    public int calculaRestante(int renda, int despesa){
+        return renda-despesa;
+    }
+
 }

@@ -22,4 +22,8 @@ public class UsuarioTeste {
 
     }
 
+    public void testeMostraTotal(){
+
+    }
+
 }
