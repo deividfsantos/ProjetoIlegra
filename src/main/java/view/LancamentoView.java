@@ -48,11 +48,7 @@ public class LancamentoView {
         System.out.println("Digite o ano inicial: ");
         int ano = input.nextInt();
 
-        if(tipoVar.equalsIgnoreCase("f")) {
-            lancamentoController.cadastraValor(valor, desc, tipo, mes, ano, 12, "f", user);
-        }else{
-            lancaVariavel(valor, desc, tipo, mes, ano, user);
-        }
+        lancamentoController.cadastraValor(valor, desc, tipo, mes, ano, user, tipoVar);
 
     }
 

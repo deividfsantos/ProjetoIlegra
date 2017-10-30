@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c849b179-65c7-4d90-9cb0-14b62573aab6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/models/services/LancamentoService.class" afterPath="$PROJECT_DIR$/out/production/classes/models/services/LancamentoService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/view/LancamentoView.class" afterPath="$PROJECT_DIR$/out/production/classes/view/LancamentoView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/classes/UsuarioTeste.class" afterPath="$PROJECT_DIR$/out/test/classes/UsuarioTeste.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/models/services/LancamentoService.java" afterPath="$PROJECT_DIR$/src/main/java/models/services/LancamentoService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/LancamentoController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/LancamentoController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/models/classes/Lancamento.java" afterPath="$PROJECT_DIR$/src/main/java/models/classes/Lancamento.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/view/LancamentoView.java" afterPath="$PROJECT_DIR$/src/main/java/view/LancamentoView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/UsuarioTeste.java" afterPath="$PROJECT_DIR$/src/test/java/UsuarioTeste.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -46,21 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsuarioController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/UsuarioController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LancamentoView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LancamentoView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/view/LancamentoView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-378">
-              <caret line="20" column="42" lean-forward="false" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+            <state relative-caret-position="0">
+              <caret line="0" column="13" lean-forward="true" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -69,14 +55,14 @@
       <file leaf-file-name="LancamentoController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/LancamentoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="21" column="15" lean-forward="true" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
+            <state relative-caret-position="882">
+              <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1539#1540#0" expanded="true" />
-                <element signature="e#1605#1606#0" expanded="true" />
-                <element signature="e#1662#1663#0" expanded="true" />
-                <element signature="e#1734#1735#0" expanded="true" />
+                <element signature="e#1876#1877#0" expanded="true" />
+                <element signature="e#1942#1943#0" expanded="true" />
+                <element signature="e#1999#2000#0" expanded="true" />
+                <element signature="e#2071#2072#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -85,8 +71,8 @@
       <file leaf-file-name="LancamentoService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/models/services/LancamentoService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="33" column="65" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="65" />
+            <state relative-caret-position="-72">
+              <caret line="29" column="60" lean-forward="false" selection-start-line="29" selection-start-column="60" selection-end-line="29" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3971#3972#0" expanded="true" />
@@ -96,38 +82,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/models/services/DataService.java">
+      <file leaf-file-name="LancamentoDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/models/dao/LancamentoDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="11" column="66" lean-forward="false" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Lancamento.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/models/classes/Lancamento.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1077">
-              <caret line="92" column="32" lean-forward="false" selection-start-line="92" selection-start-column="32" selection-end-line="92" selection-end-column="32" />
+            <state relative-caret-position="0">
+              <caret line="0" column="19" lean-forward="true" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
               <folding>
-                <element signature="method#converteTipo#0;class#Lancamento#0" expanded="false" />
-                <element signature="method#converteTipoParcelas#0;class#Lancamento#0" expanded="false" />
-                <element signature="method#ajustaPrint#0;class#Lancamento#0" expanded="false" />
-                <marker date="1509368759614" expanded="true" signature="2956:3027" ph="{...}" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LancamentoDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/models/dao/LancamentoDAO.java">
+      <file leaf-file-name="Lancamento.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/models/classes/Lancamento.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+            <state relative-caret-position="486">
+              <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#converteTipo#0;class#Lancamento#0" expanded="false" />
+                <element signature="method#converteTipoParcelas#0;class#Lancamento#0" expanded="false" />
+                <element signature="method#ajustaPrint#0;class#Lancamento#0" expanded="false" />
+                <marker date="1509374855529" expanded="true" signature="2955:3026" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -571,14 +547,14 @@
         <option value="$PROJECT_DIR$/src/main/java/models/services/DataService.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/UsuarioView.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/classes/Usuario.java" />
-        <option value="$PROJECT_DIR$/src/main/java/models/classes/Lancamento.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/MenuView.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/dao/LancamentoDAO.java" />
         <option value="$PROJECT_DIR$/src/test/java/LancamentoTeste.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/LancamentoController.java" />
         <option value="$PROJECT_DIR$/src/test/java/UsuarioTeste.java" />
-        <option value="$PROJECT_DIR$/src/main/java/view/LancamentoView.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/services/LancamentoService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/view/LancamentoView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/LancamentoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/models/classes/Lancamento.java" />
       </list>
     </option>
   </component>
@@ -637,59 +613,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjetoIlegra" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjetoIlegra" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjetoIlegra" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjetoIlegra" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjetoIlegra" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjetoIlegra" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjetoIlegra" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjetoIlegra" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="factory" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjetoIlegra" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjetoIlegra" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjetoIlegra" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjetoIlegra" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjetoIlegra" type="b2602c69:ProjectViewProjectNode" />
@@ -7270,7 +7194,27 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MenuView">
+  <component name="RunManager" selected="JUnit.All in ProjetoIlegra_test">
+    <configuration name="All in ProjetoIlegra_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="ProjetoIlegra_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration name="LancamentoTeste" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="ProjetoIlegra_test" />
@@ -7299,20 +7243,6 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="view.MenuView" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="ProjetoIlegra_main" />
-      <envs />
-    </configuration>
-    <configuration name="Teste" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Teste" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -7455,19 +7385,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Application.ViewTeste" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Teste" />
-      <item index="2" class="java.lang.String" itemvalue="Application.TesteData" />
-      <item index="3" class="java.lang.String" itemvalue="Application.MenuView" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.LancamentoTeste" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.UsuarioTeste" />
+      <item index="1" class="java.lang.String" itemvalue="Application.TesteData" />
+      <item index="2" class="java.lang.String" itemvalue="Application.MenuView" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.LancamentoTeste" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.UsuarioTeste" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.All in ProjetoIlegra_test" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.MenuView" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.UsuarioTeste" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.LancamentoTeste" />
-        <item index="3" class="java.lang.String" itemvalue="Application.TesteData" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Teste" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.All in ProjetoIlegra_test" />
+        <item index="1" class="java.lang.String" itemvalue="Application.MenuView" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.UsuarioTeste" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.LancamentoTeste" />
+        <item index="4" class="java.lang.String" itemvalue="Application.TesteData" />
       </list>
     </recent_temporary>
   </component>
@@ -7531,6 +7461,9 @@
     <servers />
   </component>
   <component name="TestHistory">
+    <history-entry file="All_in_ProjetoIlegra_test - 2017.10.30 at 12h 42m 39s.xml">
+      <configuration name="All in ProjetoIlegra_test" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="LancamentoTeste - 2017.10.30 at 11h 10m 58s.xml">
       <configuration name="LancamentoTeste" configurationId="JUnit" />
     </history-entry>
@@ -7555,6 +7488,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="345" y="27" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -7565,11 +7499,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2719486" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2719486" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2719486" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31458333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20677084" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -7624,8 +7558,8 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2719486" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2719486" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31458333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -7693,7 +7627,7 @@
             <element signature="method#converteTipo#0;class#Lancamento#0" expanded="false" />
             <element signature="method#converteTipoParcelas#0;class#Lancamento#0" expanded="false" />
             <element signature="method#ajustaPrint#0;class#Lancamento#0" expanded="false" />
-            <marker date="1509368759614" expanded="true" signature="2956:3027" ph="{...}" />
+            <marker date="1509374855529" expanded="true" signature="2955:3026" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -7728,7 +7662,7 @@
             <element signature="method#converteTipo#0;class#Lancamento#0" expanded="false" />
             <element signature="method#converteTipoParcelas#0;class#Lancamento#0" expanded="false" />
             <element signature="method#ajustaPrint#0;class#Lancamento#0" expanded="false" />
-            <marker date="1509368759614" expanded="true" signature="2956:3027" ph="{...}" />
+            <marker date="1509374855529" expanded="true" signature="2955:3026" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -7763,7 +7697,7 @@
             <element signature="method#converteTipo#0;class#Lancamento#0" expanded="false" />
             <element signature="method#converteTipoParcelas#0;class#Lancamento#0" expanded="false" />
             <element signature="method#ajustaPrint#0;class#Lancamento#0" expanded="false" />
-            <marker date="1509368759614" expanded="true" signature="2956:3027" ph="{...}" />
+            <marker date="1509374855529" expanded="true" signature="2955:3026" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -7798,7 +7732,7 @@
             <element signature="method#converteTipo#0;class#Lancamento#0" expanded="false" />
             <element signature="method#converteTipoParcelas#0;class#Lancamento#0" expanded="false" />
             <element signature="method#ajustaPrint#0;class#Lancamento#0" expanded="false" />
-            <marker date="1509368759614" expanded="true" signature="2956:3027" ph="{...}" />
+            <marker date="1509374855529" expanded="true" signature="2955:3026" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -7911,17 +7845,7 @@
         <state relative-caret-position="716">
           <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/models/dao/LancamentoDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -7950,6 +7874,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/UsuarioController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/view/MenuView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="518">
@@ -7960,23 +7892,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/models/classes/Lancamento.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/view/LancamentoView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1077">
-          <caret line="92" column="32" lean-forward="false" selection-start-line="92" selection-start-column="32" selection-end-line="92" selection-end-column="32" />
+        <state relative-caret-position="0">
+          <caret line="0" column="13" lean-forward="true" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/LancamentoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding>
-            <element signature="method#converteTipo#0;class#Lancamento#0" expanded="false" />
-            <element signature="method#converteTipoParcelas#0;class#Lancamento#0" expanded="false" />
-            <element signature="method#ajustaPrint#0;class#Lancamento#0" expanded="false" />
-            <marker date="1509368759614" expanded="true" signature="2956:3027" ph="{...}" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1876#1877#0" expanded="true" />
+            <element signature="e#1942#1943#0" expanded="true" />
+            <element signature="e#1999#2000#0" expanded="true" />
+            <element signature="e#2071#2072#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/models/services/LancamentoService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="33" column="65" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="65" />
+        <state relative-caret-position="-72">
+          <caret line="29" column="60" lean-forward="false" selection-start-line="29" selection-start-column="60" selection-end-line="29" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3971#3972#0" expanded="true" />
@@ -7985,33 +7926,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/UsuarioController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/dao/LancamentoDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/LancamentoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="21" column="15" lean-forward="true" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
+        <state relative-caret-position="0">
+          <caret line="0" column="19" lean-forward="true" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1539#1540#0" expanded="true" />
-            <element signature="e#1605#1606#0" expanded="true" />
-            <element signature="e#1662#1663#0" expanded="true" />
-            <element signature="e#1734#1735#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/LancamentoView.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/classes/Lancamento.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-378">
-          <caret line="20" column="42" lean-forward="false" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-          <folding />
+        <state relative-caret-position="486">
+          <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+          <folding>
+            <element signature="method#converteTipo#0;class#Lancamento#0" expanded="false" />
+            <element signature="method#converteTipoParcelas#0;class#Lancamento#0" expanded="false" />
+            <element signature="method#ajustaPrint#0;class#Lancamento#0" expanded="false" />
+            <marker date="1509374855529" expanded="true" signature="2955:3026" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

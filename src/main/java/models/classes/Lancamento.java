@@ -23,7 +23,6 @@ public class Lancamento {
         this.tipoParcelas = tipoParcelas;
     }
 
-
     public Lancamento(double valor, String descricao, String tipo, Date data, Usuario responsavel) {
         this.valor = valor;
         this.descricao = descricao;
