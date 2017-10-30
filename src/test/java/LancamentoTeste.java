@@ -17,12 +17,12 @@ public class LancamentoTeste {
     public void testeMostraTotal(){
 
         ArrayList<Lancamento> lancamentos = new ArrayList<>();
-        lancamentos.add(new Lancamento(500,"Teste 1", null, null, null));
-        lancamentos.add(new Lancamento(600,"Teste 1", null, null, null));
-        lancamentos.add(new Lancamento(100,"Teste 1", null, null, null));
-        lancamentos.add(new Lancamento(200,"Teste 1", null, null, null));
-        lancamentos.add(new Lancamento(300,"Teste 1", null, null, null));
-        lancamentos.add(new Lancamento(500,"Teste 1", null, null, null));
+        lancamentos.add(new Lancamento(500,"Teste 1", null, null, null, 0, ""));
+        lancamentos.add(new Lancamento(600,"Teste 1", null, null, null, 0, ""));
+        lancamentos.add(new Lancamento(100,"Teste 1", null, null, null, 0, ""));
+        lancamentos.add(new Lancamento(200,"Teste 1", null, null, null, 0, ""));
+        lancamentos.add(new Lancamento(300,"Teste 1", null, null, null, 0, ""));
+        lancamentos.add(new Lancamento(500,"Teste 1", null, null, null, 0, ""));
         LancamentoService lancamentoService = new LancamentoService();
         double inicial =  lancamentoService.calculaTotal(lancamentos);
         double esperado = 500+600+100+200+300+500;

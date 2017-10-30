@@ -5,6 +5,7 @@ import models.classes.Usuario;
 import models.services.DataService;
 
 import java.sql.*;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -47,9 +48,12 @@ public class LancamentoDAO {
 
     public ArrayList<Lancamento> visualizaValores(Usuario user, String tipoVariavel) throws SQLException {
 
-        String sql= "SELECT lancamento.* FROM projeto_financeiro.lancamento where tipo='"+tipoVariavel+"' AND cod_responsavel = '"+user.getCodigoUsuario()+"' order by lancamento.data_parcela";
+        String sql= "SELECT lancamento.* FROM projeto_financeiro.lancamento where tipo = ? AND cod_responsavel = ? order by lancamento.data_parcela";
 
         PreparedStatement preparador = con.prepareStatement(sql);
+        preparador.setString(1, tipoVariavel);
+        preparador.setInt(2, user.getCodigoUsuario());
+
         ResultSet resultado = preparador.executeQuery();
 
         ArrayList<Lancamento> lancamentos = new ArrayList<>();
@@ -72,13 +76,17 @@ public class LancamentoDAO {
         return lancamentos;
     }
 
+    public ArrayList<Lancamento> visualizaValores(Date dataSQL, Usuario user, String tipoVariavel, String tipoParcelas) throws SQLException, ParseException {
 
-    public ArrayList<Lancamento> visualizaValores(int mes, int ano, Usuario user, String tipoVariavel, String tipoParcelas) throws SQLException {
-
-        String sql= "SELECT lancamento.* FROM projeto_financeiro.lancamento where data_parcela like'"+ano+"-"+mes+"-%' AND tipo='"+tipoVariavel+"' AND tipo_parcela='"+tipoParcelas+"'" +
-                "AND cod_responsavel ="+user.getCodigoUsuario();
+        String sql= "SELECT lancamento.* FROM projeto_financeiro.lancamento where data_parcela = ? AND tipo=? AND tipo_parcela=?" +
+                "AND cod_responsavel = ?";
 
         PreparedStatement preparador = con.prepareStatement(sql);
+        preparador.setDate(1, dataSQL);
+        preparador.setString(2, tipoVariavel);
+        preparador.setString(3, tipoParcelas);
+        preparador.setInt(4, user.getCodigoUsuario());
+
         ResultSet resultado = preparador.executeQuery();
 
         ArrayList<Lancamento> lancamentos = new ArrayList<>();
@@ -100,11 +108,12 @@ public class LancamentoDAO {
         return lancamentos;
     }
 
-    public int retornaQtdParcelas(String descricao) throws SQLException {
+    private int retornaQtdParcelas(String descricao) throws SQLException {
 
         String[] valor =descricao.split(" ");
-        String sql= "SELECT count(*) AS total_parcelas FROM projeto_financeiro.lancamento where descricao like '"+valor[0]+"%'";
+        String sql= "SELECT count(*) AS total_parcelas FROM projeto_financeiro.lancamento where descricao like '"+valor[0]+" (%'";
         PreparedStatement preparador = con.prepareStatement(sql);
+
         ResultSet resultado = preparador.executeQuery();
 
         int retorno = 0;
@@ -112,7 +121,12 @@ public class LancamentoDAO {
         while (resultado.next()) {
             retorno = resultado.getInt(1);
         }
-        return retorno;
+
+        if(retorno==0){
+            return 1;
+        }else {
+            return retorno;
+        }
     }
 
 }

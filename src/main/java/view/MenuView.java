@@ -13,9 +13,9 @@ public class MenuView {
     public static void main(String[] args) throws ParseException, SQLException {
 
         Scanner input = new Scanner(System.in);
-        MenuController controle = new MenuController();
+        MenuController menuController = new MenuController();
 
-        Usuario user = controle.login();
+        Usuario user = menuController.login();
 
         int opcao=0;
 
@@ -38,8 +38,9 @@ public class MenuView {
                 System.out.println("Opção incorreta, digite novamente: ");
                 opcao = input.nextInt();
             }
-            controle.seleciona(opcao, user);
+            menuController.seleciona(opcao, user);
         }
+
     }
 
 }

@@ -15,13 +15,12 @@ public class LancamentoController {
     LancamentoDAO lancamentoDAO = new LancamentoDAO(ConnectionFactory.getConnection());
     LancamentoService lancamentoService = new LancamentoService();
 
-
     public void cadastraValor(double valor, String descricao, String tipoLancamento, int mes, int ano, Usuario user, String tipoVar) throws ParseException {
 
         LancamentoView lancamentoView = new LancamentoView();
 
         if(tipoVar.equalsIgnoreCase("f")){
-            lancamentoService.inserirLancamento(valor, descricao, tipoLancamento, mes, ano, user);
+            lancamentoService.inserirLancamento(valor, descricao, tipoLancamento, mes, ano, 12, "f", user);
         }else{
             lancamentoView.lancaVariavel(valor, descricao, tipoLancamento, mes, ano, user);
         }
@@ -38,21 +37,21 @@ public class LancamentoController {
     }
 
 
-    public ArrayList<Lancamento> buscaLancamentoMes(Usuario user, int mes, int ano, int opcao) throws SQLException {
+    public ArrayList<Lancamento> buscaLancamentoMes(Usuario user, int mes, int ano, int opcao) throws SQLException, ParseException {
 
         if(opcao==1){
-            return lancamentoService.retornaRendasMes(user, mes, ano);
+            return lancamentoService.retornaMes(user, mes, ano, "r");
         }else{
-            return lancamentoService.retornaDespesasMes(user, mes, ano);
+            return lancamentoService.retornaMes(user, mes, ano, "d");
         }
 
     }
 
-    public int retornaTotal(ArrayList<Lancamento> lancamentos){
+    public double retornaTotal(ArrayList<Lancamento> lancamentos){
         return lancamentoService.calculaTotal(lancamentos);
     }
 
-    public int calculaRestante(int renda, int despesa){
+    public double calculaRestante(double renda, double despesa){
         return lancamentoService.calculaRestante(renda, despesa);
     }
 

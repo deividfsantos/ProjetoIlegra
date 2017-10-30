@@ -14,7 +14,7 @@ public class DataService {
         return data;
     }
 
-    public static java.sql.Date converte(java.util.Date data) {
+    public static java.sql.Date converte(Date data) {
         return new java.sql.Date(data.getTime());
     }
 

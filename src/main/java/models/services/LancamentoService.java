@@ -9,25 +9,18 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class LancamentoService {
 
     Connection con = ConnectionFactory.getConnection();
     LancamentoDAO lancamentoDAO = new LancamentoDAO(con);
 
-    public void inserirLancamento(double valor, String descricao, String tipo, int mes, int ano, Usuario responsavel) throws ParseException {
-        java.util.Date date = DataService.regulaData(mes, ano);
-        Lancamento lancamento = new Lancamento(valor, descricao, tipo, date, responsavel);
-        inserirLancamentos(lancamento);
-    }
 
     public void inserirLancamento(double valor, String descricao, String tipoLancamento, int mes, int ano, int parcelas, String tipoParcelas, Usuario user) throws ParseException {
-        java.util.Date date = DataService.regulaData(mes, ano);
-        Lancamento lancamento = new Lancamento(valor, descricao, tipoLancamento, date, user, parcelas, tipoParcelas);
-        inserirLancamentos(lancamento);
-    }
+        Date date = DataService.regulaData(mes, ano);
 
-    private void inserirLancamentos(Lancamento lancamento) {
+        Lancamento lancamento = new Lancamento(valor, descricao, tipoLancamento, date, user, parcelas, tipoParcelas);
 
         if (lancamento.getTipoParcelas().equalsIgnoreCase("f")) {
             for (int i = 0; i < 12; i++) {
@@ -50,13 +43,16 @@ public class LancamentoService {
         }
     }
 
+    public ArrayList<Lancamento> retornaMes(Usuario user, int mes, int ano, String tipoVariavel) throws SQLException, ParseException {
 
-    public ArrayList<Lancamento> retornaRendasMes(Usuario user, int mes, int ano) throws SQLException {
         ArrayList<Lancamento> lancamentoFinal = new ArrayList<>();
 
-        ArrayList<Lancamento> rendaAVista= lancamentoDAO.visualizaValores(mes, ano,user,"r","a");
-        ArrayList<Lancamento> rendaParcelada= lancamentoDAO.visualizaValores(mes, ano,user,"r","p");
-        ArrayList<Lancamento> rendaFixa = lancamentoDAO.visualizaValores(mes, ano,user,"r","f");
+        Date dataUtil = DataService.regulaData(mes, ano);
+        java.sql.Date dataSQL = DataService.converte(dataUtil);
+
+        ArrayList<Lancamento> rendaAVista= lancamentoDAO.visualizaValores(dataSQL,user,tipoVariavel,"a");
+        ArrayList<Lancamento> rendaParcelada= lancamentoDAO.visualizaValores(dataSQL, user,tipoVariavel,"p");
+        ArrayList<Lancamento> rendaFixa = lancamentoDAO.visualizaValores(dataSQL,user,tipoVariavel,"f");
 
         for (Lancamento lancamento: rendaAVista) {
             lancamentoFinal.add(lancamento);
@@ -73,32 +69,9 @@ public class LancamentoService {
         return lancamentoFinal;
     }
 
-    public ArrayList<Lancamento> retornaDespesasMes(Usuario user, int mes, int ano) throws SQLException {
+    public double calculaTotal(ArrayList<Lancamento> lancamentos){
 
-        ArrayList<Lancamento> lancamentoFinal = new ArrayList<>();
-
-        ArrayList<Lancamento> despesaAVista = lancamentoDAO.visualizaValores(mes, ano,user,"d","a");
-        ArrayList<Lancamento> despesaParcelada = lancamentoDAO.visualizaValores(mes, ano,user,"d","p");
-        ArrayList<Lancamento> despesaFixa = lancamentoDAO.visualizaValores(mes, ano,user,"d","f");
-
-        for (Lancamento lancamento: despesaAVista) {
-            lancamentoFinal.add(lancamento);
-        }
-
-        for (Lancamento lancamento: despesaParcelada) {
-            lancamentoFinal.add(lancamento);
-        }
-
-        for (Lancamento lancamento: despesaFixa) {
-            lancamentoFinal.add(lancamento);
-        }
-
-        return lancamentoFinal;
-    }
-
-    public int calculaTotal(ArrayList<Lancamento> lancamentos){
-
-        int total = 0;
+        double total = 0;
 
         for (int i = 0; i < lancamentos.size(); i++) {
             total += lancamentos.get(i).getValor();
@@ -107,7 +80,7 @@ public class LancamentoService {
         return total;
     }
 
-    public int calculaRestante(int renda, int despesa){
+    public double calculaRestante(double renda, double despesa){
         return renda-despesa;
     }
 

@@ -1,5 +1,6 @@
 package models.classes;
 
+import java.text.DecimalFormat;
 import java.util.Date;
 
 public class Lancamento {
@@ -21,16 +22,6 @@ public class Lancamento {
         this.tipo = tipo;
         this.parcelas = parcelas;
         this.tipoParcelas = tipoParcelas;
-    }
-
-    public Lancamento(double valor, String descricao, String tipo, Date data, Usuario responsavel) {
-        this.valor = valor;
-        this.descricao = descricao;
-        this.data = data;
-        this.responsavel = responsavel;
-        this.tipo = tipo;
-        this.parcelas = 12;
-        this.tipoParcelas = "f";
     }
 
     public double getValor() {
@@ -108,18 +99,22 @@ public class Lancamento {
     }
 
     public String ajustaPrint(String valor, int tamanho){
-
         while(valor.length()<tamanho){
             valor= valor+" ";
         }
-
         return valor;
+    }
+
+    public String ajustaDouble(){
+        DecimalFormat df = new DecimalFormat("0.##");
+        String dx = df.format(valor);
+        return ajustaPrint(dx, 10);
     }
 
     @Override
     public String toString() {
         return  "Descricao: " + ajustaPrint(descricao, 25) +
-                "\tValor: " + ajustaPrint(String.valueOf(valor), 10) +
+                "\tValor: " + ajustaDouble() +
                 "\tParcelas: " + ajustaPrint(String.valueOf(parcelas), 5) +
                 "\tTipo: "+ converteTipo() +
                 "\tData: " + data +
