@@ -81,8 +81,6 @@ public class LancamentoService {
         ArrayList<Lancamento> despesaParcelada = lancamentoDAO.visualizaValores(mes, ano,user,"d","p");
         ArrayList<Lancamento> despesaFixa = lancamentoDAO.visualizaValores(mes, ano,user,"d","f");
 
-
-
         for (Lancamento lancamento: despesaAVista) {
             lancamentoFinal.add(lancamento);
         }
