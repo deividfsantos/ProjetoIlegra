@@ -9,7 +9,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class LancamentoService {
 
@@ -19,16 +18,17 @@ public class LancamentoService {
     public void inserirLancamento(double valor, String descricao, String tipo, int mes, int ano, Usuario responsavel) throws ParseException {
         java.util.Date date = DataService.regulaData(mes, ano);
         Lancamento lancamento = new Lancamento(valor, descricao, tipo, date, responsavel);
-        inserirLancamentos(lancamento, lancamentoDAO);
+        inserirLancamentos(lancamento);
     }
 
     public void inserirLancamento(double valor, String descricao, String tipoLancamento, int mes, int ano, int parcelas, String tipoParcelas, Usuario user) throws ParseException {
         java.util.Date date = DataService.regulaData(mes, ano);
         Lancamento lancamento = new Lancamento(valor, descricao, tipoLancamento, date, user, parcelas, tipoParcelas);
-        inserirLancamentos(lancamento, lancamentoDAO);
+        inserirLancamentos(lancamento);
     }
 
-    private void inserirLancamentos(Lancamento lancamento, LancamentoDAO lancamentoDAO) {
+    private void inserirLancamentos(Lancamento lancamento) {
+
         if (lancamento.getTipoParcelas().equalsIgnoreCase("f")) {
             for (int i = 0; i < 12; i++) {
                 lancamentoDAO.inserirUmLancamento(lancamento, i);

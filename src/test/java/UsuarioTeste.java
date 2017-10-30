@@ -12,7 +12,7 @@ public class UsuarioTeste {
         Connection con = ConnectionFactory.getConnection();
         UsuarioDAO usuarioDAO = new UsuarioDAO(con);
         String esperado = "deivid";
-        int codEsperado = 10;
+        int codEsperado = 1;
 
         String retorno = usuarioDAO.retornaUsuario(esperado).getNomeUsuario().toLowerCase();
         int cod = usuarioDAO.retornaUsuario(esperado).getCodigoUsuario();

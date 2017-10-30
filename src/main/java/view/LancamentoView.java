@@ -51,28 +51,31 @@ public class LancamentoView {
         if(tipoVar.equalsIgnoreCase("f")) {
             lancamentoController.cadastraValor(valor, desc, tipo, mes, ano, 12, "f", user);
         }else{
-            lancaVariavel(valor, desc, tipo, mes, ano, tipoVar, user);
+            lancaVariavel(valor, desc, tipo, mes, ano, user);
         }
 
     }
 
-    public void lancaVariavel(double valor,String desc,String tipo,int mes,int ano, String tipoVar, Usuario user) throws ParseException {
-        System.out.println("Digite o tipo de parcela do lançamento:\nP- Parcelada\nA- A vista");
+    public void lancaVariavel(double valor,String desc,String tipo,int mes,int ano, Usuario user) throws ParseException {
+        System.out.print("Digite o tipo de parcela do lançamento:\nP- Parcelada\nA- A vista\nDigite a opção: ");
         String tipoParcelas = input.next();
 
         while((!(tipoParcelas.equalsIgnoreCase("p")))&&(!(tipoParcelas.equalsIgnoreCase("a")))){
-            System.out.println("Tipo incorreto, digite novamente: ");
+            System.out.print("\nTipo incorreto, digite novamente: ");
             tipoParcelas=input.next();
         }
 
         int parcelas = 1;
 
         if(tipoParcelas.equalsIgnoreCase("p")) {
-            System.out.println("Digite a quantidade de parcelas: ");
+            System.out.println("\nDigite a quantidade de parcelas: ");
             parcelas = input.nextInt();
         }
         lancamentoController.cadastraValor(valor, desc, tipo, mes, ano, parcelas, tipoParcelas, user);
     }
+
+
+
 
     private void visualizaValores(ArrayList<Lancamento> lancamentos){
         for (int i = 0; i < lancamentos.size(); i++) {
