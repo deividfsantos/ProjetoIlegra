@@ -4,7 +4,6 @@ import models.classes.Lancamento;
 import models.classes.Usuario;
 import models.factory.ConnectionFactory;
 import models.dao.LancamentoDAO;
-import models.services.DataService;
 import models.services.LancamentoService;
 import view.LancamentoView;
 import java.sql.SQLException;
@@ -29,7 +28,7 @@ public class LancamentoController {
             lancamentoService.inserirLancamento(lancamento);
 
         }else{
-            lancamentoView.lancaVariavel(valor, descricao, tipoLancamento, data, user);
+            lancamentoView.menuLancaVariavel(valor, descricao, tipoLancamento, data, user);
         }
 
     }
@@ -40,23 +39,19 @@ public class LancamentoController {
         lancamentoService.inserirLancamento(lancamento);
     }
 
-    public ArrayList<Lancamento> buscaRendasEDespesas(Usuario user, String tipoLancamento) throws SQLException {
-
-        return lancamentoDAO.visualizaValores(user, tipoLancamento);
+    public ArrayList buscaRendasEDespesas(Usuario user, String tipoLancamento, String tipoVariavel) throws SQLException {
+        return lancamentoDAO.visualizaValores(user, tipoLancamento, tipoVariavel);
     }
 
-
-    public ArrayList<Lancamento> buscaLancamentoMes(Usuario user, int mes, int ano, int opcao) throws SQLException, ParseException {
-
+    public ArrayList buscaLancamentoMes(Usuario user, int mes, int ano, int opcao) throws SQLException, ParseException {
         if(opcao==1){
             return lancamentoService.retornaMes(user, mes, ano, "r");
         }else{
             return lancamentoService.retornaMes(user, mes, ano, "d");
         }
-
     }
 
-    public double retornaTotal(ArrayList<Lancamento> lancamentos){
+    public double retornaTotal(ArrayList lancamentos){
         return lancamentoService.calculaTotal(lancamentos);
     }
 

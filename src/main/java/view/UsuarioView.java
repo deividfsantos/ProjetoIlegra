@@ -11,7 +11,7 @@ public class UsuarioView {
 
     public Usuario telaLogin(){
         System.out.print("Digite seu nome de usuário: ");
-        String nome = "Deivid";//input.next();
+        String nome = input.next();
 
         Usuario user = usuarioController.verificaUsuario(nome);
 

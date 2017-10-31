@@ -44,14 +44,14 @@ public class LancamentoDAO{
 
     }
 
+    public ArrayList<Lancamento> visualizaValores(Usuario user, String tipoParcela, String tipoVariavel) throws SQLException {
 
-    public ArrayList<Lancamento> visualizaValores(Usuario user, String tipoVariavel) throws SQLException {
-
-        String sql= "SELECT lancamento.* FROM projeto_financeiro.lancamento where tipo = ? AND cod_responsavel = ? order by lancamento.data_parcela";
+        String sql= "SELECT lancamento.* FROM projeto_financeiro.lancamento where tipo = ? AND cod_responsavel = ? AND tipo_parcela = ? order by lancamento.data_parcela";
 
         PreparedStatement preparador = con.prepareStatement(sql);
-        preparador.setString(1, tipoVariavel);
+        preparador.setString(1, tipoParcela);
         preparador.setInt(2, user.getCodigoUsuario());
+        preparador.setString(3, tipoVariavel);
 
         ResultSet resultado = preparador.executeQuery();
 
@@ -63,11 +63,11 @@ public class LancamentoDAO{
             String tipo = resultado.getString("tipo");
             double valor = resultado.getDouble("valor");
             java.util.Date date = resultado.getDate("data_parcela");
-            String tipoParcela=resultado.getString("tipo_parcela");
+            String tipoParcelado=resultado.getString("tipo_parcela");
 
             int parcelas = retornaQtdParcelas(descricao);
 
-            Lancamento lancamento = new Lancamento(valor, descricao, tipo, date, user ,parcelas, tipoParcela);
+            Lancamento lancamento = new Lancamento(valor, descricao, tipo, date, user ,parcelas, tipoParcelado);
 
             lancamentos.add(lancamento);
 

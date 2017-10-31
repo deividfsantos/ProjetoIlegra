@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c849b179-65c7-4d90-9cb0-14b62573aab6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/DataTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/classes/LancamentoTeste.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/classes/UsuarioTeste.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/LancamentoTeste.java" afterPath="$PROJECT_DIR$/src/test/java/LancamentoTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/UsuarioTeste.java" afterPath="$PROJECT_DIR$/src/test/java/UsuarioTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/controller/LancamentoController.class" afterPath="$PROJECT_DIR$/out/production/classes/controller/LancamentoController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/models/services/LancamentoService.class" afterPath="$PROJECT_DIR$/out/production/classes/models/services/LancamentoService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/view/LancamentoView.class" afterPath="$PROJECT_DIR$/out/production/classes/view/LancamentoView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/view/MenuView.class" afterPath="$PROJECT_DIR$/out/production/classes/view/MenuView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/view/UsuarioView.class" afterPath="$PROJECT_DIR$/out/production/classes/view/UsuarioView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/LancamentoController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/LancamentoController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/models/services/LancamentoService.java" afterPath="$PROJECT_DIR$/src/main/java/models/services/LancamentoService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/models/dao/LancamentoDAO.java" afterPath="$PROJECT_DIR$/src/main/java/models/dao/LancamentoDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/view/LancamentoView.java" afterPath="$PROJECT_DIR$/src/main/java/view/LancamentoView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/view/MenuView.java" afterPath="$PROJECT_DIR$/src/main/java/view/MenuView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/view/UsuarioView.java" afterPath="$PROJECT_DIR$/src/main/java/view/UsuarioView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/LancamentoTest.java" afterPath="$PROJECT_DIR$/src/test/java/LancamentoTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -46,7 +35,7 @@
       <file leaf-file-name="MenuController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/MenuController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
+            <state relative-caret-position="-27">
               <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
@@ -56,8 +45,8 @@
       <file leaf-file-name="MenuView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/view/MenuView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="39" column="34" lean-forward="true" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+            <state relative-caret-position="252">
+              <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsuarioView.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UsuarioView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/view/UsuarioView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-117">
-              <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+            <state relative-caret-position="-18">
+              <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -78,8 +67,8 @@
       <file leaf-file-name="LancamentoTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/LancamentoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+            <state relative-caret-position="630">
+              <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -89,18 +78,21 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/models/factory/ConnectionFactory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+              <caret line="0" column="23" lean-forward="true" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LancamentoView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LancamentoView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/view/LancamentoView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="87" column="42" lean-forward="false" selection-start-line="87" selection-start-column="42" selection-end-line="87" selection-end-column="42" />
-              <folding />
+            <state relative-caret-position="-10">
+              <caret line="56" column="110" lean-forward="false" selection-start-line="56" selection-start-column="104" selection-end-line="56" selection-end-column="110" />
+              <folding>
+                <element signature="method#menuLancamentoRenda#0;class#LancamentoView#0" expanded="false" />
+                <element signature="method#menuLancamentoDespesa#0;class#LancamentoView#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -108,11 +100,13 @@
       <file leaf-file-name="LancamentoController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/LancamentoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state relative-caret-position="306">
+              <caret line="42" column="80" lean-forward="false" selection-start-line="42" selection-start-column="80" selection-end-line="42" selection-end-column="80" />
               <folding>
-                <element signature="e#671#672#0" expanded="true" />
-                <element signature="e#723#724#0" expanded="true" />
+                <element signature="method#cadastraValor#0;class#LancamentoController#0" expanded="false" />
+                <element signature="method#cadastraValor#1;class#LancamentoController#0" expanded="false" />
+                <element signature="method#buscaLancamentoMes#0;class#LancamentoController#0" expanded="false" />
+                <element signature="method#calculaRestante#0;class#LancamentoController#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -121,8 +115,8 @@
       <file leaf-file-name="LancamentoDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/models/dao/LancamentoDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+            <state relative-caret-position="1074">
+              <caret line="63" column="56" lean-forward="true" selection-start-line="63" selection-start-column="56" selection-end-line="63" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -133,8 +127,8 @@
       <file leaf-file-name="LancamentoService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/models/services/LancamentoService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="48" column="69" lean-forward="true" selection-start-line="48" selection-start-column="69" selection-end-line="48" selection-end-column="69" />
+            <state relative-caret-position="454">
+              <caret line="36" column="34" lean-forward="false" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2608#2609#0" expanded="true" />
@@ -520,7 +514,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/UsuarioDAO.java" />
         <option value="$PROJECT_DIR$/.idea/gradle.xml" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/Models/Despesa.java" />
@@ -563,14 +556,15 @@
         <option value="$PROJECT_DIR$/src/main/java/models/services/DataService.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/factory/ConnectionFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/classes/Lancamento.java" />
-        <option value="$PROJECT_DIR$/src/main/java/models/dao/LancamentoDAO.java" />
         <option value="$PROJECT_DIR$/src/test/java/LancamentoTeste.java" />
         <option value="$PROJECT_DIR$/src/test/java/DataTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/LancamentoController.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/services/LancamentoService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/LancamentoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/models/dao/LancamentoDAO.java" />
+        <option value="$PROJECT_DIR$/src/test/java/LancamentoTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/MenuView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/view/UsuarioView.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/LancamentoView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/view/UsuarioView.java" />
       </list>
     </option>
   </component>
@@ -40306,14 +40300,20 @@
     <history-entry file="All_in_ProjetoIlegra_test - 2017.10.31 at 14h 25m 09s.xml">
       <configuration name="All in ProjetoIlegra_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_ProjetoIlegra_test_(1) - 2017.10.31 at 11h 21m 42s.xml">
-      <configuration name="All in ProjetoIlegra_test (1)" configurationId="JUnit" />
+    <history-entry file="All_in_ProjetoIlegra_test - 2017.10.31 at 16h 49m 31s.xml">
+      <configuration name="All in ProjetoIlegra_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_ProjetoIlegra_test_(1) - 2017.10.31 at 11h 26m 05s.xml">
-      <configuration name="All in ProjetoIlegra_test (1)" configurationId="JUnit" />
+    <history-entry file="All_in_ProjetoIlegra_test - 2017.10.31 at 16h 49m 41s.xml">
+      <configuration name="All in ProjetoIlegra_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DataTest - 2017.10.31 at 13h 43m 34s.xml">
-      <configuration name="DataTest" configurationId="JUnit" />
+    <history-entry file="All_in_ProjetoIlegra_test - 2017.10.31 at 16h 52m 02s.xml">
+      <configuration name="All in ProjetoIlegra_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_ProjetoIlegra_test - 2017.10.31 at 16h 52m 26s.xml">
+      <configuration name="All in ProjetoIlegra_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_ProjetoIlegra_test - 2017.10.31 at 17h 12m 38s.xml">
+      <configuration name="All in ProjetoIlegra_test" configurationId="JUnit" />
     </history-entry>
     <history-entry file="DataTest - 2017.10.31 at 13h 44m 53s.xml">
       <configuration name="DataTest" configurationId="JUnit" />
@@ -40321,26 +40321,19 @@
     <history-entry file="DataTest - 2017.10.31 at 13h 45m 18s.xml">
       <configuration name="DataTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UsuarioTeste - 2017.10.30 at 11h 21m 32s.xml">
-      <configuration name="UsuarioTeste" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UsuarioTeste - 2017.10.30 at 11h 22m 41s.xml">
-      <configuration name="UsuarioTeste" configurationId="JUnit" />
-    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31263384" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31208792" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27142859" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37472528" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37472528" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -40448,7 +40441,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -40480,7 +40473,7 @@
         <state relative-caret-position="522">
           <caret line="41" column="22" lean-forward="false" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <marker date="1509450392274" expanded="false" signature="708:719" ph=" { " />
             <marker date="1509450392274" expanded="false" signature="732:738" ph=" }" />
             <marker date="1509450392274" expanded="false" signature="778:789" ph=" { " />
@@ -40546,7 +40539,7 @@
         <state relative-caret-position="36">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <marker date="1509450392274" expanded="false" signature="708:719" ph=" { " />
             <marker date="1509450392274" expanded="false" signature="732:738" ph=" }" />
             <marker date="1509450392274" expanded="false" signature="778:789" ph=" { " />
@@ -40612,7 +40605,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <marker date="1509450392274" expanded="false" signature="708:719" ph=" { " />
             <marker date="1509450392274" expanded="false" signature="732:738" ph=" }" />
             <marker date="1509450392274" expanded="false" signature="778:789" ph=" { " />
@@ -40752,7 +40745,7 @@
         <state relative-caret-position="270">
           <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <marker date="1509450392274" expanded="false" signature="708:719" ph=" { " />
             <marker date="1509450392274" expanded="false" signature="732:738" ph=" }" />
             <marker date="1509450392274" expanded="false" signature="778:789" ph=" { " />
@@ -40804,19 +40797,9 @@
         <state relative-caret-position="198">
           <caret line="11" column="72" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="72" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#418#419#0" expanded="true" />
-            <element signature="e#474#475#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/models/dao/LancamentoDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#418#419#0" expanded="false" />
+            <element signature="e#474#475#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -40834,7 +40817,7 @@
         <state relative-caret-position="378">
           <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -40847,37 +40830,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/LancamentoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/models/factory/ConnectionFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/LancamentoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="e#671#672#0" expanded="true" />
-            <element signature="e#723#724#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/models/services/LancamentoService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="48" column="69" lean-forward="true" selection-start-line="48" selection-start-column="69" selection-end-line="48" selection-end-column="69" />
+        <state relative-caret-position="454">
+          <caret line="36" column="34" lean-forward="false" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2608#2609#0" expanded="true" />
@@ -40886,36 +40842,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/LancamentoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/MenuController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
+        <state relative-caret-position="-27">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/UsuarioView.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/factory/ConnectionFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-117">
-          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        <state relative-caret-position="0">
+          <caret line="0" column="23" lean-forward="true" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/MenuView.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/view/LancamentoView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="39" column="34" lean-forward="true" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+        <state relative-caret-position="-10">
+          <caret line="56" column="110" lean-forward="false" selection-start-line="56" selection-start-column="104" selection-end-line="56" selection-end-column="110" />
+          <folding>
+            <element signature="method#menuLancamentoRenda#0;class#LancamentoView#0" expanded="false" />
+            <element signature="method#menuLancamentoDespesa#0;class#LancamentoView#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/LancamentoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="42" column="80" lean-forward="false" selection-start-line="42" selection-start-column="80" selection-end-line="42" selection-end-column="80" />
+          <folding>
+            <element signature="method#cadastraValor#0;class#LancamentoController#0" expanded="false" />
+            <element signature="method#cadastraValor#1;class#LancamentoController#0" expanded="false" />
+            <element signature="method#buscaLancamentoMes#0;class#LancamentoController#0" expanded="false" />
+            <element signature="method#calculaRestante#0;class#LancamentoController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/dao/LancamentoDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1074">
+          <caret line="63" column="56" lean-forward="true" selection-start-line="63" selection-start-column="56" selection-end-line="63" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/LancamentoView.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/view/MenuView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="87" column="42" lean-forward="false" selection-start-line="87" selection-start-column="42" selection-end-line="87" selection-end-column="42" />
+        <state relative-caret-position="252">
+          <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/view/UsuarioView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-18">
+          <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
           <folding />
         </state>
       </provider>

@@ -38,7 +38,7 @@ public class LancamentoTest {
         double esperado = 100;
         Usuario user = new Usuario("UsuarioTestes",666);
         LancamentoDAO lancamentoDAO = new LancamentoDAO(con);
-        ArrayList<Lancamento> lancamentos = lancamentoDAO.visualizaValores(user, "d");
+        ArrayList<Lancamento> lancamentos = lancamentoDAO.visualizaValores(user, "d", "a");
 
         double valor = 0;
         for (int i = 0; i < lancamentos.size(); i++) {
@@ -48,14 +48,4 @@ public class LancamentoTest {
         assertEquals(esperado, valor,0.000001);
     }
 
-    /*@Test
-    public void testeInsercao(){
-        LancamentoView lancamentoView = new LancamentoView();
-        LancamentoController lancamentoController = new LancamentoController(lancamentoView);
-
-        lancamentoController.cadastraValor();
-
-
-
-    }*/
 }
