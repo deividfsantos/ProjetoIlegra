@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import java.sql.Connection;
 
-public class UsuarioTeste {
+public class UsuarioTest {
 
     @Test
     public void testaBuscaUsuario(){

@@ -10,8 +10,8 @@ public class UsuarioView {
     UsuarioController usuarioController =new UsuarioController();
 
     public Usuario telaLogin(){
-        System.out.println("Digite seu nome de usuário: ");
-        String nome = input.next();
+        System.out.print("Digite seu nome de usuário: ");
+        String nome = "Deivid";//input.next();
 
         Usuario user = usuarioController.verificaUsuario(nome);
 

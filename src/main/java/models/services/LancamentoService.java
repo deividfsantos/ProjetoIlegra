@@ -46,19 +46,19 @@ public class LancamentoService {
         Date dataUtil = DataService.regulaData(mes, ano);
         java.sql.Date dataSQL = DataService.converte(dataUtil);
 
-        ArrayList<Lancamento> rendaAVista= lancamentoDAO.visualizaValores(dataSQL,user,tipoVariavel,"a");
-        ArrayList<Lancamento> rendaParcelada= lancamentoDAO.visualizaValores(dataSQL, user,tipoVariavel,"p");
-        ArrayList<Lancamento> rendaFixa = lancamentoDAO.visualizaValores(dataSQL,user,tipoVariavel,"f");
+        ArrayList<Lancamento> valorAvista= lancamentoDAO.visualizaValores(dataSQL,user,tipoVariavel,"a");
+        ArrayList<Lancamento> valorParcelado= lancamentoDAO.visualizaValores(dataSQL, user,tipoVariavel,"p");
+        ArrayList<Lancamento> valorFixo = lancamentoDAO.visualizaValores(dataSQL,user,tipoVariavel,"f");
 
-        for (Lancamento lancamento: rendaAVista) {
+        for (Lancamento lancamento: valorAvista) {
             lancamentoFinal.add(lancamento);
         }
 
-        for (Lancamento lancamento: rendaParcelada) {
+        for (Lancamento lancamento: valorParcelado) {
             lancamentoFinal.add(lancamento);
         }
 
-        for (Lancamento lancamento: rendaFixa) {
+        for (Lancamento lancamento: valorFixo) {
             lancamentoFinal.add(lancamento);
         }
 

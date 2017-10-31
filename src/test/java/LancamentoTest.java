@@ -13,7 +13,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class LancamentoTeste {
+public class LancamentoTest {
 
     @Test
     public void testeMostraTotal(){
@@ -52,7 +52,10 @@ public class LancamentoTeste {
     public void testeInsercao(){
         LancamentoView lancamentoView = new LancamentoView();
         LancamentoController lancamentoController = new LancamentoController(lancamentoView);
+
         lancamentoController.cadastraValor();
+
+
 
     }*/
 }

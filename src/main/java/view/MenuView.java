@@ -19,7 +19,7 @@ public class MenuView {
 
         int opcao=0;
 
-        System.out.println("\n\n********BEM VINDO********");
+        System.out.println("\n\n\033[34;1m********BEM VINDO********\033[0m");
 
         while (opcao != 7) {
 

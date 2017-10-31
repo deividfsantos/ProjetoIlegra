@@ -3,11 +3,13 @@ package view;
 import controller.LancamentoController;
 import models.classes.Lancamento;
 import models.classes.Usuario;
+import models.services.DataService;
 
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.Scanner;
 
 public class LancamentoView {
@@ -53,11 +55,14 @@ public class LancamentoView {
         System.out.println("Digite o ano inicial: ");
         int ano = input.nextInt();
 
-        lancamentoController.cadastraValor(valor, desc, tipo, mes, ano, user, tipoVar);
+        Date data = DataService.regulaData(mes, ano);
+
+        lancamentoController.cadastraValor(valor, desc, tipo, data, user, tipoVar);
 
     }
 
-    public void lancaVariavel(double valor,String descricao,String tipo,int mes,int ano, Usuario user) throws ParseException {
+    public void lancaVariavel(double valor,String descricao, String tipo,Date data, Usuario user) throws ParseException {
+
         System.out.print("Digite o tipo de parcela do lançamento:\nP- Parcelada\nA- A vista\nDigite a opção: ");
         String tipoParcelas = input.next();
 
@@ -72,7 +77,7 @@ public class LancamentoView {
             System.out.println("\nDigite a quantidade de parcelas: ");
             parcelas = input.nextInt();
         }
-        lancamentoController.cadastraValor(valor, descricao, tipo, mes, ano, parcelas, tipoParcelas, user);
+        lancamentoController.cadastraValor(valor, descricao, tipo, data, parcelas, tipoParcelas, user);
     }
 
     private void visualizaValores(ArrayList<Lancamento> lancamentos){
@@ -80,7 +85,7 @@ public class LancamentoView {
             System.out.println(lancamentos.get(i));
         }
         double valor = lancamentoController.retornaTotal(lancamentos);
-        System.out.println("\nTotal: " + valor);
+        System.out.printf("\nTotal: %.2f\n", valor);
 
     }
 
@@ -118,11 +123,11 @@ public class LancamentoView {
         double totalRenda = lancamentoController.retornaTotal(rendas);
         double totalDespesa = lancamentoController.retornaTotal(despesas);
 
-        System.out.println("\n**Total no mês**" +
-                "\nRenda: " +  totalRenda +
-                "\nDespesa: " +  totalDespesa +
-                "\nValor Restante: " + lancamentoController.calculaRestante(totalRenda, totalDespesa));
-
+        System.out.println("\n**Total no mês**");
+        System.out.printf("\nRenda: %.2f", totalRenda);
+        System.out.printf("\nDespesa: %.2f", totalDespesa);
+        System.out.printf("\nValor restante: %.2f", lancamentoController.calculaRestante(totalRenda, totalDespesa));
+        System.out.println("\n");
     }
 
     private void mostraDespesasERendas(ArrayList<Lancamento> rendas, ArrayList<Lancamento> despesas) {
