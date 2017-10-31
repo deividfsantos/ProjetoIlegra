@@ -1,9 +1,11 @@
+import controller.LancamentoController;
 import models.classes.Lancamento;
 import models.classes.Usuario;
 import models.dao.LancamentoDAO;
 import models.factory.ConnectionFactory;
 import models.services.LancamentoService;
 import org.junit.Test;
+import view.LancamentoView;
 
 import static org.junit.Assert.*;
 
@@ -46,6 +48,11 @@ public class LancamentoTeste {
         assertEquals(esperado, valor,0.000001);
     }
 
+    /*@Test
+    public void testeInsercao(){
+        LancamentoView lancamentoView = new LancamentoView();
+        LancamentoController lancamentoController = new LancamentoController(lancamentoView);
+        lancamentoController.cadastraValor();
 
-
+    }*/
 }

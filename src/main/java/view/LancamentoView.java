@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class LancamentoView {
 
     Scanner input = new Scanner(System.in);
-    LancamentoController lancamentoController = new LancamentoController();
+    LancamentoController lancamentoController = new LancamentoController(this);
 
     public void menuLancamentoRenda(Usuario user) throws ParseException {
         System.out.println("*********Lançamento de Renda*********");
@@ -44,6 +44,11 @@ public class LancamentoView {
 
         System.out.println("Digite o mês inicial: ");
         int mes = input.nextInt();
+
+        while(mes>12 || mes <1){
+            System.out.println("Mês inválido, por favor, digite novamente: ");
+            mes = input.nextInt();
+        }
 
         System.out.println("Digite o ano inicial: ");
         int ano = input.nextInt();
@@ -96,6 +101,12 @@ public class LancamentoView {
         System.out.println("Visualizar um mês\n");
         System.out.println("Digite o mês: ");
         int mes = input.nextInt();
+
+        while(mes>12 || mes <1){
+            System.out.println("Mês inválido, por favor, digite novamente: ");
+            mes = input.nextInt();
+        }
+
         System.out.println("Digite o ano: ");
         int ano = input.nextInt();
 

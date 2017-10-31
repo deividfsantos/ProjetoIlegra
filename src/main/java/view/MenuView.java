@@ -22,6 +22,7 @@ public class MenuView {
         System.out.println("\n\n********BEM VINDO********");
 
         while (opcao != 7) {
+
             System.out.print("\nEscolha a opção desejada" +
                     "\n1- Cadastrar usuario" +
                     "\n2- Lançamento de renda" +
@@ -31,10 +32,11 @@ public class MenuView {
                     "\n6- Visualizar mês" +
                     "\n7- Sair" +
                     "\nDigite a opção: ");
+
             opcao = input.nextInt();
             System.out.println("\n");
 
-            while(opcao>7 || opcao<1){
+            while(opcao>7 || opcao<1 ){
                 System.out.println("Opção incorreta, digite novamente: ");
                 opcao = input.nextInt();
             }

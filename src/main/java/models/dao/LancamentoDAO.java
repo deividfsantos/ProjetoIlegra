@@ -9,14 +9,13 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class LancamentoDAO {
+public class LancamentoDAO{
 
     private Connection con;
 
     public LancamentoDAO(Connection con) {
         this.con = con;
     }
-
 
     public void inserirUmLancamento(Lancamento lancamento, int i){
 

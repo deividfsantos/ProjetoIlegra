@@ -16,14 +16,18 @@ public class LancamentoController {
 
     LancamentoDAO lancamentoDAO = new LancamentoDAO(ConnectionFactory.getConnection());
     LancamentoService lancamentoService = new LancamentoService();
+    LancamentoView lancamentoView;
+
+    public LancamentoController(LancamentoView lancamentoView){
+        this.lancamentoView = lancamentoView;
+    }
 
     public void cadastraValor(double valor, String descricao, String tipoLancamento, int mes, int ano, Usuario user, String tipoVar) throws ParseException {
-        LancamentoView lancamentoView = new LancamentoView();
+
         Date data = DataService.regulaData(mes, ano);
-        Lancamento lancamento =  new Lancamento(valor, descricao, tipoLancamento, data, user, 12, "f");
 
         if(tipoVar.equalsIgnoreCase("f")){
-
+            Lancamento lancamento =  new Lancamento(valor, descricao, tipoLancamento, data, user, 12, "f");
             lancamentoService.inserirLancamento(lancamento);
 
         }else{
