@@ -70,8 +70,6 @@ public class LancamentoView {
         lancamentoController.cadastraValor(valor, descricao, tipo, mes, ano, parcelas, tipoParcelas, user);
     }
 
-
-
     private void visualizaValores(ArrayList<Lancamento> lancamentos){
         for (int i = 0; i < lancamentos.size(); i++) {
             System.out.println(lancamentos.get(i));

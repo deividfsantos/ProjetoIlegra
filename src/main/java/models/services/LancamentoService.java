@@ -16,11 +16,7 @@ public class LancamentoService {
     Connection con = ConnectionFactory.getConnection();
     LancamentoDAO lancamentoDAO = new LancamentoDAO(con);
 
-
-    public void inserirLancamento(double valor, String descricao, String tipoLancamento, int mes, int ano, int parcelas, String tipoParcelas, Usuario user) throws ParseException {
-        Date date = DataService.regulaData(mes, ano);
-
-        Lancamento lancamento = new Lancamento(valor, descricao, tipoLancamento, date, user, parcelas, tipoParcelas);
+    public void inserirLancamento(Lancamento lancamento) throws ParseException {
 
         if (lancamento.getTipoParcelas().equalsIgnoreCase("f")) {
             for (int i = 0; i < 12; i++) {

@@ -13,10 +13,6 @@ public class Lancamento {
     private int parcelas;
     private String tipoParcelas;
 
-
-    public Lancamento() {
-    }
-
     public Lancamento(double valor, String descricao, String tipo, Date data, Usuario responsavel, int parcelas, String tipoParcelas) {
         this.valor = valor;
         this.descricao = descricao;

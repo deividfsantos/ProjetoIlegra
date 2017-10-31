@@ -4,11 +4,13 @@ import models.classes.Lancamento;
 import models.classes.Usuario;
 import models.factory.ConnectionFactory;
 import models.dao.LancamentoDAO;
+import models.services.DataService;
 import models.services.LancamentoService;
 import view.LancamentoView;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class LancamentoController {
 
@@ -16,11 +18,14 @@ public class LancamentoController {
     LancamentoService lancamentoService = new LancamentoService();
 
     public void cadastraValor(double valor, String descricao, String tipoLancamento, int mes, int ano, Usuario user, String tipoVar) throws ParseException {
-
         LancamentoView lancamentoView = new LancamentoView();
+        Date data = DataService.regulaData(mes, ano);
+        Lancamento lancamento =  new Lancamento(valor, descricao, tipoLancamento, data, user, 12, "f");
 
         if(tipoVar.equalsIgnoreCase("f")){
-            lancamentoService.inserirLancamento(valor, descricao, tipoLancamento, mes, ano, 12, "f", user);
+
+            lancamentoService.inserirLancamento(lancamento);
+
         }else{
             lancamentoView.lancaVariavel(valor, descricao, tipoLancamento, mes, ano, user);
         }
@@ -28,7 +33,9 @@ public class LancamentoController {
     }
 
     public void cadastraValor(double valor, String descricao, String tipoLancamento, int mes, int ano, int parcelas, String tipoParcelas, Usuario user) throws ParseException {
-        lancamentoService.inserirLancamento(valor, descricao, tipoLancamento, mes, ano, parcelas, tipoParcelas, user);
+        Date data = DataService.regulaData(mes, ano);
+        Lancamento lancamento =  new Lancamento(valor, descricao, tipoLancamento, data, user, parcelas, tipoParcelas);
+        lancamentoService.inserirLancamento(lancamento);
     }
 
     public ArrayList<Lancamento> buscaRendasEDespesas(Usuario user, String tipoLancamento) throws SQLException {
