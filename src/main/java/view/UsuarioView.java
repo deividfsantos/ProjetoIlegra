@@ -16,7 +16,7 @@ public class UsuarioView {
         Usuario user = usuarioController.verificaUsuario(nome);
 
         while (user.getNomeUsuario().isEmpty()){
-            System.out.println("Nome de usuário não encontrado\n\nPor favor digite seu nome novamente: ");
+            System.out.print("Nome de usuário não encontrado\n\nPor favor digite seu nome novamente: ");
             nome = input.next();
             user = usuarioController.verificaUsuario(nome);
         }
@@ -25,16 +25,16 @@ public class UsuarioView {
     }
 
     public void telaCadastro() {
-        System.out.println("Digite o nome do usuário que deseja cadastrar:");
+        System.out.print("Digite o nome do usuário que deseja cadastrar:");
         String nome = input.next();
 
         usuarioController.cadastraUsuario(nome);
-        System.out.println("Usuário cadastrado com sucesso.");
+        System.out.print("\033[34;1mUsuário cadastrado com sucesso.\n\033[0m");
 
     }
 
     public String solicitaNovamente(){
-        System.out.println("\nNome de usuário já existe" +
+        System.out.print("\nNome de usuário já existe ou está incorreto" +
                 "\nPor favor, digite o nome novamente: ");
         return input.next();
     }

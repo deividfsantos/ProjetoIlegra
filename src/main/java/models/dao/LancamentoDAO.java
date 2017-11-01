@@ -17,30 +17,26 @@ public class LancamentoDAO{
         this.con = con;
     }
 
-    public void inserirUmLancamento(Lancamento lancamento, int i){
+    public void inserirUmLancamento(Lancamento lancamento, int i) throws SQLException {
 
         String sql= "insert into lancamento (descricao, tipo, valor, cod_responsavel, data_parcela, tipo_parcela) values (?,?,?,?,?,?)";
 
         UsuarioDAO user = new UsuarioDAO(con);
         Usuario responsavel = user.retornaUsuario(lancamento.getResponsavel().getNomeUsuario());
 
-        try {
-            Calendar cal = Calendar.getInstance();
-            cal.setTime(lancamento.getData());
-            cal.set(Calendar.MONTH, cal.get(Calendar.MONTH)+i);
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(lancamento.getData());
+        cal.set(Calendar.MONTH, cal.get(Calendar.MONTH)+i);
 
-            PreparedStatement preparador = con.prepareStatement(sql);
-            preparador.setString(1, lancamento.getDescricao());
-            preparador.setString(2, lancamento.getTipo());
-            preparador.setDouble(3, lancamento.getValor());
-            preparador.setInt(4, responsavel.getCodigoUsuario());
-            preparador.setDate(5, DataService.converte(cal.getTime()));
-            preparador.setString(6, lancamento.getTipoParcelas());
-            preparador.execute();
-            preparador.close();
-        } catch (SQLException e) {
-            System.out.println("Erro: " + e.getMessage());
-        }
+        PreparedStatement preparador = con.prepareStatement(sql);
+        preparador.setString(1, lancamento.getDescricao());
+        preparador.setString(2, lancamento.getTipo());
+        preparador.setDouble(3, lancamento.getValor());
+        preparador.setInt(4, responsavel.getCodigoUsuario());
+        preparador.setDate(5, DataService.converte(cal.getTime()));
+        preparador.setString(6, lancamento.getTipoParcelas());
+        preparador.execute();
+        preparador.close();
 
     }
 

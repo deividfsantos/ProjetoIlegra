@@ -8,7 +8,6 @@ import models.services.DataService;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -17,48 +16,46 @@ public class LancamentoView {
     Scanner input = new Scanner(System.in);
     LancamentoController lancamentoController = new LancamentoController(this);
 
-    public void menuLancamentoRenda(Usuario user) throws ParseException {
+    public void menuLancamentoRenda(Usuario user) throws ParseException, SQLException {
         System.out.println("*********Lançamento de Renda*********");
-
         telaCadastro("r", user);
-
         System.out.println("Lançamento efetuado com sucesso");
     }
 
-    public void menuLancamentoDespesa(Usuario user) throws ParseException {
+    public void menuLancamentoDespesa(Usuario user) throws ParseException, SQLException {
         System.out.println("*********Lançamento de despesa*********");
         telaCadastro("d", user);
         System.out.println("Lançamento efetuado com sucesso");
     }
 
-    private void telaCadastro(String tipo, Usuario user) throws ParseException {
+    private void telaCadastro(String tipo, Usuario user) throws ParseException, SQLException {
         System.out.print("Deseja lançar qual tipo?\nF - Fixa\nV - Variável\nDigite a opção: ");
         String tipoVar = input.next();
         while(!(tipoVar.equalsIgnoreCase("v"))&&!(tipoVar.equalsIgnoreCase("f"))){
-            System.out.println("Tipo incorreto, digite novamente: ");
+            System.out.print("Tipo incorreto, digite novamente: ");
             tipoVar=input.next();
         }
 
-        System.out.println("\nDigite a descrição desse lancamento: ");
+        System.out.print("\nDigite a descrição desse lancamento: ");
         String desc = input.next();
-        System.out.println("Digite o valor:");
+        System.out.print("\nDigite o valor: ");
         double valor= input.nextDouble();
-        System.out.println("Digite o mês inicial: ");
+        System.out.print("Digite o mês inicial: ");
         int mes = input.nextInt();
 
         while(mes>12 || mes <1){
-            System.out.println("Mês inválido, por favor, digite novamente: ");
+            System.out.print("Mês inválido, por favor, digite novamente: ");
             mes = input.nextInt();
         }
-        System.out.println("Digite o ano inicial: ");
+        System.out.print("Digite o ano inicial: ");
         int ano = input.nextInt();
         Date data = DataService.regulaData(mes, ano);
         lancamentoController.cadastraValor(valor, desc, tipo, data, user, tipoVar);
     }
 
-    public void menuLancaVariavel(double valor, String descricao, String tipo, Date data, Usuario user) throws ParseException {
+    public void menuLancaVariavel(double valor, String descricao, String tipo, Date data, Usuario user) throws ParseException, SQLException {
 
-        System.out.print("Digite o tipo de parcela do lançamento:\nP- Parcelada\nA- A vista\nDigite a opção: ");
+        System.out.print("\nDigite o tipo de parcela do lançamento:\nP- Parcelada\nA- A vista\nDigite a opção: ");
         String tipoParcelas = input.next();
 
         while((!(tipoParcelas.equalsIgnoreCase("p")))&&(!(tipoParcelas.equalsIgnoreCase("a")))){
@@ -69,7 +66,7 @@ public class LancamentoView {
         int parcelas = 1;
 
         if(tipoParcelas.equalsIgnoreCase("p")) {
-            System.out.println("\nDigite a quantidade de parcelas: ");
+            System.out.print("\nDigite a quantidade de parcelas: ");
             parcelas = input.nextInt();
         }
         lancamentoController.cadastraValor(valor, descricao, tipo, data, parcelas, tipoParcelas, user);
@@ -101,29 +98,32 @@ public class LancamentoView {
     }
 
     private String visualizaTipoLancamento() throws SQLException {
-        System.out.println("Seleciona qual tipo deseja visualizar" +
+        System.out.print("Seleciona qual tipo deseja visualizar" +
                 "\nA - A vista" +
                 "\nP - Parceladas" +
-                "\nF - Fixas");
+                "\nF - Fixas" +
+                "\nDigite a opção: ");
+
         String opcao = input.next();
         while(!opcao.equalsIgnoreCase("a")&&!opcao.equalsIgnoreCase("p")&&!opcao.equalsIgnoreCase("f")){
-            System.out.println("Opcao incorreta, digite novamente: ");
+            System.out.print("Opcao incorreta, digite novamente: ");
             opcao =  input.next();
         }
+        System.out.println("\n");
         return opcao;
     }
 
     public void visualizaMes(Usuario user) throws SQLException, ParseException {
         System.out.println("Visualizar um mês\n");
-        System.out.println("Digite o mês: ");
+        System.out.print("Digite o mês: ");
         int mes = input.nextInt();
 
         while(mes>12 || mes <1){
-            System.out.println("Mês inválido, por favor, digite novamente: ");
+            System.out.print("Mês inválido, por favor, digite novamente: ");
             mes = input.nextInt();
         }
 
-        System.out.println("Digite o ano: ");
+        System.out.print("Digite o ano: ");
         int ano = input.nextInt();
 
         ArrayList<Lancamento> rendas = lancamentoController.buscaLancamentoMes(user, mes, ano, 1);
@@ -149,7 +149,7 @@ public class LancamentoView {
 
     private void mostraDespesasERendas(ArrayList<Lancamento> rendas, ArrayList<Lancamento> despesas) {
         if (rendas.size()>0){
-            System.out.println("\n\t------Rendas------");
+            System.out.printf("\033[34;1m\n\t------Rendas------\033[0m\n");
         }else{
             System.out.println("\nVocê não possui rendas neste mês");
         }
@@ -159,7 +159,7 @@ public class LancamentoView {
         }
 
         if (despesas.size()>0){
-            System.out.println("\n\t------Despesas------");
+            System.out.printf("\033[31;1m\n\t------Despesas------\n\033[0m");
         }else{
             System.out.println("\nVocê não possui despesas neste mês");
         }

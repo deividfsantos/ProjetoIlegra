@@ -29,10 +29,10 @@ public class MenuController {
                 lancamentoView.menuLancamentoDespesa(user);
                 break;
             case 4:
-                lancamentoView.visualizaDespesa(user);
+                lancamentoView.visualizaRenda(user);
                 break;
             case 5:
-                lancamentoView.visualizaRenda(user);
+                lancamentoView.visualizaDespesa(user);
                 break;
             case 6:
                 lancamentoView.visualizaMes(user);
@@ -41,9 +41,5 @@ public class MenuController {
                 System.exit(0);
                 break;
         }
-
     }
-
-
-
 }
