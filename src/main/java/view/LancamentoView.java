@@ -19,7 +19,9 @@ public class LancamentoView {
 
     public void menuLancamentoRenda(Usuario user) throws ParseException {
         System.out.println("*********Lançamento de Renda*********");
+
         telaCadastro("r", user);
+
         System.out.println("Lançamento efetuado com sucesso");
     }
 
