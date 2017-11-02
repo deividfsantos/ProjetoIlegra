@@ -73,14 +73,14 @@ public class LancamentoView {
     }
 
     public void visualizaDespesa(Usuario user) throws SQLException {
-        System.out.println("***********Despesas***********");
+        System.out.printf("\033[34;1m\n***********Despesas***********\033[0m");
         String tipo = visualizaTipoLancamento();
         ArrayList<Lancamento> despesas = lancamentoController.buscaRendasEDespesas(user,"d", tipo);
         visualizaValores(despesas);
     }
 
     public void visualizaRenda(Usuario user) throws SQLException {
-        System.out.println("***********Rendas***********");
+        System.out.println("\033[31;1m\n***********Rendas***********\033[0m");
         String tipo = visualizaTipoLancamento();
         ArrayList<Lancamento> rendas = lancamentoController.buscaRendasEDespesas(user,"r", tipo);
         visualizaValores(rendas);

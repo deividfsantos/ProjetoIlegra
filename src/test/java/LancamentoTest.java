@@ -35,7 +35,7 @@ public class LancamentoTest {
     public void testeRetornaTotalDespesa() throws SQLException {
 
         Connection con = ConnectionFactory.getConnection();
-        double esperado = 100;
+        double esperado = 0;
         Usuario user = new Usuario("UsuarioTestes",666);
         LancamentoDAO lancamentoDAO = new LancamentoDAO(con);
         ArrayList<Lancamento> lancamentos = lancamentoDAO.visualizaValores(user, "d", "a");
