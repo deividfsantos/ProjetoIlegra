@@ -1,12 +1,9 @@
-import controller.LancamentoController;
 import models.classes.Lancamento;
 import models.classes.Usuario;
 import models.dao.LancamentoDAO;
 import models.factory.ConnectionFactory;
 import models.services.LancamentoService;
 import org.junit.Test;
-import view.LancamentoView;
-
 import static org.junit.Assert.*;
 
 import java.sql.Connection;
@@ -47,6 +44,11 @@ public class LancamentoTest {
         }
 
         assertEquals(esperado, valor,0.000001);
+    }
+
+    @Test
+    public void testaMultiplosLancamentos(){
+
     }
 
 }
