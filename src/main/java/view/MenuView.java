@@ -27,8 +27,8 @@ public class MenuView {
                     "\n1- Cadastrar usuario" +
                     "\n2- Lançamento de renda" +
                     "\n3- Lançamento de despesa" +
-                    "\n4- Visualizar despesas" +
-                    "\n5- Visualizar rendas" +
+                    "\n4- Visualizar rendas" +
+                    "\n5- Visualizar despesas" +
                     "\n6- Visualizar mês" +
                     "\n7- Sair" +
                     "\nDigite a opção: ");
@@ -36,7 +36,7 @@ public class MenuView {
             opcao = input.nextInt();
 
             while(opcao>7 || opcao<1 ){
-                System.out.println("Opção incorreta, digite novamente: ");
+                System.out.print("Opção incorreta, digite novamente: ");
                 opcao = input.nextInt();
             }
             System.out.print("\n");
