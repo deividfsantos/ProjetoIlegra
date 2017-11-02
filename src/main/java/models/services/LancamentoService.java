@@ -16,7 +16,7 @@ public class LancamentoService {
     Connection con = ConnectionFactory.getConnection();
     LancamentoDAO lancamentoDAO = new LancamentoDAO(con);
 
-    public void inserirLancamento(Lancamento lancamento) throws ParseException {
+    public void inserirLancamento(Lancamento lancamento) throws ParseException, SQLException {
 
         if (lancamento.getTipoParcelas().equalsIgnoreCase("f")) {
             for (int i = 0; i < 12; i++) {

@@ -25,7 +25,7 @@ public class UsuarioView {
     }
 
     public void telaCadastro() {
-        System.out.print("Digite o nome do usuário que deseja cadastrar:");
+        System.out.print("Digite o nome do usuário que deseja cadastrar: ");
         String nome = input.next();
 
         usuarioController.cadastraUsuario(nome);

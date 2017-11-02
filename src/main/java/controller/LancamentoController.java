@@ -21,7 +21,7 @@ public class LancamentoController {
         this.lancamentoView = lancamentoView;
     }
 
-    public void cadastraValor(double valor, String descricao, String tipoLancamento, Date data, Usuario user, String tipoVar) throws ParseException {
+    public void cadastraValor(double valor, String descricao, String tipoLancamento, Date data, Usuario user, String tipoVar) throws ParseException, SQLException {
 
         if(tipoVar.equalsIgnoreCase("f")){
             Lancamento lancamento =  new Lancamento(valor, descricao, tipoLancamento, data, user, 12, "f");
@@ -33,7 +33,7 @@ public class LancamentoController {
 
     }
 
-    public void cadastraValor(double valor, String descricao, String tipoLancamento, Date date, int parcelas, String tipoParcelas, Usuario user) throws ParseException {
+    public void cadastraValor(double valor, String descricao, String tipoLancamento, Date date, int parcelas, String tipoParcelas, Usuario user) throws ParseException, SQLException {
 
         Lancamento lancamento =  new Lancamento(valor, descricao, tipoLancamento, date, user, parcelas, tipoParcelas);
         lancamentoService.inserirLancamento(lancamento);

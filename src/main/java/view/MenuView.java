@@ -34,12 +34,12 @@ public class MenuView {
                     "\nDigite a opção: ");
 
             opcao = input.nextInt();
-            System.out.println("\n");
 
             while(opcao>7 || opcao<1 ){
                 System.out.println("Opção incorreta, digite novamente: ");
                 opcao = input.nextInt();
             }
+            System.out.print("\n");
             menuController.seleciona(opcao, user);
         }
 

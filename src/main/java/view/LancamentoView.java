@@ -55,7 +55,7 @@ public class LancamentoView {
 
     public void menuLancaVariavel(double valor, String descricao, String tipo, Date data, Usuario user) throws ParseException, SQLException {
 
-        System.out.print("\nDigite o tipo de parcela do lançamento:\nP- Parcelada\nA- A vista\nDigite a opção: ");
+        System.out.print("\nDigite o tipo de parcela do lançamento\nP- Parcelada\nA- A vista\nDigite a opção: ");
         String tipoParcelas = input.next();
 
         while((!(tipoParcelas.equalsIgnoreCase("p")))&&(!(tipoParcelas.equalsIgnoreCase("a")))){

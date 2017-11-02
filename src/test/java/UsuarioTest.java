@@ -12,14 +12,13 @@ public class UsuarioTest {
         Connection con = ConnectionFactory.getConnection();
         UsuarioDAO usuarioDAO = new UsuarioDAO(con);
         String esperado = "deivid";
-        int codEsperado = 1;
+        int codEsperado = 10;
 
         String retorno = usuarioDAO.retornaUsuario(esperado).getNomeUsuario().toLowerCase();
         int cod = usuarioDAO.retornaUsuario(esperado).getCodigoUsuario();
 
         assertEquals(esperado, retorno);
         assertEquals(codEsperado, cod);
-
     }
 
 
