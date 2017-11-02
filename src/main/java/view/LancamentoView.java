@@ -16,16 +16,24 @@ public class LancamentoView {
     private LancamentoController lancamentoController = new LancamentoController(this);
     Scanner input = new Scanner(System.in);
 
-    public void menuLancamentoRenda(Usuario user) throws ParseException, SQLException {
+    public void menuLancamentoRenda(Usuario user) throws ParseException{
         System.out.println("*********Lançamento de Renda*********");
-        telaCadastro("r", user);
-        System.out.println("Lançamento efetuado com sucesso");
+        try {
+            telaCadastro("r", user);
+            System.out.println("Lançamento efetuado com sucesso");
+        }catch (SQLException s){
+            System.out.println("Erro ao efetuar lançamento");
+        }
     }
 
-    public void menuLancamentoDespesa(Usuario user) throws ParseException, SQLException {
+    public void menuLancamentoDespesa(Usuario user) throws ParseException{
         System.out.println("*********Lançamento de despesa*********");
-        telaCadastro("d", user);
-        System.out.println("Lançamento efetuado com sucesso");
+        try{
+            telaCadastro("d", user);
+            System.out.println("Lançamento efetuado com sucesso");
+        }catch (SQLException s){
+            System.out.println("Erro ao efetuar lançamento");
+        }
     }
 
     private void telaCadastro(String tipo, Usuario user) throws ParseException, SQLException {
@@ -84,17 +92,6 @@ public class LancamentoView {
         String tipo = visualizaTipoLancamento();
         ArrayList<Lancamento> rendas = lancamentoController.buscaRendasEDespesas(user,"r", tipo);
         visualizaValores(rendas);
-
-    }
-
-    private void visualizaValores(ArrayList<Lancamento> lancamentos){
-        for (int i = 0; i < lancamentos.size(); i++) {
-            System.out.println(lancamentos.get(i));
-        }
-        double valor = lancamentoController.retornaTotal(lancamentos);
-        System.out.print("\033[34;1m");
-        System.out.printf("\nTotal: %.2f\n", valor);
-        System.out.print("\033[0m");
     }
 
     private String visualizaTipoLancamento() throws SQLException {
@@ -111,6 +108,18 @@ public class LancamentoView {
         }
         System.out.println("\n");
         return opcao;
+    }
+
+    private void visualizaValores(ArrayList<Lancamento> lancamentos){
+
+        for (int i = 0; i < lancamentos.size(); i++) {
+            System.out.println(lancamentos.get(i));
+        }
+
+        double valor = lancamentoController.retornaTotal(lancamentos);
+        System.out.print("\033[34;1m");
+        System.out.printf("\nTotal: %.2f\n", valor);
+        System.out.print("\033[0m");
     }
 
     public void visualizaMes(Usuario user) throws SQLException, ParseException {

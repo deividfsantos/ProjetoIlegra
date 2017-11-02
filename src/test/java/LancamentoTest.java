@@ -4,7 +4,10 @@ import models.dao.LancamentoDAO;
 import models.factory.ConnectionFactory;
 import models.services.LancamentoService;
 import org.junit.Test;
+import org.mockito.Mockito;
+
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -19,36 +22,36 @@ public class LancamentoTest {
         lancamentos.add(new Lancamento(500,"Teste 1", null, null, null, 0, ""));
         lancamentos.add(new Lancamento(600,"Teste 1", null, null, null, 0, ""));
         lancamentos.add(new Lancamento(100,"Teste 1", null, null, null, 0, ""));
-        lancamentos.add(new Lancamento(200,"Teste 1", null, null, null, 0, ""));
-        lancamentos.add(new Lancamento(300,"Teste 1", null, null, null, 0, ""));
-        lancamentos.add(new Lancamento(500,"Teste 1", null, null, null, 0, ""));
         LancamentoDAO lancamentoDAO = new LancamentoDAO(ConnectionFactory.getConnection());
         LancamentoService lancamentoService = new LancamentoService(lancamentoDAO);
         double inicial =  lancamentoService.calculaTotal(lancamentos);
-        double esperado = 500+600+100+200+300+500;
+        double esperado = 500+600+100;
         assertEquals(inicial, esperado, 0.000001);
     }
 
     @Test
     public void testeRetornaTotalDespesa() throws SQLException {
 
-        Connection con = ConnectionFactory.getConnection();
-        double esperado = 0;
         Usuario user = new Usuario("UsuarioTestes",666);
-        LancamentoDAO lancamentoDAO = new LancamentoDAO(con);
-        ArrayList<Lancamento> lancamentos = lancamentoDAO.visualizaValores(user, "d", "a");
+        Lancamento lancamento1 = new Lancamento(100,"Teeste","r",null ,user,10,"p");
+        Lancamento lancamento2 = new Lancamento(100,"Teeste","r",null ,user,10,"p");
 
-        double valor = 0;
-        for (int i = 0; i < lancamentos.size(); i++) {
-            valor += lancamentos.get(i).getValor();
-        }
+        LancamentoDAO lancamentoDAO = mock(LancamentoDAO.class);
+        ArrayList<Lancamento> lancamentos = new ArrayList<>();
+        lancamentos.add(lancamento1);
+        lancamentos.add(lancamento2);
+        when(lancamentoDAO.visualizaValores(user, "p", "r")).thenReturn(lancamentos);
+        ArrayList<Lancamento> arrayList = lancamentoDAO.visualizaValores(user, "p", "r");
 
-        assertEquals(esperado, valor,0.000001);
+        assertEquals(lancamentos, arrayList);
     }
 
-    @Test
-    public void testaMultiplosLancamentos(){
-
-    }
+    /*@Test
+    public void testaMultiplosLancamentos() throws SQLException {
+        LancamentoDAO lancamentoDAO = mock(LancamentoDAO.class);
+        LancamentoService lancamentoService = new LancamentoService(lancamentoDAO);
+        Usuario user = new Usuario("UsuarioTestes",666);
+        Lancamento lancamento1 = new Lancamento(100,"Teeste","r",null ,user,10,"p");
+    }*/
 
 }

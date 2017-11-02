@@ -3,9 +3,7 @@ package models.services;
 import models.dao.LancamentoDAO;
 import models.classes.Lancamento;
 import models.classes.Usuario;
-import models.factory.ConnectionFactory;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -43,7 +41,9 @@ public class LancamentoService {
     }
 
     public ArrayList buscaLancamentosEDespesas(Usuario user, String tipoLancamento, String tipoVariavel) throws SQLException {
+
         return lancamentoDAO.visualizaValores(user, tipoLancamento, tipoVariavel);
+
     }
 
     public ArrayList<Lancamento> retornaMes(Usuario user, int mes, int ano, String tipoVariavel) throws SQLException, ParseException {

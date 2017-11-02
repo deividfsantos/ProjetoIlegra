@@ -2,6 +2,7 @@ package models.services;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class DataService {
@@ -13,6 +14,12 @@ public class DataService {
 
         return data;
     }
+
+    public static String regulaData(java.util.Date data){
+        String data2 = new SimpleDateFormat("MM/yyyy").format(data);
+        return data2;
+    }
+
 
     public static java.sql.Date converte(Date data) {
         return new java.sql.Date(data.getTime());

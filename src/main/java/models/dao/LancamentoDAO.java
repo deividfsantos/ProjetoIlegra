@@ -66,7 +66,6 @@ public class LancamentoDAO{
             Lancamento lancamento = new Lancamento(valor, descricao, tipo, date, user ,parcelas, tipoParcelado);
 
             lancamentos.add(lancamento);
-
         }
         preparador.close();
         return lancamentos;

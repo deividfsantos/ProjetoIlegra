@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class MenuView {
 
-    public static void main(String[] args) throws ParseException, SQLException {
+    public static void main(String[] args) throws ParseException {
 
         Scanner input = new Scanner(System.in);
         MenuController menuController = new MenuController();
@@ -21,25 +21,28 @@ public class MenuView {
         System.out.println("\n\n\033[34;1m********BEM VINDO********\033[0m");
 
         while (opcao != 7) {
+            try {
+                System.out.print("\nEscolha a opção desejada" +
+                        "\n1- Cadastrar usuario" +
+                        "\n2- Lançamento de renda" +
+                        "\n3- Lançamento de despesa" +
+                        "\n4- Visualizar rendas" +
+                        "\n5- Visualizar despesas" +
+                        "\n6- Visualizar mês" +
+                        "\n7- Sair" +
+                        "\nDigite a opção: ");
 
-            System.out.print("\nEscolha a opção desejada" +
-                    "\n1- Cadastrar usuario" +
-                    "\n2- Lançamento de renda" +
-                    "\n3- Lançamento de despesa" +
-                    "\n4- Visualizar rendas" +
-                    "\n5- Visualizar despesas" +
-                    "\n6- Visualizar mês" +
-                    "\n7- Sair" +
-                    "\nDigite a opção: ");
-
-            opcao = input.nextInt();
-
-            while(opcao>7 || opcao<1 ){
-                System.out.print("Opção incorreta, digite novamente: ");
                 opcao = input.nextInt();
+
+                while (opcao > 7 || opcao < 1) {
+                    System.out.print("Opção incorreta, digite novamente: ");
+                    opcao = input.nextInt();
+                }
+                System.out.print("\n");
+                menuController.seleciona(opcao, user);
+            }catch (SQLException e){
+                System.out.println("Não foi possivel efetuar a opração, tente novamente."+e);
             }
-            System.out.print("\n");
-            menuController.seleciona(opcao, user);
         }
 
     }

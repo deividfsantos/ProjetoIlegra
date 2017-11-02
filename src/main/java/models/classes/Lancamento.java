@@ -1,6 +1,9 @@
 package models.classes;
 
+import models.services.DataService;
+
 import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.util.Date;
 
 public class Lancamento {
@@ -112,11 +115,11 @@ public class Lancamento {
 
     @Override
     public String toString() {
-        return  "Descricao: " + ajustaPrint(descricao, 25) +
-                "\tValor: " + ajustaDouble() +
-                "\tParcelas: " + ajustaPrint(String.valueOf(parcelas), 5) +
-                "\tTipo: "+ converteTipo() +
-                "\tData: " + data +
-                "\tTipo das parcelas: "+converteTipoParcelas();
+            return  "Descricao: " + ajustaPrint(descricao, 15) +
+                    "\tValor: " + ajustaDouble() +
+                    "\tParcelas: " + ajustaPrint(String.valueOf(parcelas), 5) +
+                    "\tTipo: "+ converteTipo() +
+                    "\t\tData: " + DataService.regulaData(data) +
+                    "\t\tTipo das parcelas: "+converteTipoParcelas();
     }
 }

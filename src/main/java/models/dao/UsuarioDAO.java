@@ -75,7 +75,7 @@ public class UsuarioDAO {
             }
 
         }catch (SQLException e){
-            System.out.println("Não foi possível encontrar o usuario: "+e.getMessage());
+            System.out.println(e.getMessage());
         }
 
         return true;
