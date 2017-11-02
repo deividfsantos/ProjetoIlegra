@@ -115,7 +115,7 @@ public class Lancamento {
 
     @Override
     public String toString() {
-            return  "Descricao: " + ajustaPrint(descricao, 15) +
+            return  "Descricao: " + ajustaPrint(descricao, 20) +
                     "\tValor: " + ajustaDouble() +
                     "\tParcelas: " + ajustaPrint(String.valueOf(parcelas), 5) +
                     "\tTipo: "+ converteTipo() +

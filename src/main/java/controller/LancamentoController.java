@@ -15,24 +15,10 @@ public class LancamentoController {
 
     private LancamentoDAO lancamentoDAO;
     private LancamentoService lancamentoService;
-    private LancamentoView lancamentoView;
 
-    public LancamentoController(LancamentoView lancamentoView){
-        this.lancamentoView = lancamentoView;
+    public LancamentoController(){
         this.lancamentoDAO = new LancamentoDAO(ConnectionFactory.getConnection());
         this.lancamentoService = new LancamentoService(lancamentoDAO);
-    }
-
-    public void cadastraValor(double valor, String descricao, String tipoLancamento, Date data, Usuario user, String tipoVar) throws ParseException, SQLException {
-
-        if(tipoVar.equalsIgnoreCase("f")){
-            Lancamento lancamento =  new Lancamento(valor, descricao, tipoLancamento, data, user, 12, "f");
-            lancamentoService.inserirLancamento(lancamento);
-
-        }else{
-            lancamentoView.menuLancaVariavel(valor, descricao, tipoLancamento, data, user);
-        }
-
     }
 
     public void cadastraValor(double valor, String descricao, String tipoLancamento, Date date, int parcelas, String tipoParcelas, Usuario user) throws ParseException, SQLException {
