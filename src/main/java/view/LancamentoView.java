@@ -13,8 +13,8 @@ import java.util.Scanner;
 
 public class LancamentoView {
 
+    private LancamentoController lancamentoController = new LancamentoController(this);
     Scanner input = new Scanner(System.in);
-    LancamentoController lancamentoController = new LancamentoController(this);
 
     public void menuLancamentoRenda(Usuario user) throws ParseException, SQLException {
         System.out.println("*********Lançamento de Renda*********");
@@ -98,7 +98,7 @@ public class LancamentoView {
     }
 
     private String visualizaTipoLancamento() throws SQLException {
-        System.out.print("Seleciona qual tipo deseja visualizar" +
+        System.out.print("\nSelecione qual tipo deseja visualizar" +
                 "\nA - A vista" +
                 "\nP - Parceladas" +
                 "\nF - Fixas" +

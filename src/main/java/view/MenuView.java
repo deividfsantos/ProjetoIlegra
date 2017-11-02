@@ -9,7 +9,6 @@ import java.util.Scanner;
 
 public class MenuView {
 
-
     public static void main(String[] args) throws ParseException, SQLException {
 
         Scanner input = new Scanner(System.in);

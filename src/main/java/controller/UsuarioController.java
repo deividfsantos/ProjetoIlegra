@@ -8,8 +8,13 @@ import view.UsuarioView;
 
 public class UsuarioController {
 
-    UsuarioDAO userDAO = new UsuarioDAO(ConnectionFactory.getConnection());
-    UsuarioService usuarioService = new UsuarioService();
+    private UsuarioDAO userDAO ;
+    private UsuarioService usuarioService;
+
+    public UsuarioController(){
+        userDAO = new UsuarioDAO(ConnectionFactory.getConnection());
+        usuarioService = new UsuarioService();
+    }
 
     public void cadastraUsuario(String nome){
         UsuarioView usuarioView = new UsuarioView();

@@ -25,7 +25,8 @@ public class LancamentoTest {
         lancamentos.add(new Lancamento(200,"Teste 1", null, null, null, 0, ""));
         lancamentos.add(new Lancamento(300,"Teste 1", null, null, null, 0, ""));
         lancamentos.add(new Lancamento(500,"Teste 1", null, null, null, 0, ""));
-        LancamentoService lancamentoService = new LancamentoService();
+        LancamentoDAO lancamentoDAO = new LancamentoDAO(ConnectionFactory.getConnection());
+        LancamentoService lancamentoService = new LancamentoService(lancamentoDAO);
         double inicial =  lancamentoService.calculaTotal(lancamentos);
         double esperado = 500+600+100+200+300+500;
         assertEquals(inicial, esperado, 0.000001);

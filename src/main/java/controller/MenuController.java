@@ -9,8 +9,13 @@ import java.text.ParseException;
 
 public class MenuController {
 
-    UsuarioView usuarioView = new UsuarioView();
-    LancamentoView lancamentoView =  new LancamentoView();
+    private UsuarioView usuarioView;
+    private LancamentoView lancamentoView;
+
+    public MenuController (){
+        usuarioView = new UsuarioView();
+        lancamentoView =  new LancamentoView();
+    }
 
     public Usuario login(){
         return usuarioView.telaLogin();

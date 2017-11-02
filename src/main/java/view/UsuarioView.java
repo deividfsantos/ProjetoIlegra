@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 public class UsuarioView {
 
+    private UsuarioController usuarioController =new UsuarioController();
     Scanner input = new Scanner(System.in);
-    UsuarioController usuarioController =new UsuarioController();
 
     public Usuario telaLogin(){
         System.out.print("Digite seu nome de usuário: ");

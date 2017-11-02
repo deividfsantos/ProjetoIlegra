@@ -68,6 +68,7 @@ public class LancamentoDAO{
             lancamentos.add(lancamento);
 
         }
+        preparador.close();
         return lancamentos;
     }
 
@@ -100,6 +101,7 @@ public class LancamentoDAO{
             lancamentos.add(lancamento);
 
         }
+        preparador.close();
         return lancamentos;
     }
 
@@ -117,6 +119,7 @@ public class LancamentoDAO{
             retorno = resultado.getInt(1);
         }
 
+        preparador.close();
         if(retorno==0){
             return 1;
         }else {

@@ -5,7 +5,7 @@ import models.factory.ConnectionFactory;
 
 public class UsuarioService {
 
-    UsuarioDAO usuarioDAO = new UsuarioDAO(ConnectionFactory.getConnection());
+    private UsuarioDAO usuarioDAO = new UsuarioDAO(ConnectionFactory.getConnection());
 
     public boolean cadastra(String nome){
 

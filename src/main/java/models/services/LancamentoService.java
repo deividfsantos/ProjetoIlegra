@@ -13,8 +13,11 @@ import java.util.Date;
 
 public class LancamentoService {
 
-    Connection con = ConnectionFactory.getConnection();
-    LancamentoDAO lancamentoDAO = new LancamentoDAO(con);
+    private LancamentoDAO lancamentoDAO;
+
+    public LancamentoService (LancamentoDAO lancamentoDAO){
+        this.lancamentoDAO = lancamentoDAO;
+    }
 
     public void inserirLancamento(Lancamento lancamento) throws ParseException, SQLException {
 
@@ -37,6 +40,10 @@ public class LancamentoService {
                 lancamentoDAO.inserirUmLancamento(lancamento, i);
             }
         }
+    }
+
+    public ArrayList buscaLancamentosEDespesas(Usuario user, String tipoLancamento, String tipoVariavel) throws SQLException {
+        return lancamentoDAO.visualizaValores(user, tipoLancamento, tipoVariavel);
     }
 
     public ArrayList<Lancamento> retornaMes(Usuario user, int mes, int ano, String tipoVariavel) throws SQLException, ParseException {

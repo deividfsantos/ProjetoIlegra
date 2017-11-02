@@ -13,12 +13,14 @@ import java.util.Date;
 
 public class LancamentoController {
 
-    LancamentoDAO lancamentoDAO = new LancamentoDAO(ConnectionFactory.getConnection());
-    LancamentoService lancamentoService = new LancamentoService();
-    LancamentoView lancamentoView;
+    private LancamentoDAO lancamentoDAO;
+    private LancamentoService lancamentoService;
+    private LancamentoView lancamentoView;
 
     public LancamentoController(LancamentoView lancamentoView){
         this.lancamentoView = lancamentoView;
+        this.lancamentoDAO = new LancamentoDAO(ConnectionFactory.getConnection());
+        this.lancamentoService = new LancamentoService(lancamentoDAO);
     }
 
     public void cadastraValor(double valor, String descricao, String tipoLancamento, Date data, Usuario user, String tipoVar) throws ParseException, SQLException {
@@ -40,7 +42,7 @@ public class LancamentoController {
     }
 
     public ArrayList buscaRendasEDespesas(Usuario user, String tipoLancamento, String tipoVariavel) throws SQLException {
-        return lancamentoDAO.visualizaValores(user, tipoLancamento, tipoVariavel);
+        return lancamentoService.buscaLancamentosEDespesas(user, tipoLancamento, tipoVariavel);
     }
 
     public ArrayList buscaLancamentoMes(Usuario user, int mes, int ano, int opcao) throws SQLException, ParseException {
