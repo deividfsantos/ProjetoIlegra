@@ -10,18 +10,12 @@ import java.util.Scanner;
 public class MenuView {
 
     public static void main(String[] args) throws ParseException {
-
         Scanner input = new Scanner(System.in);
         MenuController menuController = new MenuController();
-
         System.out.println("\n\n\033[32;1m**********MELHOR SISTEMA FINANCEIRO DO MUNDO**********\033[0m");
-
         Usuario user = menuController.login();
-
         int opcao=0;
-
         System.out.println("\n\n\033[32;1m**********BEM VINDO**********\033[0m");
-
         while (opcao != 7) {
             try {
                 System.out.print("\nEscolha a opção desejada" +

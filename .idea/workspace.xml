@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c849b179-65c7-4d90-9cb0-14b62573aab6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/view/LancamentoView.java" afterPath="$PROJECT_DIR$/src/main/java/view/LancamentoView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/view/MenuView.java" afterPath="$PROJECT_DIR$/src/main/java/view/MenuView.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -52,8 +51,8 @@
       <file leaf-file-name="MenuView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/view/MenuView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="22" column="39" lean-forward="false" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+            <state relative-caret-position="216">
+              <caret line="17" column="81" lean-forward="false" selection-start-line="17" selection-start-column="81" selection-end-line="17" selection-end-column="81" />
               <folding />
             </state>
           </provider>
@@ -492,8 +491,8 @@
         <option value="$PROJECT_DIR$/src/test/java/UsuarioTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/LancamentoController.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/UsuarioView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/view/MenuView.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/LancamentoView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/view/MenuView.java" />
       </list>
     </option>
   </component>
@@ -1141,7 +1140,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.95714283" sideWeight="0.49358973" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19818376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1641,8 +1640,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/view/MenuView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="22" column="39" lean-forward="false" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+        <state relative-caret-position="216">
+          <caret line="17" column="81" lean-forward="false" selection-start-line="17" selection-start-column="81" selection-end-line="17" selection-end-column="81" />
           <folding />
         </state>
       </provider>
