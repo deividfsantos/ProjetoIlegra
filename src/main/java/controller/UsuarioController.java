@@ -8,11 +8,9 @@ import view.UsuarioView;
 
 public class UsuarioController {
 
-    private UsuarioDAO userDAO ;
     private UsuarioService usuarioService;
 
     public UsuarioController(){
-        userDAO = new UsuarioDAO(ConnectionFactory.getConnection());
         usuarioService = new UsuarioService();
     }
 
@@ -31,9 +29,7 @@ public class UsuarioController {
     }
 
     public Usuario verificaUsuario(String nome){
-        Usuario user= userDAO.retornaUsuario(nome);
+        Usuario user= usuarioService.verificaUsuario(nome);
         return user;
-
     }
-
 }

@@ -17,7 +17,7 @@ public class LancamentoView {
     Scanner input = new Scanner(System.in);
 
     public void menuLancamentoRenda(Usuario user) throws ParseException{
-        System.out.println("*********Lançamento de Renda*********");
+        System.out.print("\033[34;1m*********Lançamento de Renda*********\033[0m");
         try {
             telaCadastro("r", user);
             System.out.println("Lançamento efetuado com sucesso");
@@ -27,7 +27,7 @@ public class LancamentoView {
     }
 
     public void menuLancamentoDespesa(Usuario user) throws ParseException{
-        System.out.println("*********Lançamento de despesa*********");
+        System.out.print("\033[31;1m*********Lançamento de despesa*********\033[0m");
         try{
             telaCadastro("d", user);
             System.out.println("Lançamento efetuado com sucesso");
@@ -37,17 +37,7 @@ public class LancamentoView {
     }
 
     private void telaCadastro(String tipo, Usuario user) throws ParseException, SQLException {
-        System.out.print("\nDigite o tipo de parcela do lançamento" +
-                "\nF - Fixa" +
-                "\nP - Parcelada" +
-                "\nA - A vista" +
-                "\nDigite a opção: ");
-        String tipoParcelas = input.next();
-
-        while(!tipoParcelas.equalsIgnoreCase("p")&&!tipoParcelas.equalsIgnoreCase("a")&&!tipoParcelas.equalsIgnoreCase("f")){
-            System.out.print("\nTipo incorreto, digite novamente: ");
-            tipoParcelas=input.next();
-        }
+        String tipoParcelas = selecionaTipoLancamento();
 
         System.out.print("\nDigite a descrição desse lancamento: ");
         String desc = input.next();
@@ -71,26 +61,25 @@ public class LancamentoView {
         }else if(tipoParcelas.equalsIgnoreCase("a")){
             parcelas = 1;
         }
-
         lancamentoController.cadastraValor(valor, desc, tipo, data, parcelas, tipoParcelas, user);
     }
 
     public void visualizaDespesa(Usuario user) throws SQLException {
-        System.out.printf("\033[34;1m\n***********Despesas***********\033[0m");
-        String tipo = visualizaTipoLancamento();
+        System.out.printf("\033[31;1m\n***********Despesas***********\033[0m");
+        String tipo = selecionaTipoLancamento();
         ArrayList<Lancamento> despesas = lancamentoController.buscaRendasEDespesas(user,"d", tipo);
         visualizaValores(despesas);
     }
 
     public void visualizaRenda(Usuario user) throws SQLException {
-        System.out.println("\033[31;1m\n***********Rendas***********\033[0m");
-        String tipo = visualizaTipoLancamento();
+        System.out.print("\033[34;1m\n***********Rendas***********\033[0m");
+        String tipo = selecionaTipoLancamento();
         ArrayList<Lancamento> rendas = lancamentoController.buscaRendasEDespesas(user,"r", tipo);
         visualizaValores(rendas);
     }
 
-    private String visualizaTipoLancamento() throws SQLException {
-        System.out.print("\nSelecione qual tipo deseja visualizar" +
+    private String selecionaTipoLancamento() throws SQLException {
+        System.out.print("\n\nSelecione qual tipo deseja" +
                 "\nA - A vista" +
                 "\nP - Parceladas" +
                 "\nF - Fixas" +
@@ -112,9 +101,7 @@ public class LancamentoView {
         }
 
         double valor = lancamentoController.retornaTotal(lancamentos);
-        System.out.print("\033[34;1m");
-        System.out.printf("\nTotal: %.2f\n", valor);
-        System.out.print("\033[0m");
+        System.out.printf("\033[34;1m\nTotal: %.2f\n\033[0m", valor);
     }
 
     public void visualizaMes(Usuario user) throws SQLException, ParseException {
@@ -135,16 +122,9 @@ public class LancamentoView {
         double totalDespesa = lancamentoController.retornaTotal(despesas);
 
         System.out.println("\n**Total no mês**\033[0m");
-        System.out.print("\033[34;1m");
-        System.out.printf("\nRenda total: %.2f", totalRenda);
-        System.out.print("\033[0m");
-        System.out.print("\033[31;1m");
-        System.out.printf("\nDespesa total: %.2f", totalDespesa);
-        System.out.print("\033[0m");
-        System.out.println("\033[32;1m");
-        System.out.printf("\nValor restante no mês: %.2f", lancamentoController.calculaRestante(totalRenda, totalDespesa));
-        System.out.print("\033[0m");
-        System.out.println("\n");
+        System.out.printf("\033[34;1m\nRenda total: %.2f\033[0m", totalRenda);
+        System.out.printf("\033[31;1m\nDespesa total: %.2f\033[0m", totalDespesa);
+        System.out.printf("\033[32;1m\nValor restante no mês: %.2f\033[0m\n", lancamentoController.calculaRestante(totalRenda, totalDespesa));
     }
 
     private void mostraDespesasERendas(ArrayList<Lancamento> rendas, ArrayList<Lancamento> despesas) {
@@ -168,5 +148,4 @@ public class LancamentoView {
             System.out.println(despesas.get(i));
         }
     }
-
 }

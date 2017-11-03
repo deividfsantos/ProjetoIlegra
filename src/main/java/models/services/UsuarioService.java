@@ -1,5 +1,6 @@
 package models.services;
 
+import models.classes.Usuario;
 import models.dao.UsuarioDAO;
 import models.factory.ConnectionFactory;
 
@@ -21,13 +22,17 @@ public class UsuarioService {
         return false;
     }
 
-
     public boolean validaDadosCorretos(String nome){
 
         if(Character.isAlphabetic((nome.charAt(0))) && Character.isAlphabetic((nome.charAt(nome.length() - 1)))){
             return true;
         }
         return false;
+    }
+
+    public Usuario verificaUsuario(String nome){
+        Usuario user= usuarioDAO.retornaUsuario(nome);
+        return user;
     }
 
 }

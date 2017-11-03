@@ -20,7 +20,6 @@ public class UsuarioView {
             nome = input.next();
             user = usuarioController.verificaUsuario(nome);
         }
-
         return user;
     }
 

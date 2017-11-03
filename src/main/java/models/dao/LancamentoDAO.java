@@ -18,7 +18,6 @@ public class LancamentoDAO{
     }
 
     public void inserirUmLancamento(Lancamento lancamento, int i) throws SQLException {
-
         String sql= "insert into lancamento (descricao, tipo, valor, cod_responsavel, data_parcela, tipo_parcela) values (?,?,?,?,?,?)";
 
         UsuarioDAO user = new UsuarioDAO(con);
@@ -37,24 +36,17 @@ public class LancamentoDAO{
         preparador.setString(6, lancamento.getTipoParcelas());
         preparador.execute();
         preparador.close();
-
     }
 
     public ArrayList<Lancamento> visualizaValores(Usuario user, String tipoParcela, String tipoVariavel) throws SQLException {
-
-        String sql= "SELECT lancamento.* FROM projeto_financeiro.lancamento where tipo = ? AND cod_responsavel = ? AND tipo_parcela = ? order by lancamento.data_parcela";
-
+        String sql= "SELECT lancamento.* FROM projeto_financeiro.lancamento where tipo = ? AND cod_responsavel = ? AND tipo_parcela = ? and  data_parcela >= now() group by descricao order by lancamento.data_parcela";
         PreparedStatement preparador = con.prepareStatement(sql);
         preparador.setString(1, tipoParcela);
         preparador.setInt(2, user.getCodigoUsuario());
         preparador.setString(3, tipoVariavel);
-
         ResultSet resultado = preparador.executeQuery();
-
         ArrayList<Lancamento> lancamentos = new ArrayList<>();
-
         while (resultado.next()){
-
             String descricao = resultado.getString("descricao");
             String tipo = resultado.getString("tipo");
             double valor = resultado.getDouble("valor");
@@ -98,7 +90,6 @@ public class LancamentoDAO{
             Lancamento lancamento = new Lancamento(valor, descricao, tipo, date, user ,parcelas, tipoParcela);
 
             lancamentos.add(lancamento);
-
         }
         preparador.close();
         return lancamentos;
@@ -125,5 +116,4 @@ public class LancamentoDAO{
             return retorno;
         }
     }
-
 }
