@@ -2,7 +2,7 @@ package models.dao;
 
 import models.classes.Lancamento;
 import models.classes.Usuario;
-import models.services.DataService;
+import view.Adjustments.DataAdjustment;
 
 import java.sql.*;
 import java.text.ParseException;
@@ -32,7 +32,7 @@ public class LancamentoDAO{
         preparador.setString(2, lancamento.getTipo());
         preparador.setDouble(3, lancamento.getValor());
         preparador.setInt(4, responsavel.getCodigoUsuario());
-        preparador.setDate(5, DataService.converte(cal.getTime()));
+        preparador.setDate(5, DataAdjustment.converte(cal.getTime()));
         preparador.setString(6, lancamento.getTipoParcelas());
         preparador.execute();
         preparador.close();

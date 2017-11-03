@@ -9,9 +9,11 @@ import view.UsuarioView;
 public class UsuarioController {
 
     private UsuarioService usuarioService;
+    private UsuarioDAO usuarioDAO;
 
     public UsuarioController(){
-        usuarioService = new UsuarioService();
+        usuarioDAO = new UsuarioDAO(ConnectionFactory.getConnection());
+        usuarioService = new UsuarioService(usuarioDAO);
     }
 
     public void cadastraUsuario(String nome){

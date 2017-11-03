@@ -21,9 +21,7 @@ public class LancamentoController {
         this.lancamentoService = new LancamentoService(lancamentoDAO);
     }
 
-    public void cadastraValor(double valor, String descricao, String tipoLancamento, Date date, int parcelas, String tipoParcelas, Usuario user) throws ParseException, SQLException {
-
-        Lancamento lancamento =  new Lancamento(valor, descricao, tipoLancamento, date, user, parcelas, tipoParcelas);
+    public void cadastraValor(Lancamento lancamento) throws ParseException, SQLException {
         lancamentoService.inserirLancamento(lancamento);
     }
 

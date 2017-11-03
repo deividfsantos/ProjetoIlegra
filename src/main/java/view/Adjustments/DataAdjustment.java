@@ -1,11 +1,10 @@
-package models.services;
+package view.Adjustments;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
-public class DataService {
+public class DataAdjustment {
 
     public static Date regulaData(int mes, int ano) throws ParseException {
         String valor = "/"+mes+"/"+ano;

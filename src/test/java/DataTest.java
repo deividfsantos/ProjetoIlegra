@@ -1,8 +1,6 @@
 
-import models.services.DataService;
+import view.Adjustments.DataAdjustment;
 import org.junit.Test;
-
-import javax.xml.crypto.Data;
 
 import static org.junit.Assert.*;
 import java.text.ParseException;
@@ -17,7 +15,7 @@ public class DataTest {
         int ano = 2017;
 
         Date esperado = new SimpleDateFormat("dd/MM/yyyy").parse("15/11/2017");
-        Date date = DataService.regulaData(mes, ano);
+        Date date = DataAdjustment.regulaData(mes, ano);
         assertEquals(esperado, date);
     }
 }

@@ -1,9 +1,5 @@
 package models.classes;
 
-import models.services.DataService;
-
-import java.text.DecimalFormat;
-import java.text.ParseException;
 import java.util.Date;
 
 public class Lancamento {
@@ -82,44 +78,13 @@ public class Lancamento {
         this.tipoParcelas = tipoParcelas;
     }
 
-    public String converteTipo(){
-        if(tipo.equalsIgnoreCase("r")){
-            return "Renda";
-        }else{
-            return "Despesa";
-        }
-    }
-
-    public String converteTipoParcelas(){
-        if(tipoParcelas.equalsIgnoreCase("f")){
-            return "Fixo";
-        }else if(tipoParcelas.equalsIgnoreCase("a")){
-            return "A vista";
-        }else{
-            return "Parcelado";
-        }
-    }
-
-    public String ajustaPrint(String valor, int tamanho){
-        while(valor.length()<tamanho){
-            valor= valor+" ";
-        }
-        return valor;
-    }
-
-    public String ajustaDouble(){
-        DecimalFormat df = new DecimalFormat("0.##");
-        String dx = df.format(valor);
-        return ajustaPrint(dx, 10);
-    }
-
     @Override
     public String toString() {
-            return  "Descricao: " + ajustaPrint(descricao, 25) +
-                    "\tValor: " + ajustaDouble() +
-                    "\tParcelas: " + ajustaPrint(String.valueOf(parcelas), 5) +
-                    "\tTipo: "+ converteTipo() +
-                    "\t\tData: " + DataService.regulaData(data) +
-                    "\t\tTipo das parcelas: "+converteTipoParcelas();
+            return  "Descricao: " + descricao +
+                    "\tValor: " + valor +
+                    "\tParcelas: " + parcelas +
+                    "\tTipo: "+ tipo +
+                    "\t\tData: " + getData()+
+                    "\t\tTipo das parcelas: "+ tipoParcelas;
     }
 }

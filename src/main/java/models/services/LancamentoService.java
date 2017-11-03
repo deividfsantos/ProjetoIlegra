@@ -3,6 +3,7 @@ package models.services;
 import models.dao.LancamentoDAO;
 import models.classes.Lancamento;
 import models.classes.Usuario;
+import view.Adjustments.DataAdjustment;
 
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -48,8 +49,8 @@ public class LancamentoService {
 
         ArrayList<Lancamento> lancamentoFinal = new ArrayList<>();
 
-        Date dataUtil = DataService.regulaData(mes, ano);
-        java.sql.Date dataSQL = DataService.converte(dataUtil);
+        Date dataUtil = DataAdjustment.regulaData(mes, ano);
+        java.sql.Date dataSQL = DataAdjustment.converte(dataUtil);
 
         ArrayList<Lancamento> valorAvista= lancamentoDAO.visualizaValores(dataSQL,user,tipoVariavel,"a");
         ArrayList<Lancamento> valorParcelado= lancamentoDAO.visualizaValores(dataSQL, user,tipoVariavel,"p");

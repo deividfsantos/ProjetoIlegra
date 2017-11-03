@@ -3,7 +3,8 @@ package view;
 import controller.LancamentoController;
 import models.classes.Lancamento;
 import models.classes.Usuario;
-import models.services.DataService;
+import view.Adjustments.VisualAdjustment;
+import view.Adjustments.DataAdjustment;
 
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -52,7 +53,6 @@ public class LancamentoView {
         System.out.print("Digite o ano inicial: ");
         int ano = input.nextInt();
 
-        Date data = DataService.regulaData(mes, ano);
         int parcelas = 12;
 
         if(tipoParcelas.equalsIgnoreCase("p")) {
@@ -61,17 +61,20 @@ public class LancamentoView {
         }else if(tipoParcelas.equalsIgnoreCase("a")){
             parcelas = 1;
         }
-        lancamentoController.cadastraValor(valor, desc, tipo, data, parcelas, tipoParcelas, user);
+
+        Lancamento lancamento = new Lancamento(valor, desc, tipo, DataAdjustment.regulaData(mes, ano), user, parcelas, tipoParcelas);
+
+        lancamentoController.cadastraValor(lancamento);
     }
 
-    public void visualizaDespesa(Usuario user) throws SQLException {
+    public void visualizaTodasDespesas(Usuario user) throws SQLException {
         System.out.printf("\033[31;1m\n***********Despesas***********\033[0m");
         String tipo = selecionaTipoLancamento();
         ArrayList<Lancamento> despesas = lancamentoController.buscaRendasEDespesas(user,"d", tipo);
         visualizaValores(despesas);
     }
 
-    public void visualizaRenda(Usuario user) throws SQLException {
+    public void visualizaTodasRendas(Usuario user) throws SQLException {
         System.out.print("\033[34;1m\n***********Rendas***********\033[0m");
         String tipo = selecionaTipoLancamento();
         ArrayList<Lancamento> rendas = lancamentoController.buscaRendasEDespesas(user,"r", tipo);
@@ -84,24 +87,18 @@ public class LancamentoView {
                 "\nP - Parceladas" +
                 "\nF - Fixas" +
                 "\nDigite a opção: ");
-
         String opcao = input.next();
         while(!opcao.equalsIgnoreCase("a")&&!opcao.equalsIgnoreCase("p")&&!opcao.equalsIgnoreCase("f")){
             System.out.print("Opcao incorreta, digite novamente: ");
             opcao =  input.next();
         }
-        System.out.println("\n");
         return opcao;
     }
 
     private void visualizaValores(ArrayList<Lancamento> lancamentos){
-
-        for (int i = 0; i < lancamentos.size(); i++) {
-            System.out.println(lancamentos.get(i));
-        }
-
+        visualizarGeral(lancamentos);
         double valor = lancamentoController.retornaTotal(lancamentos);
-        System.out.printf("\033[34;1m\nTotal: %.2f\n\033[0m", valor);
+        System.out.printf("\033[33;1m\n\nTotal: %.2f\n\033[0m", valor);
     }
 
     public void visualizaMes(Usuario user) throws SQLException, ParseException {
@@ -121,7 +118,7 @@ public class LancamentoView {
         double totalRenda = lancamentoController.retornaTotal(rendas);
         double totalDespesa = lancamentoController.retornaTotal(despesas);
 
-        System.out.println("\n**Total no mês**\033[0m");
+        System.out.println("\033[32;1m\n\n**Total no mês**\033[0m");
         System.out.printf("\033[34;1m\nRenda total: %.2f\033[0m", totalRenda);
         System.out.printf("\033[31;1m\nDespesa total: %.2f\033[0m", totalDespesa);
         System.out.printf("\033[32;1m\nValor restante no mês: %.2f\033[0m\n", lancamentoController.calculaRestante(totalRenda, totalDespesa));
@@ -134,32 +131,29 @@ public class LancamentoView {
             System.out.println("\nVocê não possui rendas neste mês");
         }
 
-        for (int i = 0; i < rendas.size(); i++) {
-            System.out.println(rendas.get(i));
-        }
+        visualizarGeral(rendas);
 
         if (despesas.size()>0){
-            System.out.printf("\033[31;1m\n\t------Despesas------\n\033[0m");
+            System.out.printf("\033[31;1m\n\n\t------Despesas------\n\033[0m");
         }else{
             System.out.println("\nVocê não possui despesas neste mês");
         }
-
-        for (int i = 0; i < despesas.size(); i++) {
-            System.out.println(despesas.get(i));
-        }
+        visualizarGeral(despesas);
     }
 
-    /*private void visualizarDespesas(ArrayList<Lancamento> lancamento){
+    private void visualizarGeral(ArrayList<Lancamento> lancamento){
+
         for (int i = 0; i < lancamento.size(); i++) {
-            if(lancamento.get(i).getTipo().equalsIgnoreCase("f")) {
-                System.out.print("\tDescricao: " + lancamento.get(i).getDescricao());
-                System.out.print("\tValor: " + lancamento.get(i).getValor());
-                System.out.print("\tTipo: " + lancamento.get(i).getTipo());
-                System.out.print("\tTipo das parcelas: " + lancamento.get(i).getTipoParcelas());
+            System.out.print("\nDescricao: " + VisualAdjustment.ajustaPrint(lancamento.get(i).getDescricao(), 25));
+            System.out.print("\t\tValor: " + VisualAdjustment.ajustaPrint(VisualAdjustment.ajustaDouble(lancamento.get(i).getValor()),8));
+            System.out.print("\t\tTipo: " + VisualAdjustment.converteTipo(lancamento.get(i).getTipo()));
+            System.out.print("\t\tTipo das parcelas: " + VisualAdjustment.converteTipoParcelas(lancamento.get(i).getTipoParcelas()));
+            if(lancamento.get(i).getTipoParcelas().equalsIgnoreCase("p")) {
+                System.out.print("\t\tData: "+ DataAdjustment.regulaData(lancamento.get(i).getData()));
+                System.out.print("\t\tParcelas: "+ lancamento.get(i).getParcelas());
+            }else if(lancamento.get(i).getTipoParcelas().equalsIgnoreCase("a")){
+                System.out.print("\t\tData: "+ DataAdjustment.regulaData(lancamento.get(i).getData()));
             }
-
         }
-
-    }*/
-
+    }
 }

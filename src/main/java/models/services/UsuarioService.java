@@ -6,7 +6,11 @@ import models.factory.ConnectionFactory;
 
 public class UsuarioService {
 
-    private UsuarioDAO usuarioDAO = new UsuarioDAO(ConnectionFactory.getConnection());
+    private UsuarioDAO usuarioDAO;
+
+    public UsuarioService(UsuarioDAO usuarioDAO){
+        this.usuarioDAO = usuarioDAO;
+    }
 
     public boolean cadastra(String nome){
 
@@ -23,7 +27,6 @@ public class UsuarioService {
     }
 
     public boolean validaDadosCorretos(String nome){
-
         if(Character.isAlphabetic((nome.charAt(0))) && Character.isAlphabetic((nome.charAt(nome.length() - 1)))){
             return true;
         }
