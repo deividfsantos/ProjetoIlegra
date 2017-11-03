@@ -14,11 +14,13 @@ public class MenuView {
         Scanner input = new Scanner(System.in);
         MenuController menuController = new MenuController();
 
+        System.out.println("\n\n\033[34;1m**********MELHOR SISTEMA FINANCEIRO DO MUNDO**********\033[0m");
+
         Usuario user = menuController.login();
 
         int opcao=0;
 
-        System.out.println("\n\n\033[34;1m********BEM VINDO********\033[0m");
+        System.out.println("\n\n\033[34;1m**********BEM VINDO**********\033[0m");
 
         while (opcao != 7) {
             try {
@@ -32,11 +34,11 @@ public class MenuView {
                         "\n7- Sair" +
                         "\nDigite a opção: ");
 
-                opcao = input.nextInt();
+                opcao = Integer.parseInt(input.nextLine());
 
                 while (opcao > 7 || opcao < 1) {
                     System.out.print("Opção incorreta, digite novamente: ");
-                    opcao = input.nextInt();
+                    opcao = Integer.parseInt(input.nextLine());
                 }
                 System.out.print("\n");
                 menuController.seleciona(opcao, user);

@@ -2,31 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c849b179-65c7-4d90-9cb0-14b62573aab6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/view/Adjustments/VisualAdjustment.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/classes/models/services/DataService.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/models/services/DataService.java" afterPath="$PROJECT_DIR$/src/main/java/view/Adjustments/DataAdjustment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/controller/MenuController.class" afterPath="$PROJECT_DIR$/out/production/classes/controller/MenuController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/controller/UsuarioController.class" afterPath="$PROJECT_DIR$/out/production/classes/controller/UsuarioController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/models/classes/Lancamento.class" afterPath="$PROJECT_DIR$/out/production/classes/models/classes/Lancamento.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/models/dao/LancamentoDAO.class" afterPath="$PROJECT_DIR$/out/production/classes/models/dao/LancamentoDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/models/services/LancamentoService.class" afterPath="$PROJECT_DIR$/out/production/classes/models/services/LancamentoService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/models/services/UsuarioService.class" afterPath="$PROJECT_DIR$/out/production/classes/models/services/UsuarioService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/view/LancamentoView.class" afterPath="$PROJECT_DIR$/out/production/classes/view/LancamentoView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/classes/DataTest.class" afterPath="$PROJECT_DIR$/out/test/classes/DataTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/classes/LancamentoTest.class" afterPath="$PROJECT_DIR$/out/test/classes/LancamentoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/classes/UsuarioTest.class" afterPath="$PROJECT_DIR$/out/test/classes/UsuarioTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/LancamentoController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/LancamentoController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/MenuController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/MenuController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/UsuarioController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/UsuarioController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/models/classes/Lancamento.java" afterPath="$PROJECT_DIR$/src/main/java/models/classes/Lancamento.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/models/dao/LancamentoDAO.java" afterPath="$PROJECT_DIR$/src/main/java/models/dao/LancamentoDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/models/services/LancamentoService.java" afterPath="$PROJECT_DIR$/src/main/java/models/services/LancamentoService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/models/services/UsuarioService.java" afterPath="$PROJECT_DIR$/src/main/java/models/services/UsuarioService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/view/LancamentoView.java" afterPath="$PROJECT_DIR$/src/main/java/view/LancamentoView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/DataTest.java" afterPath="$PROJECT_DIR$/src/test/java/DataTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/LancamentoTest.java" afterPath="$PROJECT_DIR$/src/test/java/LancamentoTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/UsuarioTest.java" afterPath="$PROJECT_DIR$/src/test/java/UsuarioTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/view/MenuView.java" afterPath="$PROJECT_DIR$/src/main/java/view/MenuView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/view/UsuarioView.java" afterPath="$PROJECT_DIR$/src/main/java/view/UsuarioView.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -52,54 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UsuarioDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/models/dao/UsuarioDAO.java">
+      <file leaf-file-name="LancamentoView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/view/LancamentoView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="34" column="29" lean-forward="false" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LancamentoDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/models/dao/LancamentoDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsuarioTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/UsuarioTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="32" column="26" lean-forward="false" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsuarioService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/models/services/UsuarioService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="35" column="22" lean-forward="true" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-              <folding>
-                <element signature="e#244#245#0" expanded="true" />
-                <element signature="e#288#289#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsuarioController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/UsuarioController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+            <state relative-caret-position="274">
+              <caret line="45" column="51" lean-forward="false" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -108,28 +43,18 @@
       <file leaf-file-name="UsuarioView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/view/UsuarioView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="630">
+              <caret line="37" column="29" lean-forward="false" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LancamentoView.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/view/LancamentoView.java">
+      <file leaf-file-name="MenuView.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/view/MenuView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="151" column="32" lean-forward="false" selection-start-line="151" selection-start-column="32" selection-end-line="151" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LancamentoController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/LancamentoController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12">
-              <caret line="23" column="90" lean-forward="false" selection-start-line="23" selection-start-column="90" selection-end-line="23" selection-end-column="90" />
+            <state relative-caret-position="540">
+              <caret line="35" column="16" lean-forward="false" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -150,6 +75,10 @@
     <findStrings>
       <find>exibeL</find>
       <find>\n</find>
+      <find>nextI</find>
+      <find>next()</find>
+      <find>next</find>
+      <find>next(</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -547,11 +476,9 @@
         <option value="$PROJECT_DIR$/src/main/java/models/factory/ConnectionFactory.java" />
         <option value="$PROJECT_DIR$/src/test/java/LancamentoTeste.java" />
         <option value="$PROJECT_DIR$/src/test/java/DataTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/view/UsuarioView.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/MenuController.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/dao/LancamentoDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/dao/UsuarioDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/view/MenuView.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/classes/Lancamento.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/services/LancamentoService.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/ajustes/AjusteVisual.java" />
@@ -564,6 +491,8 @@
         <option value="$PROJECT_DIR$/src/test/java/UsuarioTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/LancamentoController.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/LancamentoView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/view/UsuarioView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/view/MenuView.java" />
       </list>
     </option>
   </component>
@@ -1209,7 +1138,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36263737" sideWeight="0.50641024" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.378022" sideWeight="0.49358973" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.95714283" sideWeight="0.49358973" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1353,22 +1282,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
           <caret line="52" column="29" lean-forward="false" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/MenuView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="43" column="87" lean-forward="false" selection-start-line="43" selection-start-column="87" selection-end-line="43" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MenuController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="36" column="41" lean-forward="false" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1693,14 +1606,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/UsuarioView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/LancamentoController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-12">
@@ -1709,10 +1614,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MenuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="36" column="41" lean-forward="false" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/view/LancamentoView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="151" column="32" lean-forward="false" selection-start-line="151" selection-start-column="32" selection-end-line="151" selection-end-column="32" />
+        <state relative-caret-position="274">
+          <caret line="45" column="51" lean-forward="false" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/view/UsuarioView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="37" column="29" lean-forward="false" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/view/MenuView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="35" column="16" lean-forward="false" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
           <folding />
         </state>
       </provider>

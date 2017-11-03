@@ -41,23 +41,23 @@ public class LancamentoView {
         String tipoParcelas = selecionaTipoLancamento();
 
         System.out.print("Digite a descrição desse lancamento: ");
-        String desc = input.next();
+        String desc = input.nextLine();
         System.out.print("\nDigite o valor: ");
-        double valor= input.nextDouble();
+        double valor= Double.parseDouble(input.nextLine());
         System.out.print("Digite o mês inicial: ");
-        int mes = input.nextInt();
+        int mes = Integer.parseInt(input.nextLine());
         while(mes>12 || mes <1){
             System.out.print("Mês inválido, por favor, digite novamente: ");
-            mes = input.nextInt();
+            mes = Integer.parseInt(input.nextLine());
         }
         System.out.print("Digite o ano inicial: ");
-        int ano = input.nextInt();
+        int ano = Integer.parseInt(input.nextLine());
 
         int parcelas = 12;
 
         if(tipoParcelas.equalsIgnoreCase("p")) {
             System.out.print("\nDigite a quantidade de parcelas: ");
-            parcelas = input.nextInt();
+            parcelas = Integer.parseInt(input.nextLine());
         }else if(tipoParcelas.equalsIgnoreCase("a")){
             parcelas = 1;
         }
@@ -87,10 +87,10 @@ public class LancamentoView {
                 "\nP - Parceladas" +
                 "\nF - Fixas" +
                 "\nDigite a opção: ");
-        String opcao = input.next();
+        String opcao = input.nextLine();
         while(!opcao.equalsIgnoreCase("a")&&!opcao.equalsIgnoreCase("p")&&!opcao.equalsIgnoreCase("f")){
             System.out.print("Opcao incorreta, digite novamente: ");
-            opcao =  input.next();
+            opcao =  input.nextLine();
         }
         return opcao;
     }
@@ -104,14 +104,14 @@ public class LancamentoView {
     public void visualizaMes(Usuario user) throws SQLException, ParseException {
         System.out.println("Visualizar um mês\n");
         System.out.print("Digite o mês: ");
-        int mes = input.nextInt();
+        int mes = Integer.parseInt(input.nextLine());
 
         while(mes>12 || mes <1){
             System.out.print("Mês inválido, por favor, digite novamente: ");
-            mes = input.nextInt();
+            mes = Integer.parseInt(input.nextLine());
         }
         System.out.print("Digite o ano: ");
-        int ano = input.nextInt();
+        int ano = Integer.parseInt(input.nextLine());
         ArrayList<Lancamento> rendas = lancamentoController.buscaLancamentoMes(user, mes, ano, 1);
         ArrayList<Lancamento> despesas = lancamentoController.buscaLancamentoMes(user, mes, ano, 2);
         mostraDespesasERendas(rendas, despesas);
