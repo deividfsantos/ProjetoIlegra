@@ -39,7 +39,6 @@ public class LancamentoView {
 
     private void telaCadastro(String tipo, Usuario user) throws ParseException, SQLException {
         String tipoParcelas = selecionaTipoLancamento();
-
         System.out.print("Digite a descrição desse lancamento: ");
         String desc = input.nextLine();
         System.out.print("\nDigite o valor: ");
@@ -52,19 +51,20 @@ public class LancamentoView {
         }
         System.out.print("Digite o ano inicial: ");
         int ano = Integer.parseInt(input.nextLine());
+        int parcelas = verificaParcelas(tipoParcelas);
+        Lancamento lancamento = new Lancamento(valor, desc, tipo, DataAdjustment.regulaData(mes, ano), user, parcelas, tipoParcelas);
+        lancamentoController.cadastraValor(lancamento);
+    }
 
+    private int verificaParcelas(String tipoParcelas) {
         int parcelas = 12;
-
         if(tipoParcelas.equalsIgnoreCase("p")) {
             System.out.print("\nDigite a quantidade de parcelas: ");
             parcelas = Integer.parseInt(input.nextLine());
         }else if(tipoParcelas.equalsIgnoreCase("a")){
             parcelas = 1;
         }
-
-        Lancamento lancamento = new Lancamento(valor, desc, tipo, DataAdjustment.regulaData(mes, ano), user, parcelas, tipoParcelas);
-
-        lancamentoController.cadastraValor(lancamento);
+        return parcelas;
     }
 
     public void visualizaTodasDespesas(Usuario user) throws SQLException {
@@ -98,7 +98,7 @@ public class LancamentoView {
     private void visualizaValores(ArrayList<Lancamento> lancamentos){
         visualizarGeral(lancamentos);
         double valor = lancamentoController.retornaTotal(lancamentos);
-        System.out.printf("\033[33;1m\n\nTotal: %.2f\n\033[0m", valor);
+        System.out.printf("\033[32;1m\n\nTotal: %.2f\n\033[0m", valor);
     }
 
     public void visualizaMes(Usuario user) throws SQLException, ParseException {
