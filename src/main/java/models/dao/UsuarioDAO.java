@@ -29,7 +29,6 @@ public class UsuarioDAO {
 
             System.out.println("Não foi possível salvar nos ba " +
                     "nco "+e.getMessage());
-
         }
     }
 

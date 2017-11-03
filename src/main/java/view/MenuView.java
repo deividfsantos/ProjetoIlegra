@@ -41,7 +41,7 @@ public class MenuView {
                 System.out.print("\n");
                 menuController.seleciona(opcao, user);
             }catch (SQLException e){
-                System.out.println("Não foi possivel efetuar a opração, tente novamente."+e);
+                System.out.println("Não foi possivel efetuar a opração, tente novamente");
             }
         }
 

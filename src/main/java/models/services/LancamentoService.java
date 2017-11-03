@@ -41,22 +41,7 @@ public class LancamentoService {
     }
 
     public ArrayList buscaLancamentosEDespesas(Usuario user, String tipoLancamento, String tipoVariavel) throws SQLException {
-
-        /*if(tipoVariavel.equalsIgnoreCase("p")){
-            ArrayList<Lancamento> lancamentoParcelado = lancamentoDAO.visualizaValores(user, tipoLancamento, tipoVariavel);
-
-            for (int i = 0; i < lancamentoParcelado.size(); i++) {
-                String[] valor = lancamentoParcelado.get(i).getDescricao().split(" ");
-                lancamentoParcelado.get(i).setDescricao(valor[0]);
-            }
-
-            return lancamentoParcelado;
-
-        }else{*/
         return lancamentoDAO.visualizaValores(user, tipoLancamento, tipoVariavel);
-        //}
-
-
     }
 
     public ArrayList<Lancamento> retornaMes(Usuario user, int mes, int ano, String tipoVariavel) throws SQLException, ParseException {

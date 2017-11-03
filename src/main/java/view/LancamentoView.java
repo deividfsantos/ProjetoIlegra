@@ -39,7 +39,7 @@ public class LancamentoView {
     private void telaCadastro(String tipo, Usuario user) throws ParseException, SQLException {
         String tipoParcelas = selecionaTipoLancamento();
 
-        System.out.print("\nDigite a descrição desse lancamento: ");
+        System.out.print("Digite a descrição desse lancamento: ");
         String desc = input.next();
         System.out.print("\nDigite o valor: ");
         double valor= input.nextDouble();
@@ -148,4 +148,18 @@ public class LancamentoView {
             System.out.println(despesas.get(i));
         }
     }
+
+    /*private void visualizarDespesas(ArrayList<Lancamento> lancamento){
+        for (int i = 0; i < lancamento.size(); i++) {
+            if(lancamento.get(i).getTipo().equalsIgnoreCase("f")) {
+                System.out.print("\tDescricao: " + lancamento.get(i).getDescricao());
+                System.out.print("\tValor: " + lancamento.get(i).getValor());
+                System.out.print("\tTipo: " + lancamento.get(i).getTipo());
+                System.out.print("\tTipo das parcelas: " + lancamento.get(i).getTipoParcelas());
+            }
+
+        }
+
+    }*/
+
 }

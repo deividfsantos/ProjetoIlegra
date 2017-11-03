@@ -1,19 +1,26 @@
+
+import models.classes.Usuario;
 import models.dao.UsuarioDAO;
-import models.factory.ConnectionFactory;
 import models.services.UsuarioService;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import java.sql.Connection;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 
 public class UsuarioTest {
 
     @Test
     public void testaBuscaUsuario(){
 
-        Connection con = ConnectionFactory.getConnection();
-        UsuarioDAO usuarioDAO = new UsuarioDAO(con);
         String esperado = "deivid";
-        int codEsperado = 10;
+        int codEsperado = 1;
+
+        Usuario user = new Usuario(esperado,codEsperado);
+
+        UsuarioDAO usuarioDAO= mock(UsuarioDAO.class);
+
+        when(usuarioDAO.retornaUsuario(esperado)).thenReturn(user);
 
         String retorno = usuarioDAO.retornaUsuario(esperado).getNomeUsuario().toLowerCase();
         int cod = usuarioDAO.retornaUsuario(esperado).getCodigoUsuario();

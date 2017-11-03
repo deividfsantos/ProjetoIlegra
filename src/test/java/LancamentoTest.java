@@ -40,6 +40,7 @@ public class LancamentoTest {
         ArrayList<Lancamento> lancamentos = new ArrayList<>();
         lancamentos.add(lancamento1);
         lancamentos.add(lancamento2);
+
         when(lancamentoDAO.visualizaValores(user, "p", "r")).thenReturn(lancamentos);
         ArrayList<Lancamento> arrayList = lancamentoDAO.visualizaValores(user, "p", "r");
 
