@@ -3,13 +3,12 @@ package view;
 import controller.LancamentoController;
 import models.classes.Lancamento;
 import models.classes.Usuario;
-import view.Adjustments.VisualAdjustment;
-import view.Adjustments.DataAdjustment;
+import adjustments.VisualAdjustment;
+import adjustments.DataAdjustment;
 
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Scanner;
 
 public class LancamentoView {
@@ -21,7 +20,7 @@ public class LancamentoView {
         System.out.print("\033[34;1m*********Lançamento de Renda*********\033[0m");
         try {
             telaCadastro("r", user);
-            System.out.println("Lançamento efetuado com sucesso");
+            System.out.println("\033[33;1mLançamento efetuado com sucesso\033[0m");
         }catch (SQLException s){
             System.out.println("Erro ao efetuar lançamento");
         }
@@ -31,7 +30,7 @@ public class LancamentoView {
         System.out.print("\033[31;1m*********Lançamento de despesa*********\033[0m");
         try{
             telaCadastro("d", user);
-            System.out.println("Lançamento efetuado com sucesso");
+            System.out.println("\033[33;1mLançamento efetuado com sucesso\033[0m");
         }catch (SQLException s){
             System.out.println("Erro ao efetuar lançamento");
         }
@@ -39,9 +38,9 @@ public class LancamentoView {
 
     private void telaCadastro(String tipo, Usuario user) throws ParseException, SQLException {
         String tipoParcelas = selecionaTipoLancamento();
-        System.out.print("Digite a descrição desse lancamento: ");
+        System.out.print("\nDigite a descrição desse lancamento: ");
         String desc = input.nextLine();
-        System.out.print("\nDigite o valor: ");
+        System.out.print("Digite o valor: ");
         double valor= Double.parseDouble(input.nextLine());
         System.out.print("Digite o mês inicial: ");
         int mes = Integer.parseInt(input.nextLine());
@@ -136,7 +135,7 @@ public class LancamentoView {
         if (despesas.size()>0){
             System.out.printf("\033[31;1m\n\n\t------Despesas------\n\033[0m");
         }else{
-            System.out.println("\nVocê não possui despesas neste mês");
+            System.out.println("\n\nVocê não possui despesas neste mês");
         }
         visualizarGeral(despesas);
     }

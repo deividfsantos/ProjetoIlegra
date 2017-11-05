@@ -2,6 +2,7 @@ package controller;
 
 import models.classes.Usuario;
 import view.LancamentoView;
+import view.MenuView;
 import view.UsuarioView;
 
 import java.sql.SQLException;
@@ -17,15 +18,30 @@ public class MenuController {
         lancamentoView =  new LancamentoView();
     }
 
+    public void selecionaLogin(int opcao){
+        MenuView menuView = new MenuView();
+        switch (opcao){
+            case 1:
+                usuarioView.telaCadastroUsuario();
+                break;
+            case 2:
+                menuView.menu();
+                break;
+            case 3:
+                System.exit(0);
+                break;
+        }
+    }
+
     public Usuario login(){
         return usuarioView.telaLogin();
     }
 
-    public void seleciona(int opcao, Usuario user) throws ParseException, SQLException {
+    public void selecionaPrincipal(int opcao, Usuario user) throws ParseException, SQLException {
 
         switch (opcao){
             case 1:
-                usuarioView.telaCadastro();
+                usuarioView.telaCadastroUsuario();
                 break;
             case 2:
                 lancamentoView.menuLancamentoRenda(user);

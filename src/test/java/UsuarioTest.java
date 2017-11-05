@@ -15,19 +15,6 @@ public class UsuarioTest {
     private UsuarioDAO usuarioDAO = mock(UsuarioDAO.class);
 
     @Test
-    public void testaBuscaUsuario(){
-        String esperado = "deivid";
-        int codEsperado = 1;
-        Usuario user = new Usuario(esperado,codEsperado);
-        UsuarioDAO usuarioDAO= mock(UsuarioDAO.class);
-        when(usuarioDAO.retornaUsuario(esperado)).thenReturn(user);
-        String retorno = usuarioDAO.retornaUsuario(esperado).getNomeUsuario().toLowerCase();
-        int cod = usuarioDAO.retornaUsuario(esperado).getCodigoUsuario();
-        assertEquals(esperado, retorno);
-        assertEquals(codEsperado, cod);
-    }
-
-    @Test
     public void testaValidacaoFalsa(){
         UsuarioService usuarioService = new UsuarioService(usuarioDAO);
         String nome = "@$#%#";
@@ -44,8 +31,20 @@ public class UsuarioTest {
     }
 
     @Test
-    public void testaCadastroUsuario(){
+    public void testaBuscaUsuario(){
+        String esperado = "deivid";
+        int codEsperado = 1;
+        Usuario user = new Usuario(esperado,codEsperado);
+        UsuarioDAO usuarioDAO= mock(UsuarioDAO.class);
+        when(usuarioDAO.retornaUsuario(esperado)).thenReturn(user);
+        String retorno = usuarioDAO.retornaUsuario(esperado).getNomeUsuario().toLowerCase();
+        int cod = usuarioDAO.retornaUsuario(esperado).getCodigoUsuario();
+        assertEquals(esperado, retorno);
+        assertEquals(codEsperado, cod);
+    }
 
+    @Test
+    public void testaCadastroUsuario(){
         UsuarioService usuarioService = new UsuarioService(usuarioDAO);
 
         String nome = "#&@#";
@@ -59,6 +58,5 @@ public class UsuarioTest {
         String nome3 = "NomeNovo";
         when(usuarioDAO.verificaUsuario(nome3)).thenReturn(false);
         assertFalse(usuarioService.cadastra(nome3));
-
     }
 }

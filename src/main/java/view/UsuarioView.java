@@ -23,13 +23,12 @@ public class UsuarioView {
         return user;
     }
 
-    public void telaCadastro() {
-        System.out.print("Digite o nome do usuário que deseja cadastrar: ");
+    public void telaCadastroUsuario() {
+        System.out.print("\nDigite o novo nome de usuário: ");
         String nome = input.nextLine();
 
         usuarioController.cadastraUsuario(nome);
         System.out.print("\033[34;1mUsuário cadastrado com sucesso.\n\033[0m");
-
     }
 
     public String solicitaNovamente(){

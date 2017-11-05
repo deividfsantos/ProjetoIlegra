@@ -2,7 +2,7 @@ package models.dao;
 
 import models.classes.Lancamento;
 import models.classes.Usuario;
-import view.Adjustments.DataAdjustment;
+import adjustments.DataAdjustment;
 
 import java.sql.*;
 import java.text.ParseException;

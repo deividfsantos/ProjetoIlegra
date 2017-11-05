@@ -3,7 +3,7 @@ package models.services;
 import models.dao.LancamentoDAO;
 import models.classes.Lancamento;
 import models.classes.Usuario;
-import view.Adjustments.DataAdjustment;
+import adjustments.DataAdjustment;
 
 import java.sql.SQLException;
 import java.text.ParseException;

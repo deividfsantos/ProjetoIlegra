@@ -1,4 +1,4 @@
-package view.Adjustments;
+package adjustments;
 
 import java.text.DecimalFormat;
 

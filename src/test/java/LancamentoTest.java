@@ -2,7 +2,7 @@ import models.classes.Lancamento;
 import models.classes.Usuario;
 import models.dao.LancamentoDAO;
 import models.factory.ConnectionFactory;
-import view.Adjustments.DataAdjustment;
+import adjustments.DataAdjustment;
 import models.services.LancamentoService;
 import org.junit.Test;
 
@@ -32,7 +32,7 @@ public class LancamentoTest {
 
     @Test
     public void testeRetornaTotalDespesa() throws SQLException {
-        Usuario user = new Usuario("UsuarioTestes",666);
+        Usuario user = new Usuario("UsuarioTestes",5);
         Lancamento lancamento1 = new Lancamento(100,"Teeste","r",null ,user,10,"p");
         Lancamento lancamento2 = new Lancamento(100,"Teeste","r",null ,user,10,"p");
         LancamentoDAO lancamentoDAO = mock(LancamentoDAO.class);
@@ -48,10 +48,10 @@ public class LancamentoTest {
     public void testaLancamentoParcelado() throws SQLException, ParseException {
         LancamentoService lancamentoService = new LancamentoService(lancamentoDAO);
         Date data= DataAdjustment.regulaData(11,2017);
-        Usuario user = new Usuario("UsuarioTestes",666);
-        Lancamento lancamento = new Lancamento(100,"Teeste","r", data, user,7,"f");
+        Usuario user = new Usuario("UsuarioTestes",5);
+        Lancamento lancamento = new Lancamento(100,"Teeste","r", data, user,7,"p");
         lancamentoService.inserirLancamento(lancamento);
-        verify(lancamentoDAO).inserirUmLancamento(lancamento, 7);
+        verify(lancamentoDAO).inserirUmLancamento(lancamento, 6);
     }
 
     @Test

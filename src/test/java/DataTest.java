@@ -1,5 +1,5 @@
 
-import view.Adjustments.DataAdjustment;
+import adjustments.DataAdjustment;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
