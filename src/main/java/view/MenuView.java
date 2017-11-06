@@ -14,6 +14,7 @@ public class MenuView {
 
     public void login(){
         int opcao=0;
+        System.out.print("\n\n\033[32;1m**********CONTROLE FINANCEIRO MENSAL**********\033[0m");
         while(opcao!= 3) {
             System.out.print("\n\nSelecione a opção desejada: " +
                     "\n1 - Cadastrar novo Usuario" +
@@ -26,7 +27,6 @@ public class MenuView {
     }
 
     public void menu(){
-        System.out.println("\n\n\033[32;1m**********CONTROLE FINANCEIRO MENSAL**********\033[0m");
         Usuario user = menuController.login();
         int opcao=0;
         System.out.println("\n\n\033[32;1m**********BEM VINDO**********\033[0m");
@@ -51,7 +51,7 @@ public class MenuView {
                 System.out.print("\n");
                 menuController.selecionaPrincipal(opcao, user);
             }catch (SQLException e){
-                System.out.println("Não foi possivel efetuar a opração, tente novamente");
+                System.out.println("Não foi possivel efetuar a opração, tente novamente"+e);
             } catch (ParseException e) {
                 System.out.println("Erro no valor digitado");
             }
