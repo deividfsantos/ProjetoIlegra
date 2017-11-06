@@ -1,6 +1,6 @@
-import models.factory.ConnectionFactory;
+import model.factory.ConnectionFactory;
 import org.junit.Test;
-import java.sql.Connection;
+
 import java.sql.SQLException;
 
 import static org.junit.Assert.*;

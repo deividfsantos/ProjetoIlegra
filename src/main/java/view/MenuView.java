@@ -1,7 +1,7 @@
 package view;
 
 import controller.MenuController;
-import models.classes.Usuario;
+import model.classes.Usuario;
 
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -26,7 +26,7 @@ public class MenuView {
     }
 
     public void menu(){
-        System.out.println("\n\n\033[32;1m**********MELHOR SISTEMA FINANCEIRO DO MUNDO**********\033[0m");
+        System.out.println("\n\n\033[32;1m**********CONTROLE FINANCEIRO MENSAL**********\033[0m");
         Usuario user = menuController.login();
         menuPrincipal(user);
     }

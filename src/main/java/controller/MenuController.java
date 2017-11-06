@@ -1,6 +1,6 @@
 package controller;
 
-import models.classes.Usuario;
+import model.classes.Usuario;
 import view.LancamentoView;
 import view.MenuView;
 import view.UsuarioView;

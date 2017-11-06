@@ -1,6 +1,6 @@
-package models.dao;
+package model.dao;
 
-import models.classes.Usuario;
+import model.classes.Usuario;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

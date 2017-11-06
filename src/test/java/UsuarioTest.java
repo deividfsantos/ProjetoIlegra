@@ -1,11 +1,9 @@
 
-import models.classes.Usuario;
-import models.dao.UsuarioDAO;
-import models.factory.ConnectionFactory;
-import models.services.UsuarioService;
+import model.classes.Usuario;
+import model.dao.UsuarioDAO;
+import model.services.UsuarioService;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -13,6 +11,23 @@ import static org.mockito.Mockito.when;
 public class UsuarioTest {
 
     private UsuarioDAO usuarioDAO = mock(UsuarioDAO.class);
+
+    @Test
+    public void testaCadastroUsuario(){
+        UsuarioService usuarioService = new UsuarioService(usuarioDAO);
+
+        String nome = "#&@#";
+        when(usuarioDAO.verificaUsuario(nome)).thenReturn(false);
+        assertTrue(usuarioService.cadastraUsuario(nome));
+
+        String nome2 = "Deivid";
+        when(usuarioDAO.verificaUsuario(nome2)).thenReturn(true);
+        assertTrue(usuarioService.cadastraUsuario(nome2));
+
+        String nome3 = "NomeNovo";
+        when(usuarioDAO.verificaUsuario(nome3)).thenReturn(false);
+        assertFalse(usuarioService.cadastraUsuario(nome3));
+    }
 
     @Test
     public void testaValidacaoFalsa(){
@@ -43,20 +58,4 @@ public class UsuarioTest {
         assertEquals(codEsperado, cod);
     }
 
-    @Test
-    public void testaCadastroUsuario(){
-        UsuarioService usuarioService = new UsuarioService(usuarioDAO);
-
-        String nome = "#&@#";
-        when(usuarioDAO.verificaUsuario(nome)).thenReturn(false);
-        assertTrue(usuarioService.cadastra(nome));
-
-        String nome2 = "Deivid";
-        when(usuarioDAO.verificaUsuario(nome2)).thenReturn(true);
-        assertTrue(usuarioService.cadastra(nome2));
-
-        String nome3 = "NomeNovo";
-        when(usuarioDAO.verificaUsuario(nome3)).thenReturn(false);
-        assertFalse(usuarioService.cadastra(nome3));
-    }
 }

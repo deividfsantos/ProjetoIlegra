@@ -1,7 +1,7 @@
-package models.dao;
+package model.dao;
 
-import models.classes.Lancamento;
-import models.classes.Usuario;
+import model.classes.Lancamento;
+import model.classes.Usuario;
 import adjustments.DataAdjustment;
 
 import java.sql.*;

@@ -1,8 +1,8 @@
 package view;
 
 import controller.LancamentoController;
-import models.classes.Lancamento;
-import models.classes.Usuario;
+import model.classes.Lancamento;
+import model.classes.Usuario;
 import adjustments.VisualAdjustment;
 import adjustments.DataAdjustment;
 

@@ -1,9 +1,9 @@
 package controller;
 
-import models.classes.Usuario;
-import models.factory.ConnectionFactory;
-import models.dao.UsuarioDAO;
-import models.services.UsuarioService;
+import model.classes.Usuario;
+import model.factory.ConnectionFactory;
+import model.dao.UsuarioDAO;
+import model.services.UsuarioService;
 import view.UsuarioView;
 
 public class UsuarioController {
@@ -19,13 +19,13 @@ public class UsuarioController {
     public void cadastraUsuario(String nome){
         UsuarioView usuarioView = new UsuarioView();
 
-        boolean verificacao = usuarioService.cadastra(nome);
+        boolean verificacao = usuarioService.cadastraUsuario(nome);
 
         String novoNome;
 
         while(verificacao){
             novoNome = usuarioView.solicitaNovamente();
-            verificacao = usuarioService.cadastra(novoNome);
+            verificacao = usuarioService.cadastraUsuario(novoNome);
         }
 
     }

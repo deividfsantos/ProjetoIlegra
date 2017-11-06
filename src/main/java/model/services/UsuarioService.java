@@ -1,8 +1,7 @@
-package models.services;
+package model.services;
 
-import models.classes.Usuario;
-import models.dao.UsuarioDAO;
-import models.factory.ConnectionFactory;
+import model.classes.Usuario;
+import model.dao.UsuarioDAO;
 
 public class UsuarioService {
 
@@ -12,7 +11,7 @@ public class UsuarioService {
         this.usuarioDAO = usuarioDAO;
     }
 
-    public boolean cadastra(String nome){
+    public boolean cadastraUsuario(String nome){
 
         boolean verificacao1 = usuarioDAO.verificaUsuario(nome);
         boolean verificacao2 = validaDadosCorretos(nome);

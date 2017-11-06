@@ -1,7 +1,7 @@
 package view;
 
 import controller.UsuarioController;
-import models.classes.Usuario;
+import model.classes.Usuario;
 import java.util.Scanner;
 
 public class UsuarioView {
