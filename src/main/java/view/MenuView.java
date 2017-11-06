@@ -28,10 +28,6 @@ public class MenuView {
     public void menu(){
         System.out.println("\n\n\033[32;1m**********CONTROLE FINANCEIRO MENSAL**********\033[0m");
         Usuario user = menuController.login();
-        menuPrincipal(user);
-    }
-
-    private void menuPrincipal( Usuario user) {
         int opcao=0;
         System.out.println("\n\n\033[32;1m**********BEM VINDO**********\033[0m");
         while (opcao != 7) {
